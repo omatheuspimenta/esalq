@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Presentations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #485563 0%, #29323c 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .bio {
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.85;
+            font-size: 1rem;
+        }
+
+        .main-content {
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #34495e;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 300;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea, #2b839e);
+            margin: 1rem auto;
+            border-radius: 1px;
+        }
+
+        .slides-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .slide-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e8ecf3;
+            overflow: hidden;
+        }
+
+        .slide-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+
+        .slide-link {
+            display: block;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .slide-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .slide-description {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .slide-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #95a5a6;
+        }
+
+        .slide-date {
+            background: #ecf0f1;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+        }
+
+        .slide-type {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #764ba2;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            
+            .header {
+                padding: 2rem 1rem;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            
+            .slide-link {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="name">Matheus Pimenta</h1>
+                <p class="title">Bioinformatician</p>
+                <p class="bio">Computational biologist specializing in genomics and data analysis, with expertise in mathematics, statistics, and high-performance computing.</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <h2 class="section-title">Presentations</h2>
+            
+            <div class="slides-grid">
+                <div class="slide-card">
+                    <a href="https://omatheuspimenta.github.io/esalq/al_methods/" class="slide-link" target="_blank" rel="noopener noreferrer">
+                        <h3 class="slide-title">Alignment-free methods in Bioinformatics</h3>
+                        <p class="slide-description">
+                            Alignment-free methods used for phylogenetic analysis. <br>
+                            Class taught in the Database course - ESALQ - 09/2025
+                        </p>
+                        <div class="slide-meta">
+                            <span class="slide-type">Class Presentation</span>
+                            <span class="slide-date">September 2025</span>
+                        </div>
+                    </a>
+                </div>
+
+               
+
+        <footer class="footer">
+            <p>Research presentations and computational biology resources</p>
+            <div class="contact-info">
+                <a href="mailto:omatheuspimenta@outlook.com">Email</a>
+                <a href="https://orcid.org/0000-0003-0698-6360">ORCID</a>
+                <a href="https://github.com/omatheuspimenta">GitHub</a>
+                <a href="https://scholar.google.com/citations?user=c_fztjEAAAAJ&hl=pt-BR&oi=ao">Google Scholar</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
