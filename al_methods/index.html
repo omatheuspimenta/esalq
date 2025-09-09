@@ -6,11 +6,12 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-a6e161b2431e1f94a14e0f5d32135a3c.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Matheus Pimenta">
-  <title>Test Slide</title>
+  <meta name="dcterms.date" content="2025-09-09">
+  <title>Phylogenetics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,10 +30,12 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-5ae9c59b2727fcd5357d4f034d95f9e0.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -127,36 +130,251 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Test Slide</h1>
+  <h1 class="title">Phylogenetics</h1>
+  <p class="subtitle">Alignment-free Methods</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Matheus Pimenta 
+Matheus Pimenta <a href="https://orcid.org/0000-0003-0698-6360" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
 </div>
+<div class="quarto-title-author-email">
+<a href="mailto:omatheuspimenta@outlook.com">omatheuspimenta@outlook.com</a>
 </div>
+        <p class="quarto-title-affiliation">
+            Luiz de Queiroz College of Agriculture, University of São Paulo
+          </p>
+    </div>
 </div>
 
-</section>
-<section id="titulo-1" class="slide level2">
-<h2>Titulo 1</h2>
+  <p class="date">September 9, 2025</p>
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of Contents</h2>
 <ul>
-<li>Teste 1</li>
-<li>Teste 2</li>
+<li><a href="#/phylogeny-basic-concepts" id="/toc-phylogeny-basic-concepts">Phylogeny – Basic Concepts</a></li>
+<li><a href="#/approaches" id="/toc-approaches">Approaches</a></li>
+<li><a href="#/examples-of-alignment-free-tools" id="/toc-examples-of-alignment-free-tools">Examples of Alignment-Free Tools</a></li>
+<li><a href="#/applications" id="/toc-applications">Applications</a></li>
+<li><a href="#/conclusion" id="/toc-conclusion">Conclusion</a></li>
+</ul>
+</nav>
+</section>
+<section id="phylogenetics---an-alignment-free-approach" class="slide level2">
+<h2>Phylogenetics - An alignment-free approach</h2>
+<ul>
+<li class="fragment"><p>Learning objectives</p></li>
+<li class="fragment"><p>The importance of phylogeny in the genomic era</p></li>
 </ul>
 </section>
-<section id="título-2" class="slide level2">
-<h2>Título 2</h2>
-<ul>
-<li>Exemplo 1</li>
-<li>Exemplo 2</li>
-</ul>
+<section>
+<section id="phylogeny-basic-concepts" class="title-slide slide level1 center">
+<h1>Phylogeny – Basic Concepts</h1>
 
 </section>
+<section id="definitions-and-brief-history" class="slide level2">
+<h2>Definitions and brief history</h2>
+<ul>
+<li class="fragment"><p>Phylogeny: a hypothesis of evolutionary relationships, not an absolute truth</p></li>
+<li class="fragment"><p>Historical contributions:</p>
+<ul>
+<li class="fragment">Darwin → descent with modification</li>
+<li class="fragment">Hennig → cladistics and systematics</li>
+</ul></li>
+<li class="fragment"><p>Anatomy of a phylogenetic tree: root, nodes, branches, terminals, clades, polytomies</p></li>
+</ul>
+</section>
+<section id="classical-paradigm" class="slide level2">
+<h2>Classical Paradigm</h2>
+<ul>
+<li class="fragment"><p>From morphology to molecular sequences</p></li>
+<li class="fragment"><p>Multiple Sequence Alignment (MSA) as a hypothesis of homology</p></li>
+<li class="fragment"><p>Post-alignment methods:</p>
+<ul>
+<li class="fragment">Distance-based: Neighbor-Joining, UPGMA</li>
+<li class="fragment">Character-based: Parsimony, Maximum Likelihood, Bayesian inference</li>
+</ul></li>
+<li class="fragment"><p>Limitations of MSA:</p>
+<ul>
+<li class="fragment">High computational cost</li>
+<li class="fragment">Parameter dependence (gaps, scoring matrices)</li>
+<li class="fragment">Loss of collinearity due to rearrangements and horizontal gene transfer (HGT)</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="approaches" class="title-slide slide level1 center">
+<h1>Approaches</h1>
+
+</section>
+<section id="alignment-based-methods" class="slide level2">
+<h2>Alignment-Based Methods</h2>
+</section>
+<section id="alignment-free-methods" class="slide level2">
+<h2>Alignment-Free Methods</h2>
+<ul>
+<li class="fragment"><p>Principle: from positional homology → to compositional signatures</p></li>
+<li class="fragment"><p>Advantages: speed, scalability, robustness to rearrangements</p></li>
+<li class="fragment"><p>Trade-off: loss of positional information</p></li>
+</ul>
+</section>
+<section id="main-alignment-free-strategies" class="slide level2">
+<h2>Main Alignment-Free Strategies</h2>
+<ul>
+<li class="fragment"><p><strong>k-mers</strong>: fixed-length substring counts</p></li>
+<li class="fragment"><p><strong>Average Common Substring (ACS)</strong> approaches</p></li>
+<li class="fragment"><p><strong>Information-theory based</strong>: compression, entropy measures</p></li>
+<li class="fragment"><p><strong>Other methods</strong>: Chaos Game Representation, mathematical transforms (Fourier, wavelets)</p></li>
+</ul>
+</section>
+<section id="comparison-alignment-vs.-alignment-free" class="slide level2">
+<h2>Comparison: Alignment vs.&nbsp;Alignment-Free</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 29%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Alignment-based</th>
+<th>Alignment-free</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Speed</td>
+<td>Slow</td>
+<td>Very fast</td>
+</tr>
+<tr class="even">
+<td>Scalability</td>
+<td>Limited</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>Assumption</td>
+<td>Positional homology</td>
+<td>Compositional similarity</td>
+</tr>
+<tr class="even">
+<td>Rearrangement robust.</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>Resolution</td>
+<td>Site-specific</td>
+<td>Whole-genome</td>
+</tr>
+<tr class="even">
+<td>Memory usage</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section>
+<section id="examples-of-alignment-free-tools" class="title-slide slide level1 center">
+<h1>Examples of Alignment-Free Tools</h1>
+
+</section>
+<section id="selected-tools" class="slide level2">
+<h2>Selected tools</h2>
+<ul>
+<li class="fragment"><code>mashtree</code>: <code>minHash</code>; rapid phylogenomic surveillance</li>
+<li class="fragment"><code>mash</code>: pairwise distance estimation from sketches</li>
+<li class="fragment"><code>mike</code>:</li>
+</ul>
+</section>
+<section id="selected-tools-1" class="slide level2">
+<h2>Selected tools</h2>
+<ul>
+<li><code>mashtree</code>: <code>minHash</code>; rapid phylogenomic surveillance</li>
+<li><code>mash</code>: pairwise distance estimation from sketches</li>
+<li><code>mike</code>:</li>
+</ul>
+<div title="Tip">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>choice of <strong>k-mer size</strong> strongly impacts results</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="mash" class="slide level2">
+<h2><code>mash</code></h2>
+</section>
+<section id="mike" class="slide level2">
+<h2><code>mike</code></h2>
+</section></section>
+<section>
+<section id="applications" class="title-slide slide level1 center">
+<h1>Applications</h1>
+
+</section>
+<section id="practical-applications" class="slide level2">
+<h2>Practical applications</h2>
+<ul>
+<li class="fragment">Large-scale phylogenomics</li>
+<li class="fragment">Metagenomics (binning, phylogenetic placement)</li>
+<li class="fragment">Assembly-free analysis from raw sequencing reads</li>
+<li class="fragment">Genomic epidemiology (e.g.&nbsp;SARS-CoV-2, bacterial outbreaks)</li>
+</ul>
+</section>
+<section id="limitations" class="slide level2">
+<h2>Limitations</h2>
+<ul>
+<li class="fragment"><p>Loss of positional information</p></li>
+<li class="fragment"><p>Sensitivity to k-mer size</p></li>
+<li class="fragment"><p>k-mer homoplasy (shared k-mers not due to ancestry)</p></li>
+<li class="fragment"><p>Reliance on distance measures instead of explicit evolutionary models</p></li>
+</ul>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1 center">
+<h1>Conclusion</h1>
+
+</section>
+<section id="future-perspectives" class="slide level2">
+<h2>Future perspectives</h2>
+<ul>
+<li class="fragment"><p>Hybrid approaches (alignment + alignment-free)</p></li>
+<li class="fragment"><p>Statistical modeling of k-mer data (machine learning on compositional features)</p></li>
+<li class="fragment"><p>Graphs of life instead of trees (capturing HGT and reticulate evolution)</p></li>
+<li class="fragment"><p>Integration with pangenomics, multi-omics, and AI-based frameworks</p></li>
+</ul>
+</section>
+<section id="encerramento" class="slide level2">
+<h2>Encerramento</h2>
+<ul>
+<li class="fragment"><p>Take-home message: alignment-based and alignment-free methods are <strong>complementary tools</strong></p></li>
+<li class="fragment"><p>Open questions for discussion:</p>
+<ul>
+<li class="fragment">When is alignment no longer useful?</li>
+<li class="fragment">How do parameter choices affect different biological questions?</li>
+</ul></li>
+<li class="fragment"><p>Recommended readings:</p></li>
+</ul>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="images/logo.jpg" class="slide-logo"></p>
 <div class="footer footer-default">
-
+<p>Phylogenetics - Alignment-free Methods | Matheus Pimenta</p>
 </div>
 </div></div>
 
@@ -167,6 +385,7 @@ Matheus Pimenta
   <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -181,18 +400,19 @@ Matheus Pimenta
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
@@ -209,7 +429,7 @@ Matheus Pimenta
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -314,14 +534,14 @@ Matheus Pimenta
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'slide',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
+        backgroundTransition: 'fade',
 
         // Number of slides away from the current that are visible
         viewDistance: 3,
@@ -341,8 +561,13 @@ Matheus Pimenta
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
 
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 2,
+
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -359,7 +584,7 @@ Matheus Pimenta
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,

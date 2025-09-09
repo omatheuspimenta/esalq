@@ -1,15 +1,170 @@
 ---
-title: "Test Slide"
-author: "Matheus Pimenta"
-format: revealjs
+title: "Phylogenetics"
+subtitle: "Alignment-free Methods"
+format: 
+  clean-revealjs:
+    transition: slide
+    background-transition: fade
+    highlight-style: github
+    code-line-numbers: true
+    slide-number: true
+    chalkboard: true
+    controls: true
+    logo: "images/logo.jpg" 
+    footer: "Phylogenetics - Alignment-free Methods | Matheus Pimenta"
+    margin: 0.1
+    min-scale: 0.2
+    max-scale: 2.0
+    menu: true
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: Matheus Pimenta
+    orcid: 0000-0003-0698-6360
+    email: omatheuspimenta@outlook.com
+    affiliations: Luiz de Queiroz College of Agriculture, University of São Paulo
+date: last-modified
+toc: true
+toc-title: "Table of Contents"
+toc-depth: 1
 ---
 
-## Titulo 1
+## Phylogenetics - An alignment-free approach
+::: {.incremental}
+- Learning objectives
 
-- Teste 1
-- Teste 2
+- The importance of phylogeny in the genomic era
+:::
 
-## Título 2
+# Phylogeny – Basic Concepts
 
-- Exemplo 1
-- Exemplo 2
+## Definitions and brief history
+::: {.incremental}
+- Phylogeny: a hypothesis of evolutionary relationships, not an absolute truth
+
+- Historical contributions:
+  - Darwin → descent with modification
+  - Hennig → cladistics and systematics
+
+- Anatomy of a phylogenetic tree: root, nodes, branches, terminals, clades, polytomies
+:::
+
+## Classical Paradigm
+::: {.incremental}
+- From morphology to molecular sequences
+
+- Multiple Sequence Alignment (MSA) as a hypothesis of homology
+
+- Post-alignment methods:
+  - Distance-based: Neighbor-Joining, UPGMA
+  - Character-based: Parsimony, Maximum Likelihood, Bayesian inference
+
+- Limitations of MSA:
+  - High computational cost
+  - Parameter dependence (gaps, scoring matrices)
+  - Loss of collinearity due to rearrangements and horizontal gene transfer (HGT)
+:::
+
+# Approaches
+
+## Alignment-Based Methods
+
+## Alignment-Free Methods
+::: {.incremental}
+- Principle: from positional homology → to compositional signatures
+
+- Advantages: speed, scalability, robustness to rearrangements
+
+- Trade-off: loss of positional information
+:::
+
+## Main Alignment-Free Strategies
+::: {.incremental}
+- **k-mers**: fixed-length substring counts
+
+- **Average Common Substring (ACS)** approaches
+
+- **Information-theory based**: compression, entropy measures
+
+- **Other methods**: Chaos Game Representation, mathematical transforms (Fourier, wavelets)
+:::
+
+## Comparison: Alignment vs. Alignment-Free
+| Feature               | Alignment-based     | Alignment-free           |
+| --------------------- | ------------------- | ------------------------ |
+| Speed                 | Slow                | Very fast                |
+| Scalability           | Limited             | High                     |
+| Assumption            | Positional homology | Compositional similarity |
+| Rearrangement robust. | Low                 | High                     |
+| Resolution            | Site-specific       | Whole-genome             |
+| Memory usage          | High                | Low                      |
+
+# Examples of Alignment-Free Tools
+## Selected tools
+::: {.incremental}
+- `mashtree`: `minHash`; rapid phylogenomic surveillance
+- `mash`: pairwise distance estimation from sketches
+- `mike`: 
+
+
+:::
+
+## Selected tools
+
+- `mashtree`: `minHash`; rapid phylogenomic surveillance
+- `mash`: pairwise distance estimation from sketches
+- `mike`: 
+
+::: {.callout-tip title="Tip"}
+- choice of **k-mer size** strongly impacts results
+:::
+
+
+## `mash`
+
+## `mike`
+
+# Applications
+
+## Practical applications
+::: {.incremental}
+- Large-scale phylogenomics
+- Metagenomics (binning, phylogenetic placement)
+- Assembly-free analysis from raw sequencing reads
+- Genomic epidemiology (e.g. SARS-CoV-2, bacterial outbreaks)
+:::
+
+## Limitations
+::: {.incremental}
+- Loss of positional information
+
+- Sensitivity to k-mer size
+
+- k-mer homoplasy (shared k-mers not due to ancestry)
+
+- Reliance on distance measures instead of explicit evolutionary models
+:::
+
+# Conclusion
+## Future perspectives
+::: {.incremental}
+- Hybrid approaches (alignment + alignment-free)
+
+- Statistical modeling of k-mer data (machine learning on compositional features)
+
+- Graphs of life instead of trees (capturing HGT and reticulate evolution)
+
+- Integration with pangenomics, multi-omics, and AI-based frameworks
+:::
+
+## Encerramento
+::: {.incremental}
+- Take-home message: alignment-based and alignment-free methods are **complementary tools**
+
+- Open questions for discussion:
+  - When is alignment no longer useful?
+  - How do parameter choices affect different biological questions?
+
+- Recommended readings:
+:::
