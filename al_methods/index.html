@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Matheus Pimenta">
-  <meta name="dcterms.date" content="2025-09-09">
+  <meta name="dcterms.date" content="2025-09-10">
   <title>Phylogenetics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -29,7 +29,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-5ae9c59b2727fcd5357d4f034d95f9e0.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -147,7 +167,7 @@ Matheus Pimenta <a href="https://orcid.org/0000-0003-0698-6360" class="quarto-ti
     </div>
 </div>
 
-  <p class="date">September 9, 2025</p>
+  <p class="date">September 10, 2025</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of Contents</h2>
@@ -160,46 +180,193 @@ Matheus Pimenta <a href="https://orcid.org/0000-0003-0698-6360" class="quarto-ti
 </ul>
 </nav>
 </section>
-<section id="phylogenetics---an-alignment-free-approach" class="slide level2">
-<h2>Phylogenetics - An alignment-free approach</h2>
-<ul>
-<li class="fragment"><p>Learning objectives</p></li>
-<li class="fragment"><p>The importance of phylogeny in the genomic era</p></li>
-</ul>
-</section>
 <section>
 <section id="phylogeny-basic-concepts" class="title-slide slide level1 center">
 <h1>Phylogeny – Basic Concepts</h1>
 
 </section>
-<section id="definitions-and-brief-history" class="slide level2">
-<h2>Definitions and brief history</h2>
+<section id="definitions-and-brief-history---i" class="slide level2">
+<h2>Definitions and brief history - I</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
 <ul>
 <li class="fragment"><p>Phylogeny: a hypothesis of evolutionary relationships, not an absolute truth</p></li>
 <li class="fragment"><p>Historical contributions:</p>
 <ul>
-<li class="fragment">Darwin → descent with modification</li>
+<li class="fragment">Darwin → descent with modification<br>
+</li>
 <li class="fragment">Hennig → cladistics and systematics</li>
 </ul></li>
 <li class="fragment"><p>Anatomy of a phylogenetic tree: root, nodes, branches, terminals, clades, polytomies</p></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<ul>
+<li><span class="fragment">
+<figure>
+<img src="https://training.galaxyproject.org/training-material/topics/evolution/tutorials/abc_intro_phylo/images/Darwin_tree.png" width="75%">
+<figcaption style="font-size:0.5em; text-align:center;">
+Darwin’s original sketch of evolutionary tree.
+</figcaption>
+</figure>
+</span></li>
+</ul>
+</div></div>
+</section>
+<section id="definitions-and-brief-history---ii" class="slide level2">
+<h2>Definitions and brief history - II</h2>
+<div style="position: relative; width: 80%; height: 500px; margin: auto; text-align:center;">
+<figure class="fragment fade-out" data-fragment-index="1" style="position:absolute; top:0; left:0; width:100%; margin:0;">
+<a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="https://www.bioinformatics.nl/bif20306/_images/sars-cov-2.svg" style="width:100%; height:auto;"> </a>
+<figcaption style="font-size:1em; margin-top:0.5em;">
+SARS-CoV-2 phylogenetic tree - Mar.&nbsp;2024
+</figcaption>
+</figure>
+<figure class="fragment" data-fragment-index="1" style="position:absolute; top:0; left:0; width:100%; margin:0;">
+<a href="https://nextstrain.org/mpox/all-clades" target="_blank"> <img src="images/mkpx_phylo.png" style="width:100%; height:auto;"> </a>
+<figcaption style="font-size:1em; margin-top:0.5em;">
+Monkeypox phylogenetic tree - Sep.&nbsp;2025
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="anatomy-of-a-phylogenetic-tree---i" class="slide level2">
+<h2>Anatomy of a Phylogenetic Tree - I</h2>
+<div style="text-align:center; width:100%; margin:auto;">
+<figure>
+<a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="https://www.bioinformatics.nl/bif20306/_images/tree-example.png" style="width:70%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+A rooted ultrametric phylogenetic tree with its main parts and characteristics indicated. Here, the OTUs are GenBank plant chloroplast gene accessions, the names of which have been condensed.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="anatomy-of-a-phylogenetic-tree---ii" class="slide level2">
+<h2>Anatomy of a Phylogenetic Tree - II</h2>
+<div style="text-align:center; width:100%; margin:auto;">
+<figure>
+<a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="https://www.bioinformatics.nl/bif20306/_images/tree-types.png" style="width:90%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+A rooted phylogenetic tree with its main parts and characteristics indicated. Here, the OTUs are GenBank plant chloroplast gene accessions, the names of which have been condensed. For the same data, the tree is given as additive tree (top) and as an ultrametric tree (bottom left) with branch lengths corresponding to time. On the right, flipped, the same tree as cladogram, with branch lengths only indicating the structure of the trees.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="anatomy-of-a-phylogenetic-tree---iii" class="slide level2">
+<h2>Anatomy of a Phylogenetic Tree - III</h2>
+<div style="text-align:center; width:100%; margin:auto;">
+<figure>
+<a href="https://www.geneious.com/guides/understanding-phylogenetics" target="_blank"> <img src="https://images.ctfassets.net/ifq1osqu2ba1/5KBdd5VPTNEo1JZYhuDaKp/a986de45a104247ac162e0defbd35f68/GN_Phylogenetic_tree_learn2.jpg?w=770" style="width:90%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+<p>Different components of a phylogenetic tree.</p>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="anatomy-of-a-phylogenetic-tree---iv" class="slide level2">
+<h2>Anatomy of a Phylogenetic Tree - IV</h2>
+<div style="text-align:center; width:100%; margin:auto;">
+<figure>
+<a href="https://training.galaxyproject.org/training-material/topics/evolution/tutorials/abc_intro_phylo/tutorial.html" target="_blank"> <img src="https://training.galaxyproject.org/training-material/topics/evolution/tutorials/abc_intro_phylo/images/TreeAnatomyWithOutgroup.png" style="width:90%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+Anatomy of a phylogenetic tree.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="anatomy-of-a-phylogenetic-tree---v" class="slide level2">
+<h2>Anatomy of a Phylogenetic Tree - V</h2>
+<div style="text-align:center; width:100%; margin:auto;">
+<figure>
+<a href="https://www.geneious.com/guides/understanding-phylogenetics" target="_blank"> <img src="https://images.ctfassets.net/ifq1osqu2ba1/7pA09dcmTU5qUHnHeSsWQZ/c7d52c01689c138a4f1c1074f6e2cad3/GN_Phylogenetic_trees-learn6.jpg" style="width:90%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+<p>Rooted tree (left) and an unrooted tree (right).</p>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="why-infer-phylogenetic-relationships" class="slide level2">
+<h2>Why Infer Phylogenetic Relationships?</h2>
+<p>Aside from gaining a fundamental understanding of biology, other reasons include:</p>
+<ul>
+<li class="fragment">Designing vaccines, for example for SARS-CoV-2 and influenza</li>
+<li class="fragment">Measuring phylogenetic diversity for guiding conservation efforts</li>
+<li class="fragment">Understanding coevolution; for example, around 70% of emergent human diseases have come from other species</li>
+<li class="fragment">Dating major evolutionary events to study the effects of environmental change on different species</li>
 </ul>
 </section>
 <section id="classical-paradigm" class="slide level2">
 <h2>Classical Paradigm</h2>
 <ul>
-<li class="fragment"><p>From morphology to molecular sequences</p></li>
-<li class="fragment"><p>Multiple Sequence Alignment (MSA) as a hypothesis of homology</p></li>
-<li class="fragment"><p>Post-alignment methods:</p>
+<li class="fragment">Orthologs and paralogs
+<ul>
+<li class="fragment"><div style="text-align:center; width:100%; margin:auto;">
+<figure>
+<a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="https://www.bioinformatics.nl/bif20306/_images/ortho-para.svg" style="width:90%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+The challenge of paralogs: (A) Paralogous genes are created by gene duplication events. Gene X is duplicated in a (recent) common ancestor (RCA) of species A and B resulting in paralogous genes X and X’. Species A and B inherit both copies of the gene (unless one or the other is lost somewhere along the way). (B) Phylogenetic analysis of the X/X’ gene family gives two parallel phylogenies. All sequences of gene X are orthologues of each other, as are all sequences of gene X’. However, X and X’ are paralogues. Both the X and X’ subtrees show the true relationships among the three species. The subtrees are also each other’s natural outgroup, and as a result each subtree is rooted with the other (reciprocally rooting). (C ) A tree of the X/X’ gene family can be misleading if not all the sequences are included (because of incomplete sampling or gene loss). If the broken branches are missing, then the true species relationships are misrepresented.
+</figcaption>
+</figure>
+</div></li>
+</ul></li>
+</ul>
+</section>
+<section id="classical-paradigm-1" class="slide level2">
+<h2>Classical Paradigm</h2>
+<ul>
+<li>Orthologs and paralogs
+<ul>
+<li><div style="text-align:center; width:100%; margin:auto;">
+<figure>
+<a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="https://www.bioinformatics.nl/bif20306/_images/gene-duplication-speciation_alt.svg" style="width:90%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+The evolutionary history of a gene that has undergone two separate duplication events. (A) The species tree (large blue cylinders) comprising species A and B and with indicated gene duplication and neo-functionalisation events leading to β and γ functions. (B) The phylogenetic tree that would be drawn for the resulting 5 genes in (A), here drawn as a cladogram.
+</figcaption>
+</figure>
+</div></li>
+</ul></li>
+</ul>
+</section>
+<section id="classical-paradigm-2" class="slide level2">
+<h2>Classical Paradigm</h2>
+<ul>
+<li>Orthologs and paralogs</li>
+<li>Multiple Sequence Alignment (MSA) as a hypothesis of homology</li>
+</ul>
+<ul>
+<li class="fragment">Post-alignment methods:
 <ul>
 <li class="fragment">Distance-based: Neighbor-Joining, UPGMA</li>
 <li class="fragment">Character-based: Parsimony, Maximum Likelihood, Bayesian inference</li>
 </ul></li>
-<li class="fragment"><p>Limitations of MSA:</p>
+</ul>
+<ul>
+<li><figure class="fragment" style="text-align:center; width:100%; margin:auto;">
+<a href="https://www.geneious.com/guides/understanding-phylogenetics" target="_blank"> <img src="https://images.ctfassets.net/ifq1osqu2ba1/4JvaUzsS7fJchTXm3MdHjP/885abd115d5a67d8fc4ef807a5b20c98/GN_Phylogenetic_tree_Construction-learn7.png" style="width:60%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+Types of tree construction methods.
+</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="classical-paradigm-3" class="slide level2">
+<h2>Classical Paradigm</h2>
+<ul>
+<li>Orthologs and paralogs</li>
+<li>Multiple Sequence Alignment (MSA) as a hypothesis of homology</li>
+<li>Post-alignment methods:
+<ul>
+<li>Character-based: Parsimony, Maximum Likelihood, Bayesian inference</li>
+<li>Distance-based: Neighbor-Joining, UPGMA</li>
+</ul></li>
+</ul>
+<ul>
+<li class="fragment">Limitations of MSA:
 <ul>
 <li class="fragment">High computational cost</li>
 <li class="fragment">Parameter dependence (gaps, scoring matrices)</li>
 <li class="fragment">Loss of collinearity due to rearrangements and horizontal gene transfer (HGT)</li>
 </ul></li>
+<li class="fragment">Phylogenetic trees are not directly observed but <em>inferred</em></li>
 </ul>
 </section></section>
 <section>
@@ -207,8 +374,106 @@ Matheus Pimenta <a href="https://orcid.org/0000-0003-0698-6360" class="quarto-ti
 <h1>Approaches</h1>
 
 </section>
-<section id="alignment-based-methods" class="slide level2">
-<h2>Alignment-Based Methods</h2>
+<section id="alignment-based-methods---based-in-msa" class="slide level2">
+<h2>Alignment-Based Methods - Based in MSA</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li class="fragment">Uses a set of genes</li>
+<li class="fragment">Character based
+<ul>
+<li class="fragment">maximum parsimony (MP)</li>
+<li class="fragment">maximum likelihood (ML)</li>
+<li class="fragment">Bayesian Inference (BI)</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<ul>
+<li><span class="fragment">
+<figure>
+<a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="https://www.bioinformatics.nl/bif20306/_images/bifurcating_alt.svg" width="100%"> </a><br>
+
+<figcaption style="font-size:0.5em; text-align:center;">
+Having to assess such large numbers of trees falls under the category of ‘NP complete’ problems which cannot be solved in a lifetime even with unlimited resources.
+</figcaption>
+</figure>
+</span></li>
+</ul>
+</div></div>
+</section>
+<section id="maximum-parsimony-mp" class="slide level2">
+<h2>Maximum Parsimony (MP)</h2>
+<ul>
+<li class="fragment"><p>Maximum parsimony seeks to provide the simplest explanation for a phenomenon.</p></li>
+<li class="fragment"><p>In phylogenetics, this means building all possible trees and selecting the best tree based on the smallest number of evolutionary changes (e.g., insertions, deletions, substitutions) required to explain the relatedness between sequences.</p></li>
+<li class="fragment"><figure class="fragment" style="text-align:center; width:100%; margin:auto;">
+<p><a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="images/parsimony.png" style="width:60%; height:auto;"> </a></p>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+<p>Character state changes for all characters in the MSA shown left are indicated on the trees and exemplar syn- and autapomorphies are indicated. Note that character 6 is invariant and therefore does not contribute to any tree. Also note that each substitution occurring in the MSA results in one extra step on the tree.</p>
+</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="maximum-likelihood-ml" class="slide level2">
+<h2>Maximum Likelihood (ML)</h2>
+<ul>
+<li class="fragment"><p>The maximum likelihood model constructs all possible trees and selects the tree that most likely predicts the relatedness between sequences based on a specific evolutionary model.</p></li>
+<li class="fragment"><p>These models take into account how likely different genetic changes occur over time.</p></li>
+<li class="fragment"><p>For example, maximum likelihood models can account for:</p>
+<ul>
+<li class="fragment">The probability of different types of substitutions (A → G, C → T, etc.)<br>
+</li>
+<li class="fragment">The frequency of transition (purine → purine, pyrimidine → pyrimidine) vs.&nbsp;transversion (purine → pyrimidine, pyrimidine → purine)<br>
+</li>
+<li class="fragment">The rate of substitutions among different sites within a DNA sequence</li>
+</ul></li>
+</ul>
+</section>
+<section id="distance-based-clustering" class="slide level2">
+<h2>Distance-Based Clustering</h2>
+<ul>
+<li class="fragment"><p>The other main approach to tree building is <strong>clustering</strong>, which is <strong>distance-based</strong>.</p></li>
+<li class="fragment"><p>Widely used in several applications, for instance in visualizing BLAST searches as Neighbor Joining trees.</p></li>
+<li class="fragment"><p>Distance-based means that instead of comparing one character at a time across all sequences in the MSA, <strong>pairwise comparisons of entire sequences</strong> are made for all possible sequence pairs.</p></li>
+<li class="fragment"><p>Pairwise comparisons yield pairwise distances, which can be <strong>ultrametric</strong> or <strong>Euclidean</strong>.</p></li>
+<li class="fragment"><p>The relation between <strong>Distance</strong> and <strong>Similarity</strong> matrices is:</p>
+<ul>
+<li class="fragment">Distance matrix → diagonals are all 0’s<br>
+</li>
+<li class="fragment">Similarity matrix → diagonals are all 1’s</li>
+</ul></li>
+</ul>
+</section>
+<section id="building-distance-trees" class="slide level2">
+<h2>Building Distance Trees</h2>
+<ul>
+<li class="fragment"><p>Pairwise distances are calculated from the same MSA and used to build a <strong>distance tree</strong> (e.g., Neighbor Joining).</p></li>
+<li class="fragment"><p>The MSA is not further used in the analysis; only the distance values are used.</p></li>
+<li class="fragment"><p>Both parsimony trees and distance trees may have the same topology, but parsimony trees contain more information</p></li>
+<li class="fragment"><p>If substitutions accumulate in a clock-like manner, distances may be ultrametric, meaning matrix distances match tree distances.</p></li>
+<li class="fragment"><p>In real data, distances often differ from tree distances, producing additive trees with unequal sister branch lengths.</p></li>
+<li class="fragment"><p>In additive trees, the most similar sequences in the matrix may not be the most closely related on the tree.</p></li>
+</ul>
+</section>
+<section id="neighbor-joining-nj-method" class="slide level2">
+<h2>Neighbor Joining (NJ) – Method</h2>
+<ul>
+<li class="fragment"><p>Neighbor Joining is one of the most commonly used distance tree building methods, fast and effective for large MSAs (hundreds of sequences).</p></li>
+<li class="fragment"><p>NJ starts with a fully unresolved tree containing all sequences and calculates the total tree length by summing all pairwise distances.</p></li>
+<li class="fragment"><p>A pair of sequences is chosen and joined to start a small cluster (“neighbors”), and the total tree length is updated.</p></li>
+<li class="fragment"><p>This step is repeated iteratively until all sequences are joined, minimizing the overall tree length at each step.</p></li>
+<li class="fragment"><p>NJ produces unrooted trees; if needed, an outgroup can be used for rooting.</p></li>
+</ul>
+</section>
+<section id="neighbor-joining-nj-properties-and-applications" class="slide level2">
+<h2>Neighbor Joining (NJ) – Properties and Applications</h2>
+<ul>
+<li class="fragment"><p>No molecular clock assumption, allowing branch lengths to differ between neighbors (sisters).</p></li>
+<li class="fragment"><p>Can generate trees with hundreds of sequences very quickly, making it useful for rapid assessment of phylogenetic structure.</p></li>
+<li class="fragment"><p>NJ is a <em>clustering method</em>, grouping sequences by overall similarity, not by shared ancestry (synapomorphies).</p></li>
+<li class="fragment"><p>For detailed phylogenetic studies, character-based methods are preferred, and NJ can be used in addition to check for possible incongruencies.</p></li>
+<li class="fragment"><p>If incongruencies are found, it may indicate non-metric data, which could warrant additional methods.</p></li>
+</ul>
 </section>
 <section id="alignment-free-methods" class="slide level2">
 <h2>Alignment-Free Methods</h2>
@@ -221,11 +486,57 @@ Matheus Pimenta <a href="https://orcid.org/0000-0003-0698-6360" class="quarto-ti
 <section id="main-alignment-free-strategies" class="slide level2">
 <h2>Main Alignment-Free Strategies</h2>
 <ul>
-<li class="fragment"><p><strong>k-mers</strong>: fixed-length substring counts</p></li>
-<li class="fragment"><p><strong>Average Common Substring (ACS)</strong> approaches</p></li>
-<li class="fragment"><p><strong>Information-theory based</strong>: compression, entropy measures</p></li>
-<li class="fragment"><p><strong>Other methods</strong>: Chaos Game Representation, mathematical transforms (Fourier, wavelets)</p></li>
+<li class="fragment"><p>Two main categories of alignment-free methods are recognized:</p>
+<ol type="1">
+<li class="fragment">Word-based methods<br>
+</li>
+<li class="fragment">Information theory-based methods</li>
+</ol></li>
+<li class="fragment"><p>Word-based methods analyze the frequency and distribution of <strong>k-mers</strong> (fixed-length subsequences) extracted from the sequences, creating specific profiles for each genome.<br>
+Examples: k-mers, Average Common Substring (ACS), strobmers, minimizers, …</p></li>
+<li class="fragment"><p>Information theory-based methods quantify the <strong>complexity and structure</strong> of genomic sequences, identifying more complex patterns and evolutionary or functional relationships between different genomes.</p></li>
+<li class="fragment"><p>Other methods: Chaos Game Representation, graph-based methods, mathematical transforms (Fourier, wavelets)</p></li>
 </ul>
+</section>
+<section id="k-mers" class="slide level2">
+<h2>k-mers</h2>
+<ul>
+<li><figure class="fragment" style="text-align:center; width:100%; margin:auto;">
+<a href="https://kamimrcht.github.io/webpage/strobemers.html" target="_blank"> <img src="https://kamimrcht.github.io/webpage/files/kmer0.png" style="width:60%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+k-mers from two sequences
+</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="information-theory-based" class="slide level2">
+<h2>Information theory-based</h2>
+<ul>
+<li><figure class="fragment" style="text-align:center; width:100%; margin:auto;">
+<a href="http://biorxiv.org/lookup/doi/10.1101/2022.06.13.495895" target="_blank"> <img src="images/entropy.png" style="width:60%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+Diagrammatic representation of the methodology to produce the IE spectrum.
+</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="chaos-game-representation" class="slide level2">
+<h2>Chaos Game Representation</h2>
+<figure class="fragment" style="text-align:center; width:100%; margin:auto;">
+<a href="https://www.researchgate.net/figure/Contribution-of-base-composition-to-chaos-game-representation-CGR-images-Top-row_fig3_12738224" target="_blank"> <img src="images/cgr.png" style="width:60%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+Example of Chaos Game Representation of whole genomes.
+</figcaption>
+</figure>
+</section>
+<section id="varkodes-chaos-game-representation-based-method" class="slide level2">
+<h2><code>varKodes</code>: Chaos Game Representation based method</h2>
+<figure class="fragment" style="text-align:center; width:100%; margin:auto;">
+<a href="https://www.nature.com/articles/s41559-025-02752-1" target="_blank"> <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41559-025-02752-1/MediaObjects/41559_2025_2752_Fig1_HTML.png?as=webp" style="width:41%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+varKodes method workflow based in the Chaos Game Representation
+</figcaption>
+</figure>
 </section>
 <section id="comparison-alignment-vs.-alignment-free" class="slide level2">
 <h2>Comparison: Alignment vs.&nbsp;Alignment-Free</h2>
@@ -284,17 +595,17 @@ Matheus Pimenta <a href="https://orcid.org/0000-0003-0698-6360" class="quarto-ti
 <section id="selected-tools" class="slide level2">
 <h2>Selected tools</h2>
 <ul>
-<li class="fragment"><code>mashtree</code>: <code>minHash</code>; rapid phylogenomic surveillance</li>
 <li class="fragment"><code>mash</code>: pairwise distance estimation from sketches</li>
-<li class="fragment"><code>mike</code>:</li>
+<li class="fragment"><code>mashtree</code>: <code>minHash</code> rapid phylogenomic surveillance</li>
+<li class="fragment"><code>mike</code>: MinHash-based k-mer algorithm</li>
 </ul>
 </section>
 <section id="selected-tools-1" class="slide level2">
 <h2>Selected tools</h2>
 <ul>
-<li><code>mashtree</code>: <code>minHash</code>; rapid phylogenomic surveillance</li>
 <li><code>mash</code>: pairwise distance estimation from sketches</li>
-<li><code>mike</code>:</li>
+<li><code>mashtree</code>: <code>minHash</code> rapid phylogenomic surveillance</li>
+<li><code>mike</code>: MinHash-based k-mer algorithm</li>
 </ul>
 <div title="Tip">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -314,11 +625,186 @@ Matheus Pimenta <a href="https://orcid.org/0000-0003-0698-6360" class="quarto-ti
 </div>
 </div>
 </section>
-<section id="mash" class="slide level2">
-<h2><code>mash</code></h2>
+<section id="mash-fast-genome-and-metagenome-distance-estimation-using-minhash" class="slide level2">
+<h2><code>mash</code>: fast genome and metagenome distance estimation using MinHash</h2>
+<ul>
+<li class="fragment">Problem:
+<ul>
+<li class="fragment">Comparing large genomes using traditional alignment is slow and computationally expensive.<br>
+</li>
+<li class="fragment">We need a faster way to estimate similarity between sequences.</li>
+</ul></li>
+<li class="fragment">Mash’s Solution: MinHash Sketching
+<ol type="1">
+<li class="fragment"><strong>Decomposition into k-mers:</strong> Break sequences into overlapping substrings of length <em>k</em>.<br>
+</li>
+<li class="fragment"><strong>Hashing:</strong> Convert each k-mer into a unique number.<br>
+</li>
+<li class="fragment"><strong>Create the Sketch:</strong> Keep only the smallest hashes (e.g., 1000 smallest).<br>
+</li>
+</ol></li>
+</ul>
 </section>
-<section id="mike" class="slide level2">
-<h2><code>mike</code></h2>
+<section id="mash-from-sketches-to-distance" class="slide level2">
+<h2><code>mash</code>: From Sketches to Distance</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li class="fragment">The sketch is a small, random, representative sample of the genome, allowing massive data compression.</li>
+</ul>
+<ol type="1">
+<li class="fragment"><strong>Estimate Similarity (Jaccard Index)</strong>
+<ul>
+<li class="fragment">Compare sketches by calculating the Jaccard Index:<br>
+<span class="math display">\[j = \frac{|SketchA \cap SketchB|}{|SketchA \cup SketchB|}\]</span></li>
+<li class="fragment">Higher <em>j</em> → genomes are more similar.</li>
+</ul></li>
+</ol>
+</div><div class="column" style="width:40%;">
+<ul>
+<li class="fragment"><a href="https://kamimrcht.github.io/webpage/sketch.html" target="_blank"> <img src="images/jacc.png" style="width:100%; height:auto;"> </a>
+<figcaption style="font-size:0.8em; margin-top:0.5em;">
+Jaccard Similarity visually represented
+</figcaption></li>
+</ul>
+</div></div>
+</section>
+<section id="mash-from-sketches-to-distance-1" class="slide level2">
+<h2><code>mash</code>: From Sketches to Distance</h2>
+<ol start="2" type="1">
+<li class="fragment">Calculate Mash Distance (D)<br>
+</li>
+</ol>
+<ul>
+<li class="fragment"><p>Converts similarity to evolutionary distance:<br>
+<span class="math display">\[D = -\frac{1}{k} \ln \frac{2j}{1+j}\]</span></p></li>
+<li class="fragment"><p>Fast approximation of mutation rate, correlates with alignment-based measures like ANI.</p></li>
+<li class="fragment"><p>Mash is scalable, fast, and ideal for clustering genomes, identifying unknown samples, and large-scale comparative genomics.</p></li>
+</ul>
+</section>
+<section id="mashtree-a-rapid-comparison-of-whole-genome-sequence-files." class="slide level2">
+<h2><code>mashtree</code>: a rapid comparison of whole genome sequence files.</h2>
+<ol type="1">
+<li class="fragment">MinHash Sketching (Mash)
+<ul>
+<li class="fragment"><code>mash</code> creates genome sketches (sketch size increased from 1,000 → 10,000 for higher resolution) and calculates pairwise distances → stored in a distance matrix.</li>
+</ul></li>
+<li class="fragment">Neighbor-Joining Tree (QuickTree)
+<ul>
+<li class="fragment">Distance matrix used with QuickTree (default options) → generates a dendrogram.</li>
+</ul></li>
+</ol>
+<ul>
+<li class="fragment">Confidence Values:
+<ul>
+<li class="fragment">Although Mashtree does not infer true phylogeny, node support values are calculated using resample methods.<br>
+</li>
+</ul></li>
+<li class="fragment">Both methods resample to create trees and assign confidence to internal nodes.</li>
+</ul>
+</section>
+<section id="mashtree-a-rapid-comparison-of-whole-genome-sequence-files.-1" class="slide level2">
+<h2><code>mashtree</code>: a rapid comparison of whole genome sequence files.</h2>
+<figure class="fragment" style="text-align:center; width:100%; margin:auto;">
+<a href="https://joss.theoj.org/papers/10.21105/joss.01762" target="_blank"> <img src="images/mashtree1.png" style="width:50%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+The Mashtree workflow.
+</figcaption>
+</figure>
+</section>
+<section id="mashtree-a-rapid-comparison-of-whole-genome-sequence-files.-2" class="slide level2">
+<h2><code>mashtree</code>: a rapid comparison of whole genome sequence files.</h2>
+<figure class="fragment" style="text-align:center; width:100%; margin:auto;">
+<a href="https://joss.theoj.org/papers/10.21105/joss.01762" target="_blank"> <img src="images/mashtree2.png" style="width:55%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+The Mashtree workflow - bootstrap mode.
+</figcaption>
+</figure>
+</section>
+<section id="mike-an-ultrafast-assembly-and-alignment-free-approach-for-phylogenetic-tree-construction" class="slide level2">
+<h2><code>mike</code>: an ultrafast, assembly, and alignment-free approach for phylogenetic tree construction</h2>
+<p>Build phylogenetic trees directly from raw sequencing reads, without assembly or alignment.</p>
+<ul>
+<li class="fragment">Steps:
+<ol type="1">
+<li class="fragment">Split reads into k-mers (default k = 21).<br>
+</li>
+<li class="fragment">Group by prefix (kpre), encode suffixes (ksuf) into one-hot vectors.<br>
+</li>
+<li class="fragment">Random permutation → smallest non-zero value → minhash.<br>
+</li>
+<li class="fragment">Combine fingerprints → compute Jaccard similarity → convert to evolutionary distance.<br>
+</li>
+</ol></li>
+<li class="fragment">Key advantages:
+<ul>
+<li class="fragment"><span class="math inline">\(\mathcal{O}(n)\)</span> time complexity (linear), low memory, accurate even for polyploids</li>
+</ul></li>
+</ul>
+</section>
+<section id="mike-an-ultrafast-assembly-and-alignment-free-approach-for-phylogenetic-tree-construction-1" class="slide level2">
+<h2><code>mike</code>: an ultrafast, assembly, and alignment-free approach for phylogenetic tree construction</h2>
+<ul>
+<li class="fragment">Accuracy:
+<ul>
+<li class="fragment">Best performance around 10×–20× coverage.<br>
+</li>
+<li class="fragment">Outperforms Mash, BinDash, and Kssd in most scenarios.<br>
+</li>
+</ul></li>
+<li class="fragment">Efficiency:
+<ul>
+<li class="fragment">Shortest runtime among minhash-based tools.<br>
+</li>
+<li class="fragment">Memory ≈200 MB (much lower than Kssd at &gt;30 GB).<br>
+</li>
+</ul></li>
+<li class="fragment">Tree construction:
+<ul>
+<li class="fragment">Uses Neighbor Joining (NJ/BIONJ) with evolutionary distances.<br>
+</li>
+<li class="fragment">Performs well across haploid, autotetraploid, and allotetraploid simulations.<br>
+</li>
+<li class="fragment">Robust for large datasets (e.g., Ficus, Zea, Oryza).<br>
+</li>
+</ul></li>
+</ul>
+</section>
+<section id="mike-saccharum-results-polyploid-sugarcane" class="slide level2">
+<h2><code>mike</code>: Saccharum Results (Polyploid Sugarcane)</h2>
+<ul>
+<li>Dataset: 42 <em>Saccharum spontaneum</em> individuals (ploidy n=4 to n=13), Sorghum as outgroup.<br>
+</li>
+<li>Findings:
+<ul>
+<li>Topology consistent with earlier studies.<br>
+</li>
+<li>Individuals cluster into 4 distinct groups:
+<ul>
+<li>Group I: Tetraploid (n=4) + part of hexaploid (n=6).<br>
+</li>
+<li>Group II: Remaining hexaploid + nonuploid (n=9).<br>
+</li>
+<li>Groups III–IV: Decaploid (n=10) and higher ploidy species.<br>
+</li>
+</ul></li>
+</ul></li>
+<li>Conclusion:
+<ul>
+<li>MIKE is effective for polyploid species like sugarcane.<br>
+</li>
+<li>Can distinguish lineage differences where assembly/alignment methods are slow or impractical.</li>
+</ul></li>
+</ul>
+</section>
+<section id="mike-saccharum-results-polyploid-sugarcane-1" class="slide level2">
+<h2><code>mike</code>: Saccharum Results (Polyploid Sugarcane)</h2>
+<figure class="fragment" style="text-align:center; width:100%; margin:auto;">
+<a href="https://doi.org/10.1093/bioinformatics/btae154" target="_blank"> <img src="https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/bioinformatics/40/4/10.1093_bioinformatics_btae154/1/btae154f5.jpeg?Expires=1760550086&amp;Signature=FnYyoyhNeKp34FOtJcymwEBOayR1LdOaPeBPgi-HvoXiYq15s3Q~3qH~EGrqGIJ90whxdoOJ8inGLE3eEbuQHvUUHPxXIfsRi0gucxwfK4zG3-F2DYqMgGb~OHAkiqoX3INMRKHMkQl7sqQN5m5RWclZDyI8H-gpBF2GzSzXPeXc5t4MiqPN83t5T9s~HlOUjlCwFORxRwfMsV~Yz3trduJzyhwMePIS2wYgjkKy93qZbglQoth50nK3AHcGvKib9Llfo40T---f9xrOBC9ApZz~UbYU0p2zWRTdYa5w56iNJAysQl82T8NudTqLmBfYbGkDrXK4cg2M02X59jurag__&amp;Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" style="width:75%; height:auto;"> </a>
+<figcaption style="font-size:0.5em; margin-top:0.5em;">
+The phylogenetic tree constructed using mike for 42 samples of S.spontaneum
+</figcaption>
+</figure>
 </section></section>
 <section>
 <section id="applications" class="title-slide slide level1 center">
@@ -357,8 +843,8 @@ Matheus Pimenta <a href="https://orcid.org/0000-0003-0698-6360" class="quarto-ti
 <li class="fragment"><p>Integration with pangenomics, multi-omics, and AI-based frameworks</p></li>
 </ul>
 </section>
-<section id="encerramento" class="slide level2">
-<h2>Encerramento</h2>
+<section id="conclusion-1" class="slide level2">
+<h2>Conclusion</h2>
 <ul>
 <li class="fragment"><p>Take-home message: alignment-based and alignment-free methods are <strong>complementary tools</strong></p></li>
 <li class="fragment"><p>Open questions for discussion:</p>
@@ -366,9 +852,29 @@ Matheus Pimenta <a href="https://orcid.org/0000-0003-0698-6360" class="quarto-ti
 <li class="fragment">When is alignment no longer useful?</li>
 <li class="fragment">How do parameter choices affect different biological questions?</li>
 </ul></li>
-<li class="fragment"><p>Recommended readings:</p></li>
 </ul>
+</section>
+<section id="thank-you" class="slide level2">
+<h2>Thank you!</h2>
+<div style="text-align: center; margin-top: 30px;">
+<p><strong>Matheus Pimenta</strong><br>
+📧 omatheuspimenta@outlook.com<br>
+ESALQ/USP</p>
+</div>
+</section>
+<section id="recommended-readings" class="slide level2 smaller scrollable">
+<h2>Recommended readings</h2>
+<p><span class="citation" data-cites="zielezinski_alignment-free_2017">Zielezinski et al. (<a href="#/recommended-readings" role="doc-biblioref" onclick="">2017</a>)</span><br>
+<span class="citation" data-cites="zielezinski_benchmarking_2019">Zielezinski et al. (<a href="#/recommended-readings" role="doc-biblioref" onclick="">2019</a>)</span></p>
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-zielezinski_benchmarking_2019" class="csl-entry" role="listitem">
+Zielezinski, Andrzej, Hani Z. Girgis, Guillaume Bernard, Chris-Andre Leimeister, Kujin Tang, Thomas Dencker, Anna Katharina Lau, et al. 2019. <span>“Benchmarking of Alignment-Free Sequence Comparison Methods.”</span> <em>Genome Biology</em> 20 (1): 144. <a href="https://doi.org/10.1186/s13059-019-1755-7">https://doi.org/10.1186/s13059-019-1755-7</a>.
+</div>
+<div id="ref-zielezinski_alignment-free_2017" class="csl-entry" role="listitem">
+Zielezinski, Andrzej, Susana Vinga, Jonas Almeida, and Wojciech M. Karlowski. 2017. <span>“Alignment-Free Sequence Comparison: Benefits, Applications, and Tools.”</span> <em>Genome Biology</em> 18 (1): 186. <a href="https://doi.org/10.1186/s13059-017-1319-7">https://doi.org/10.1186/s13059-017-1319-7</a>.
+</div>
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
