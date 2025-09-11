@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Matheus Pimenta">
-  <meta name="dcterms.date" content="2025-09-10">
+  <meta name="dcterms.date" content="2025-09-11">
   <title>Phylogenetics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -29,6 +29,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -167,7 +233,7 @@ Matheus Pimenta <a href="https://orcid.org/0000-0003-0698-6360" class="quarto-ti
     </div>
 </div>
 
-  <p class="date">September 10, 2025</p>
+  <p class="date">September 11, 2025</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of Contents</h2>
@@ -216,7 +282,7 @@ Darwin’s original sketch of evolutionary tree.
 <h2>Definitions and brief history - II</h2>
 <div style="position: relative; width: 80%; height: 500px; margin: auto; text-align:center;">
 <figure class="fragment fade-out" data-fragment-index="1" style="position:absolute; top:0; left:0; width:100%; margin:0;">
-<a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="https://www.bioinformatics.nl/bif20306/_images/sars-cov-2.svg" style="width:100%; height:auto;"> </a>
+<a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="images/sars-cov-2.svg" style="width:100%; height:auto;"> </a>
 <figcaption style="font-size:1em; margin-top:0.5em;">
 SARS-CoV-2 phylogenetic tree - Mar.&nbsp;2024
 </figcaption>
@@ -233,17 +299,6 @@ Monkeypox phylogenetic tree - Sep.&nbsp;2025
 <h2>Anatomy of a Phylogenetic Tree - I</h2>
 <div style="text-align:center; width:100%; margin:auto;">
 <figure>
-<a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="https://www.bioinformatics.nl/bif20306/_images/tree-example.png" style="width:70%; height:auto;"> </a>
-<figcaption style="font-size:0.5em; margin-top:0.5em;">
-A rooted ultrametric phylogenetic tree with its main parts and characteristics indicated. Here, the OTUs are GenBank plant chloroplast gene accessions, the names of which have been condensed.
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="anatomy-of-a-phylogenetic-tree---ii" class="slide level2">
-<h2>Anatomy of a Phylogenetic Tree - II</h2>
-<div style="text-align:center; width:100%; margin:auto;">
-<figure>
 <a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="https://www.bioinformatics.nl/bif20306/_images/tree-types.png" style="width:90%; height:auto;"> </a>
 <figcaption style="font-size:0.5em; margin-top:0.5em;">
 A rooted phylogenetic tree with its main parts and characteristics indicated. Here, the OTUs are GenBank plant chloroplast gene accessions, the names of which have been condensed. For the same data, the tree is given as additive tree (top) and as an ultrametric tree (bottom left) with branch lengths corresponding to time. On the right, flipped, the same tree as cladogram, with branch lengths only indicating the structure of the trees.
@@ -251,8 +306,8 @@ A rooted phylogenetic tree with its main parts and characteristics indicated. He
 </figure>
 </div>
 </section>
-<section id="anatomy-of-a-phylogenetic-tree---iii" class="slide level2">
-<h2>Anatomy of a Phylogenetic Tree - III</h2>
+<section id="anatomy-of-a-phylogenetic-tree---ii" class="slide level2">
+<h2>Anatomy of a Phylogenetic Tree - II</h2>
 <div style="text-align:center; width:100%; margin:auto;">
 <figure>
 <a href="https://www.geneious.com/guides/understanding-phylogenetics" target="_blank"> <img src="https://images.ctfassets.net/ifq1osqu2ba1/5KBdd5VPTNEo1JZYhuDaKp/a986de45a104247ac162e0defbd35f68/GN_Phylogenetic_tree_learn2.jpg?w=770" style="width:90%; height:auto;"> </a>
@@ -262,19 +317,8 @@ A rooted phylogenetic tree with its main parts and characteristics indicated. He
 </figure>
 </div>
 </section>
-<section id="anatomy-of-a-phylogenetic-tree---iv" class="slide level2">
-<h2>Anatomy of a Phylogenetic Tree - IV</h2>
-<div style="text-align:center; width:100%; margin:auto;">
-<figure>
-<a href="https://training.galaxyproject.org/training-material/topics/evolution/tutorials/abc_intro_phylo/tutorial.html" target="_blank"> <img src="https://training.galaxyproject.org/training-material/topics/evolution/tutorials/abc_intro_phylo/images/TreeAnatomyWithOutgroup.png" style="width:90%; height:auto;"> </a>
-<figcaption style="font-size:0.5em; margin-top:0.5em;">
-Anatomy of a phylogenetic tree.
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="anatomy-of-a-phylogenetic-tree---v" class="slide level2">
-<h2>Anatomy of a Phylogenetic Tree - V</h2>
+<section id="anatomy-of-a-phylogenetic-tree---iii" class="slide level2">
+<h2>Anatomy of a Phylogenetic Tree - III</h2>
 <div style="text-align:center; width:100%; margin:auto;">
 <figure>
 <a href="https://www.geneious.com/guides/understanding-phylogenetics" target="_blank"> <img src="https://images.ctfassets.net/ifq1osqu2ba1/7pA09dcmTU5qUHnHeSsWQZ/c7d52c01689c138a4f1c1074f6e2cad3/GN_Phylogenetic_trees-learn6.jpg" style="width:90%; height:auto;"> </a>
@@ -678,7 +722,7 @@ Jaccard Similarity visually represented
 <ul>
 <li class="fragment"><p>Converts similarity to evolutionary distance:<br>
 <span class="math display">\[D = -\frac{1}{k} \ln \frac{2j}{1+j}\]</span></p></li>
-<li class="fragment"><p>Fast approximation of mutation rate, correlates with alignment-based measures like ANI.</p></li>
+<li class="fragment"><p>Fast approximation of mutation rate, correlates with alignment-based measures.</p></li>
 <li class="fragment"><p>Mash is scalable, fast, and ideal for clustering genomes, identifying unknown samples, and large-scale comparative genomics.</p></li>
 </ul>
 </section>
@@ -700,7 +744,7 @@ Jaccard Similarity visually represented
 <li class="fragment">Although Mashtree does not infer true phylogeny, node support values are calculated using resample methods.<br>
 </li>
 </ul></li>
-<li class="fragment">Both methods resample to create trees and assign confidence to internal nodes.</li>
+<li class="fragment">Two resampling methods for creating trees and assigning confidence to internal nodes.</li>
 </ul>
 </section>
 <section id="mashtree-a-rapid-comparison-of-whole-genome-sequence-files.-1" class="slide level2">
@@ -810,6 +854,113 @@ The phylogenetic tree constructed using mike for 42 samples of S.spontaneum
 <section id="applications" class="title-slide slide level1 center">
 <h1>Applications</h1>
 
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>All files and softwares are in the <code>phylo</code> folder.<br>
+Monkeypox sequences are from <a href="https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/">NCBI</a><br>
+HIV sequences are from <a href="https://www.hiv.lanl.gov/content/index">Los Alamos National Laboratory</a></p>
+<div class="column" style="width:50%;">
+<p>MKPX</p>
+<ul>
+<li>41 sequences</li>
+<li>5 subtypes</li>
+<li>Average sequence size <span class="math inline">\(\approx\)</span> 200000 bp</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p>HIV</p>
+<ul>
+<li>6964 sequences</li>
+<li>8 subtypes</li>
+<li>Average sequence size <span class="math inline">\(\approx\)</span> 10000 bp</li>
+</ul>
+</div><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="co"># To install mashtree (conda version)</span></span>
+<span id="cb1-2"><a href=""></a><span class="ex">conda</span> create <span class="at">-n</span> mashtree <span class="at">-c</span> bioconda mashtree</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="example---mike-in-mkpx" class="slide level2">
+<h2>Example - <code>mike</code> in MKPX</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-code-line-numbers="|2|4-6|8|10|12|14|16|18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="co"># Create a absolute path for every file</span></span>
+<span id="cb2-2"><a href=""></a><span class="fu">realpath</span> MKPX/seqs/<span class="pp">*</span> <span class="op">&gt;</span> seqs_MKPX.txt</span>
+<span id="cb2-3"><a href=""></a><span class="co"># Run the KMC kmers sketch</span></span>
+<span id="cb2-4"><a href=""></a><span class="cf">while</span> <span class="bu">read</span> <span class="va">seq</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb2-5"><a href=""></a>    <span class="ex">python</span> kmc.py <span class="at">-k</span> 21 <span class="at">-f</span> <span class="st">"</span><span class="va">$seq</span><span class="st">"</span> <span class="at">-d</span> ../MKPX/output_kmers/</span>
+<span id="cb2-6"><a href=""></a><span class="cf">done</span> <span class="op">&lt;</span> seqs_MKPX.txt</span>
+<span id="cb2-7"><a href=""></a><span class="co"># Create absolute path for every kmer file</span></span>
+<span id="cb2-8"><a href=""></a><span class="fu">realpath</span> MKPX/output_kmers/<span class="pp">*</span> <span class="op">&gt;</span> kmers_MKPX.txt</span>
+<span id="cb2-9"><a href=""></a><span class="co"># Run mike sketch -t 1 (thread number)</span></span>
+<span id="cb2-10"><a href=""></a><span class="ex">./mike</span> sketch <span class="at">-t</span> 1 <span class="at">-l</span> kmers_MKPX.txt <span class="at">-d</span> MKPX/output_mike/</span>
+<span id="cb2-11"><a href=""></a><span class="co"># Create absolute path for every sketch file</span></span>
+<span id="cb2-12"><a href=""></a><span class="fu">realpath</span> MKPX/output_mike/<span class="pp">*</span> <span class="op">&gt;</span> mike_MKPX.txt</span>
+<span id="cb2-13"><a href=""></a><span class="co"># Compute Jaccard (mike)</span></span>
+<span id="cb2-14"><a href=""></a><span class="ex">./mike</span> compute <span class="at">-l</span> mike_MKPX.txt <span class="at">-L</span> mike_MKPX.txt <span class="at">-d</span> MKPX/</span>
+<span id="cb2-15"><a href=""></a><span class="co"># Compute distance (mike)</span></span>
+<span id="cb2-16"><a href=""></a><span class="ex">./mike</span> dist <span class="at">-l</span> mike_MKPX.txt <span class="at">-L</span> mike_MKPX.txt <span class="at">-d</span> MKPX/</span>
+<span id="cb2-17"><a href=""></a><span class="co"># Create newick file with R</span></span>
+<span id="cb2-18"><a href=""></a><span class="ex">Rscript</span> draw.r <span class="at">-f</span> MKPX/dist.txt <span class="at">-o</span> MKPX/dist.nwk</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="example---mashtree-in-mkpx" class="slide level2">
+<h2>Example - <code>mashtree</code> in MKPX</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-code-line-numbers="|2|4|6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="co"># Activate conda environments</span></span>
+<span id="cb3-2"><a href=""></a><span class="ex">conda</span> activate mashtree</span>
+<span id="cb3-3"><a href=""></a><span class="co"># Run mashtree in fasta files</span></span>
+<span id="cb3-4"><a href=""></a><span class="ex">mashtree</span> MKPX/seqs/<span class="pp">*</span>.fasta <span class="op">&gt;</span> MKPX/mashtree.dnd</span>
+<span id="cb3-5"><a href=""></a><span class="co"># Run mashtree bootstrap mode (only 100 times in class, in pratice 1000)</span></span>
+<span id="cb3-6"><a href=""></a><span class="ex">mashtree_bootstrap.pl</span> <span class="at">--reps</span> 100 MKPX/seqs/<span class="pp">*</span>.fasta <span class="at">--</span> <span class="at">--min-depth</span> 0 <span class="op">&gt;</span> MKPX/mashtree.bootstrap.dnd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="plotting-the-trees" class="slide level2">
+<h2>Plotting the Trees</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-code-line-numbers="|2|4|6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href=""></a><span class="co"># Plot mike output</span></span>
+<span id="cb4-2"><a href=""></a><span class="ex">Rscript</span> create_tree_MKPX.R <span class="at">-t</span> MKPX/dist.nwk <span class="at">-a</span> MKPX/annotation.csv <span class="at">-o</span> MKPX/</span>
+<span id="cb4-3"><a href=""></a><span class="co"># Plot mashtree output</span></span>
+<span id="cb4-4"><a href=""></a><span class="ex">Rscript</span> create_tree_MKPX.R <span class="at">-t</span> MKPX/mashtree.dnd <span class="at">-a</span> MKPX/annotation.csv <span class="at">-o</span> MKPX/</span>
+<span id="cb4-5"><a href=""></a><span class="co"># Plot mashtree bootstrap output</span></span>
+<span id="cb4-6"><a href=""></a><span class="ex">Rscript</span> create_tree_MKPX.R <span class="at">-t</span> MKPX/mashtree.bootstrap.dnd <span class="at">-a</span> MKPX/annotation.csv <span class="at">-o</span> MKPX/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="plots" class="slide level2">
+<h2>Plots</h2>
+<div style="position: relative; width: 80%; height: 500px; margin: auto; text-align:center;">
+<!-- First image - visible initially, fades out when second appears -->
+<figure class="fragment fade-out" data-fragment-index="1" style="position:absolute; top:0; left:0; width:100%; margin:0;">
+<a href="blank" target="_blank"> <img src="images/dist_phylo_tree1.png" style="width:100%; height:auto;"> </a>
+<figcaption style="font-size:1em; margin-top:0.5em;">
+MKPX phylogenetic tree - mike version
+</figcaption>
+</figure>
+<!-- Second image - appears at the same time first fades out -->
+<figure class="fragment fade-in-then-out" data-fragment-index="1" style="position:absolute; top:0; left:0; width:100%; margin:0;">
+<a href="blank" target="_blank"> <img src="images/mashtree_phylo_tree1.png" style="width:100%; height:auto;"> </a>
+<figcaption style="font-size:1em; margin-top:0.5em;">
+Monkeypox phylogenetic tree - mashtree version
+</figcaption>
+</figure>
+<!-- Third image - appears when second fades out -->
+<figure class="fragment fade-in" data-fragment-index="2" style="position:absolute; top:0; left:0; width:100%; margin:0;">
+<a href="blank" target="_blank"> <img src="images/mashtree.bootstrap_phylo_tree1.png" style="width:100%; height:auto;"> </a>
+<figcaption style="font-size:1em; margin-top:0.5em;">
+Monkeypox phylogenetic tree - mashtree bootstrap version
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="example---mashtree-in-hiv-challenge" class="slide level2">
+<h2>Example - <code>mashtree</code> in HIV (challenge)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-code-line-numbers="|2|4|6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href=""></a><span class="co"># Activate conda environments</span></span>
+<span id="cb5-2"><a href=""></a><span class="ex">conda</span> activate mashtree</span>
+<span id="cb5-3"><a href=""></a><span class="co"># Run mashtree in fasta files - 11-mers. (can use --numcpus 4 option to run in multithread mode)</span></span>
+<span id="cb5-4"><a href=""></a><span class="ex">mashtree</span> <span class="at">--kmerlength</span> 11 HIV/seqs/<span class="pp">*</span>.fasta <span class="op">&gt;</span> HIV/mashtree.dnd</span>
+<span id="cb5-5"><a href=""></a><span class="co"># Run mashtree bootstrap mode (only 100 times in class, in pratice 1000)</span></span>
+<span id="cb5-6"><a href=""></a><span class="ex">mashtree_bootstrap.pl</span> <span class="at">--kmerlength</span> 11 <span class="at">--reps</span> 100 HIV/seqs/<span class="pp">*</span>.fasta <span class="at">--</span> <span class="at">--min-depth</span> 0 <span class="op">&gt;</span> HIV/mashtree.bootstrap.dnd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="plotting-the-trees-1" class="slide level2">
+<h2>Plotting the Trees</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="|2|4|6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href=""></a><span class="co"># Plot mashtree output</span></span>
+<span id="cb6-2"><a href=""></a><span class="ex">Rscript</span> create_tree_HIV.R <span class="at">-t</span> HIV/mashtree.dnd <span class="at">-a</span> HIV/annotation.csv <span class="at">-o</span> HIV/</span>
+<span id="cb6-3"><a href=""></a><span class="co"># Plot mashtree bootstrap output</span></span>
+<span id="cb6-4"><a href=""></a><span class="ex">Rscript</span> create_tree_HIV.R <span class="at">-t</span> HIV/mashtree.bootstrap.dnd <span class="at">-a</span> HIV/annotation.csv <span class="at">-o</span> HIV/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="plots-1" class="slide level2">
+<h2>Plots</h2>
+<p><em>Work in progress</em></p>
 </section>
 <section id="practical-applications" class="slide level2">
 <h2>Practical applications</h2>

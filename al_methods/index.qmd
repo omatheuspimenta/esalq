@@ -65,7 +65,7 @@ toc-depth: 1
 <figure class="fragment fade-out" data-fragment-index="1" 
         style="position:absolute; top:0; left:0; width:100%; margin:0;">
   <a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank">
-    <img src="https://www.bioinformatics.nl/bif20306/_images/sars-cov-2.svg" 
+    <img src="images/sars-cov-2.svg" 
          style="width:100%; height:auto;" />
   </a>
   <figcaption style="font-size:1em; margin-top:0.5em;">
@@ -91,21 +91,6 @@ toc-depth: 1
 
 <figure>
   <a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank">
-    <img src="https://www.bioinformatics.nl/bif20306/_images/tree-example.png" style="width:70%; height:auto;">
-  </a>
-  <figcaption style="font-size:0.5em; margin-top:0.5em;">
-    A rooted ultrametric phylogenetic tree with its main parts and characteristics indicated. 
-    Here, the OTUs are GenBank plant chloroplast gene accessions, the names of which have been condensed.
-  </figcaption>
-</figure>
-
-</div>
-
-## Anatomy of a Phylogenetic Tree - II
-<div style="text-align:center; width:100%; margin:auto;">
-
-<figure>
-  <a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank">
     <img src="https://www.bioinformatics.nl/bif20306/_images/tree-types.png" style="width:90%; height:auto;">
   </a>
   <figcaption style="font-size:0.5em; margin-top:0.5em;">
@@ -115,7 +100,7 @@ toc-depth: 1
 
 </div>
 
-## Anatomy of a Phylogenetic Tree - III
+## Anatomy of a Phylogenetic Tree - II
 <div style="text-align:center; width:100%; margin:auto;">
 
 <figure>
@@ -130,21 +115,8 @@ toc-depth: 1
 
 </div>
 
-## Anatomy of a Phylogenetic Tree - IV
-<div style="text-align:center; width:100%; margin:auto;">
 
-<figure>
-  <a href="https://training.galaxyproject.org/training-material/topics/evolution/tutorials/abc_intro_phylo/tutorial.html" target="_blank">
-    <img src="https://training.galaxyproject.org/training-material/topics/evolution/tutorials/abc_intro_phylo/images/TreeAnatomyWithOutgroup.png" style="width:90%; height:auto;">
-  </a>
-  <figcaption style="font-size:0.5em; margin-top:0.5em;">
-    Anatomy of a phylogenetic tree.
-  </figcaption>
-</figure>
-
-</div>
-
-## Anatomy of a Phylogenetic Tree - V
+## Anatomy of a Phylogenetic Tree - III
 <div style="text-align:center; width:100%; margin:auto;">
 
 <figure>
@@ -492,7 +464,7 @@ Examples: k-mers, Average Common Substring (ACS), strobmers, minimizers, ...
   - Converts similarity to evolutionary distance:  
     $$D = -\frac{1}{k} \ln \frac{2j}{1+j}$$
 
-  - Fast approximation of mutation rate, correlates with alignment-based measures like ANI.  
+  - Fast approximation of mutation rate, correlates with alignment-based measures.  
 
 - Mash is scalable, fast, and ideal for clustering genomes, identifying unknown samples, and large-scale comparative genomics.
 :::
@@ -507,7 +479,7 @@ Examples: k-mers, Average Common Substring (ACS), strobmers, minimizers, ...
 
 - Confidence Values:  
   - Although Mashtree does not infer true phylogeny, node support values are calculated using resample methods.  
-- Both methods resample to create trees and assign confidence to internal nodes. 
+- Two resampling methods for creating trees and assigning confidence to internal nodes.
 
 :::
 
@@ -581,6 +553,136 @@ Build phylogenetic trees directly from raw sequencing reads, without assembly or
   </figure>
 
 # Applications
+
+## Example
+All files and softwares are in the `phylo` folder.  
+Monkeypox sequences are from [NCBI](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/)  
+HIV sequences are from [Los Alamos National Laboratory](https://www.hiv.lanl.gov/content/index)
+
+::: {.column width="50%"}
+MKPX
+
+- 41 sequences
+- 5 subtypes
+- Average sequence size $\approx$ 200000 bp
+:::
+
+::: {.column width="50%"}
+HIV
+
+- 6964 sequences
+- 8 subtypes
+- Average sequence size $\approx$ 10000 bp
+:::
+
+```{.bash}
+# To install mashtree (conda version)
+conda create -n mashtree -c bioconda mashtree
+```
+
+## Example - `mike` in MKPX
+```{.bash code-line-numbers="|2|4-6|8|10|12|14|16|18"}
+# Create a absolute path for every file
+realpath MKPX/seqs/* > seqs_MKPX.txt
+# Run the KMC kmers sketch
+while read seq; do
+    python kmc.py -k 21 -f "$seq" -d ../MKPX/output_kmers/
+done < seqs_MKPX.txt
+# Create absolute path for every kmer file
+realpath MKPX/output_kmers/* > kmers_MKPX.txt
+# Run mike sketch -t 1 (thread number)
+./mike sketch -t 1 -l kmers_MKPX.txt -d MKPX/output_mike/
+# Create absolute path for every sketch file
+realpath MKPX/output_mike/* > mike_MKPX.txt
+# Compute Jaccard (mike)
+./mike compute -l mike_MKPX.txt -L mike_MKPX.txt -d MKPX/
+# Compute distance (mike)
+./mike dist -l mike_MKPX.txt -L mike_MKPX.txt -d MKPX/
+# Create newick file with R
+Rscript draw.r -f MKPX/dist.txt -o MKPX/dist.nwk
+```
+
+## Example - `mashtree` in MKPX
+```{.bash code-line-numbers="|2|4|6"}
+# Activate conda environments
+conda activate mashtree
+# Run mashtree in fasta files
+mashtree MKPX/seqs/*.fasta > MKPX/mashtree.dnd
+# Run mashtree bootstrap mode (only 100 times in class, in pratice 1000)
+mashtree_bootstrap.pl --reps 100 MKPX/seqs/*.fasta -- --min-depth 0 > MKPX/mashtree.bootstrap.dnd
+```
+
+## Plotting the Trees
+```{.bash code-line-numbers="|2|4|6"}
+# Plot mike output
+Rscript create_tree_MKPX.R -t MKPX/dist.nwk -a MKPX/annotation.csv -o MKPX/
+# Plot mashtree output
+Rscript create_tree_MKPX.R -t MKPX/mashtree.dnd -a MKPX/annotation.csv -o MKPX/
+# Plot mashtree bootstrap output
+Rscript create_tree_MKPX.R -t MKPX/mashtree.bootstrap.dnd -a MKPX/annotation.csv -o MKPX/
+```
+
+## Plots
+<div style="position: relative; width: 80%; height: 500px; margin: auto; text-align:center;">
+
+  <!-- First image - visible initially, fades out when second appears -->
+  <figure class="fragment fade-out" data-fragment-index="1"
+          style="position:absolute; top:0; left:0; width:100%; margin:0;">
+    <a href="blank" target="_blank">
+      <img src="images/dist_phylo_tree1.png"
+           style="width:100%; height:auto;" />
+    </a>
+    <figcaption style="font-size:1em; margin-top:0.5em;">
+      MKPX phylogenetic tree - mike version
+    </figcaption>
+  </figure>
+
+  <!-- Second image - appears at the same time first fades out -->
+  <figure class="fragment fade-in-then-out" data-fragment-index="1"
+          style="position:absolute; top:0; left:0; width:100%; margin:0;">
+    <a href="blank" target="_blank">
+      <img src="images/mashtree_phylo_tree1.png"
+           style="width:100%; height:auto;" />
+    </a>
+    <figcaption style="font-size:1em; margin-top:0.5em;">
+      Monkeypox phylogenetic tree - mashtree version
+    </figcaption>
+  </figure>
+
+  <!-- Third image - appears when second fades out -->
+  <figure class="fragment fade-in" data-fragment-index="2"
+          style="position:absolute; top:0; left:0; width:100%; margin:0;">
+    <a href="blank" target="_blank">
+      <img src="images/mashtree.bootstrap_phylo_tree1.png"
+           style="width:100%; height:auto;" />
+    </a>
+    <figcaption style="font-size:1em; margin-top:0.5em;">
+      Monkeypox phylogenetic tree - mashtree bootstrap version
+    </figcaption>
+  </figure>
+
+</div>
+
+## Example - `mashtree` in HIV (challenge)
+```{.bash code-line-numbers="|2|4|6"}
+# Activate conda environments
+conda activate mashtree
+# Run mashtree in fasta files - 11-mers. (can use --numcpus 4 option to run in multithread mode)
+mashtree --kmerlength 11 HIV/seqs/*.fasta > HIV/mashtree.dnd
+# Run mashtree bootstrap mode (only 100 times in class, in pratice 1000)
+mashtree_bootstrap.pl --kmerlength 11 --reps 100 HIV/seqs/*.fasta -- --min-depth 0 > HIV/mashtree.bootstrap.dnd
+```
+
+## Plotting the Trees
+```{.bash code-line-numbers="|2|4|6"}
+# Plot mashtree output
+Rscript create_tree_HIV.R -t HIV/mashtree.dnd -a HIV/annotation.csv -o HIV/
+# Plot mashtree bootstrap output
+Rscript create_tree_HIV.R -t HIV/mashtree.bootstrap.dnd -a HIV/annotation.csv -o HIV/
+```
+
+## Plots
+*Work in progress*
 
 ## Practical applications
 ::: {.incremental}
