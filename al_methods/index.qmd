@@ -403,14 +403,14 @@ Examples: k-mers, Average Common Substring (ACS), strobmers, minimizers, ...
 | Memory usage          | High                | Low                      |
 
 # Examples of Alignment-Free Tools
-## Selected tools
+## Selected tools to the class
 ::: {.incremental}
 - `mash`: pairwise distance estimation from sketches
 - `mashtree`: `minHash` rapid phylogenomic surveillance
 - `mike`: MinHash-based k-mer algorithm
 :::
 
-## Selected tools
+## Selected tools to the class
 - `mash`: pairwise distance estimation from sketches
 - `mashtree`: `minHash` rapid phylogenomic surveillance
 - `mike`: MinHash-based k-mer algorithm
