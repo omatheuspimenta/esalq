@@ -572,7 +572,7 @@ Monkeypox sequences are from [NCBI](https://www.ncbi.nlm.nih.gov/labs/virus/vssi
 HIV sequences are from [Los Alamos National Laboratory](https://www.hiv.lanl.gov/content/index)
 
 ```{.bash}
-git clone 
+git clone https://github.com/omatheuspimenta/phylo.git
 ```
 
 ::: {.column width="50%"}
