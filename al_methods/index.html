@@ -341,13 +341,13 @@ A rooted phylogenetic tree with its main parts and characteristics indicated. He
 <section id="classical-paradigm" class="slide level2">
 <h2>Classical Paradigm</h2>
 <ul>
-<li class="fragment">Orthologs and paralogs
+<li>Orthologs and paralogs
 <ul>
-<li class="fragment"><div style="text-align:center; width:100%; margin:auto;">
+<li><div style="text-align:center; width:100%; margin:auto;">
 <figure>
-<a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="https://www.bioinformatics.nl/bif20306/_images/ortho-para.svg" style="width:90%; height:auto;"> </a>
+<a href="https://www.nlm.nih.gov/ncbi/workshops/2023-08_BLAST_evol/ortho_para.html" target="_blank"> <img src="https://www.nlm.nih.gov/ncbi/workshops/2023-08_BLAST_evol/img/ortholog_paralog.jpg" style="width:90%; height:auto;"> </a>
 <figcaption style="font-size:0.5em; margin-top:0.5em;">
-The challenge of paralogs: (A) Paralogous genes are created by gene duplication events. Gene X is duplicated in a (recent) common ancestor (RCA) of species A and B resulting in paralogous genes X and X’. Species A and B inherit both copies of the gene (unless one or the other is lost somewhere along the way). (B) Phylogenetic analysis of the X/X’ gene family gives two parallel phylogenies. All sequences of gene X are orthologues of each other, as are all sequences of gene X’. However, X and X’ are paralogues. Both the X and X’ subtrees show the true relationships among the three species. The subtrees are also each other’s natural outgroup, and as a result each subtree is rooted with the other (reciprocally rooting). (C ) A tree of the X/X’ gene family can be misleading if not all the sequences are included (because of incomplete sampling or gene loss). If the broken branches are missing, then the true species relationships are misrepresented.
+Gene 1 in the ancestral species undergoes a duplication event generating Gene 1a and Gene 1b. The ancestral species splits into two species, each with its own copy of Gene 1a and Gene 1b. Gene 1a in species one is the ortholog of Gene 1a in species two; Gene 1a and Gene 1b are paralogs; All four genes are homologs.
 </figcaption>
 </figure>
 </div></li>
@@ -357,13 +357,13 @@ The challenge of paralogs: (A) Paralogous genes are created by gene duplication 
 <section id="classical-paradigm-1" class="slide level2">
 <h2>Classical Paradigm</h2>
 <ul>
-<li>Orthologs and paralogs
+<li class="fragment">Orthologs and paralogs
 <ul>
-<li><div style="text-align:center; width:100%; margin:auto;">
+<li class="fragment"><div style="text-align:center; width:100%; margin:auto;">
 <figure>
-<a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="https://www.bioinformatics.nl/bif20306/_images/gene-duplication-speciation_alt.svg" style="width:90%; height:auto;"> </a>
+<a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="https://www.bioinformatics.nl/bif20306/_images/ortho-para.svg" style="width:90%; height:auto;"> </a>
 <figcaption style="font-size:0.5em; margin-top:0.5em;">
-The evolutionary history of a gene that has undergone two separate duplication events. (A) The species tree (large blue cylinders) comprising species A and B and with indicated gene duplication and neo-functionalisation events leading to β and γ functions. (B) The phylogenetic tree that would be drawn for the resulting 5 genes in (A), here drawn as a cladogram.
+The challenge of paralogs: (A) Paralogous genes are created by gene duplication events. Gene X is duplicated in a (recent) common ancestor (RCA) of species A and B resulting in paralogous genes X and X’. Species A and B inherit both copies of the gene (unless one or the other is lost somewhere along the way). (B) Phylogenetic analysis of the X/X’ gene family gives two parallel phylogenies. All sequences of gene X are orthologues of each other, as are all sequences of gene X’. However, X and X’ are paralogues. Both the X and X’ subtrees show the true relationships among the three species. The subtrees are also each other’s natural outgroup, and as a result each subtree is rooted with the other (reciprocally rooting). (C ) A tree of the X/X’ gene family can be misleading if not all the sequences are included (because of incomplete sampling or gene loss). If the broken branches are missing, then the true species relationships are misrepresented.
 </figcaption>
 </figure>
 </div></li>
@@ -379,8 +379,9 @@ The evolutionary history of a gene that has undergone two separate duplication e
 <ul>
 <li class="fragment">Post-alignment methods:
 <ul>
-<li class="fragment">Distance-based: Neighbor-Joining, UPGMA</li>
 <li class="fragment">Character-based: Parsimony, Maximum Likelihood, Bayesian inference</li>
+<li class="fragment">Distance-based: Neighbor-Joining, UPGMA<br>
+</li>
 </ul></li>
 </ul>
 <ul>
@@ -539,7 +540,7 @@ Having to assess such large numbers of trees falls under the category of ‘NP c
 <li class="fragment"><p>Word-based methods analyze the frequency and distribution of <strong>k-mers</strong> (fixed-length subsequences) extracted from the sequences, creating specific profiles for each genome.<br>
 Examples: k-mers, Average Common Substring (ACS), strobmers, minimizers, …</p></li>
 <li class="fragment"><p>Information theory-based methods quantify the <strong>complexity and structure</strong> of genomic sequences, identifying more complex patterns and evolutionary or functional relationships between different genomes.</p></li>
-<li class="fragment"><p>Other methods: Chaos Game Representation, graph-based methods, mathematical transforms (Fourier, wavelets)</p></li>
+<li class="fragment"><p>Other methods: Chaos Game Representation, graph-based methods, vector representation like <code>sweep</code> method, mathematical transforms (Fourier, wavelets)</p></li>
 </ul>
 </section>
 <section id="k-mers" class="slide level2">
@@ -874,8 +875,13 @@ HIV sequences are from <a href="https://www.hiv.lanl.gov/content/index">Los Alam
 <li>8 subtypes</li>
 <li>Average sequence size <span class="math inline">\(\approx\)</span> 10000 bp</li>
 </ul>
-</div><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="co"># To install mashtree (conda version)</span></span>
-<span id="cb1-2"><a href=""></a><span class="ex">conda</span> create <span class="at">-n</span> mashtree <span class="at">-c</span> bioconda mashtree</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></section>
+<section id="install-softwares" class="slide level2">
+<h2>Install softwares</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="co"># To install mashtree (conda version)</span></span>
+<span id="cb1-2"><a href=""></a><span class="ex">conda</span> create <span class="at">-n</span> mashtree <span class="at">-c</span> bioconda mashtree</span>
+<span id="cb1-3"><a href=""></a><span class="co"># To install mike just clone the github repository</span></span>
+<span id="cb1-4"><a href=""></a><span class="fu">git</span> clone https://github.com/Argonum-Clever2/mike.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="example---mike-in-mkpx" class="slide level2">
 <h2>Example - <code>mike</code> in MKPX</h2>
@@ -953,7 +959,7 @@ Monkeypox phylogenetic tree - mashtree bootstrap version
 </section>
 <section id="plotting-the-trees-1" class="slide level2">
 <h2>Plotting the Trees</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="|2|4|6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href=""></a><span class="co"># Plot mashtree output</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="|2|4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href=""></a><span class="co"># Plot mashtree output</span></span>
 <span id="cb6-2"><a href=""></a><span class="ex">Rscript</span> create_tree_HIV.R <span class="at">-t</span> HIV/mashtree.dnd <span class="at">-a</span> HIV/annotation.csv <span class="at">-o</span> HIV/</span>
 <span id="cb6-3"><a href=""></a><span class="co"># Plot mashtree bootstrap output</span></span>
 <span id="cb6-4"><a href=""></a><span class="ex">Rscript</span> create_tree_HIV.R <span class="at">-t</span> HIV/mashtree.bootstrap.dnd <span class="at">-a</span> HIV/annotation.csv <span class="at">-o</span> HIV/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>

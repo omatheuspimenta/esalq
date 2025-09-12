@@ -144,6 +144,20 @@ Aside from gaining a fundamental understanding of biology, other reasons include
 
 
 ## Classical Paradigm
+- Orthologs and paralogs
+  - <div style="text-align:center; width:100%; margin:auto;">
+    <figure>
+      <a href="https://www.nlm.nih.gov/ncbi/workshops/2023-08_BLAST_evol/ortho_para.html" target="_blank">
+        <img src="https://www.nlm.nih.gov/ncbi/workshops/2023-08_BLAST_evol/img/ortholog_paralog.jpg" style="width:90%; height:auto;">
+      </a>
+      <figcaption style="font-size:0.5em; margin-top:0.5em;">
+        Gene 1 in the ancestral species undergoes a duplication event generating Gene 1a and Gene 1b. The ancestral species splits into two species, each with its own copy of Gene 1a and Gene 1b. Gene 1a in species one is the ortholog of Gene 1a in species two; Gene 1a and Gene 1b are paralogs; All four genes are homologs.
+      </figcaption>
+    </figure>
+    </div>
+
+
+## Classical Paradigm
 ::: {.incremental}
 - Orthologs and paralogs
   - <div style="text-align:center; width:100%; margin:auto;">
@@ -159,28 +173,14 @@ Aside from gaining a fundamental understanding of biology, other reasons include
 :::
 
 ## Classical Paradigm
-- Orthologs and paralogs
-  - <div style="text-align:center; width:100%; margin:auto;">
-    <figure>
-      <a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank">
-        <img src="https://www.bioinformatics.nl/bif20306/_images/gene-duplication-speciation_alt.svg" style="width:90%; height:auto;">
-      </a>
-      <figcaption style="font-size:0.5em; margin-top:0.5em;">
-        The evolutionary history of a gene that has undergone two separate duplication events. (A) The species tree (large blue cylinders) comprising species A and B and with indicated gene duplication and neo-functionalisation events leading to β and γ functions. (B) The phylogenetic tree that would be drawn for the resulting 5 genes in (A), here drawn as a cladogram.
-      </figcaption>
-    </figure>
-    </div>
-
-
-## Classical Paradigm
 
 - Orthologs and paralogs
 - Multiple Sequence Alignment (MSA) as a hypothesis of homology
 
 ::: {.incremental}
 - Post-alignment methods:
-  - Distance-based: Neighbor-Joining, UPGMA
   - Character-based: Parsimony, Maximum Likelihood, Bayesian inference
+  - Distance-based: Neighbor-Joining, UPGMA  
 :::
 - <figure class="fragment" style="text-align:center; width:100%; margin:auto;">
   <a href="https://www.geneious.com/guides/understanding-phylogenetics" target="_blank">
@@ -349,7 +349,7 @@ Examples: k-mers, Average Common Substring (ACS), strobmers, minimizers, ...
 
 - Information theory-based methods quantify the **complexity and structure** of genomic sequences, identifying more complex patterns and evolutionary or functional relationships between different genomes. 
 
-- Other methods: Chaos Game Representation, graph-based methods, mathematical transforms (Fourier, wavelets)
+- Other methods: Chaos Game Representation, graph-based methods, vector representation like `sweep` method, mathematical transforms (Fourier, wavelets)
 :::
 
 ## k-mers
@@ -575,9 +575,13 @@ HIV
 - Average sequence size $\approx$ 10000 bp
 :::
 
+## Install softwares
+
 ```{.bash}
 # To install mashtree (conda version)
 conda create -n mashtree -c bioconda mashtree
+# To install mike just clone the github repository
+git clone https://github.com/Argonum-Clever2/mike.git
 ```
 
 ## Example - `mike` in MKPX
@@ -674,7 +678,7 @@ mashtree_bootstrap.pl --kmerlength 11 --reps 100 HIV/seqs/*.fasta -- --min-depth
 ```
 
 ## Plotting the Trees
-```{.bash code-line-numbers="|2|4|6"}
+```{.bash code-line-numbers="|2|4"}
 # Plot mashtree output
 Rscript create_tree_HIV.R -t HIV/mashtree.dnd -a HIV/annotation.csv -o HIV/
 # Plot mashtree bootstrap output
