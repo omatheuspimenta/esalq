@@ -469,6 +469,18 @@ Examples: k-mers, Average Common Substring (ACS), strobmers, minimizers, ...
 - Mash is scalable, fast, and ideal for clustering genomes, identifying unknown samples, and large-scale comparative genomics.
 :::
 
+## `mash`
+- Used in all sequences from NCBI RefSeq Release 70 totaling 54,118 organisms and 618 Gbp of genomic sequence.
+- Sketching all genomes and computing all ~1.5 billion pairwise distances required just 26.1 and 6.9 CPU h, respectively.
+- <figure class="fragment" style="text-align:center; width:100%; margin:auto;">
+    <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x" target="_blank">
+      <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-016-0997-x/MediaObjects/13059_2016_997_Fig3_HTML.gif?as=webp" style="width:41%; height:auto;">
+    </a>
+    <figcaption style="font-size:0.5em; margin-top:0.5em;">
+      Comparison and de novo clustering of all RefSeq genomes using Mash. Each graph node represents a genome. Two genomes are connected by an edge if their Mash distance D ≤0.05 and P value ≤10–10. Only components containing microbial genomes are shown here (including viruses).
+    </figcaption>
+  </figure>
+
 ## `mashtree`: a rapid comparison of whole genome sequence files.
 :::{.incremental}
 1. MinHash Sketching (Mash)  
@@ -508,7 +520,7 @@ Build phylogenetic trees directly from raw sequencing reads, without assembly or
 
 :::{.incremental}
 - Steps:
-  1. Split reads into k-mers (default k = 21).  
+  1. Split reads into k-mers (k = 21).  
   2. Group by prefix (kpre), encode suffixes (ksuf) into one-hot vectors.  
   3. Random permutation → smallest non-zero value → minhash.  
   4. Combine fingerprints → compute Jaccard similarity → convert to evolutionary distance.  
@@ -558,6 +570,10 @@ Build phylogenetic trees directly from raw sequencing reads, without assembly or
 All files and softwares are in the `phylo` folder.  
 Monkeypox sequences are from [NCBI](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/)  
 HIV sequences are from [Los Alamos National Laboratory](https://www.hiv.lanl.gov/content/index)
+
+```{.bash}
+git clone 
+```
 
 ::: {.column width="50%"}
 MKPX
@@ -668,25 +684,53 @@ Rscript create_tree_MKPX.R -t MKPX/mashtree.bootstrap.dnd -a MKPX/annotation.csv
 </div>
 
 ## Example - `mashtree` in HIV (challenge)
-```{.bash code-line-numbers="|2|4|6"}
+```{.bash code-line-numbers="|2|4|6|8|10"}
 # Activate conda environments
 conda activate mashtree
+# Use only 500 sequences to the class (run in the HIV folder)
+./select_500seqs.sh
+# Copy the sequences into 'samples' folder
+mkdir samples && cat samples.txt | xargs cp -t samples/
 # Run mashtree in fasta files - 11-mers. (can use --numcpus 4 option to run in multithread mode)
-mashtree --kmerlength 11 HIV/seqs/*.fasta > HIV/mashtree.dnd
+mashtree --kmerlength 11 HIV/samples/*.fasta > HIV/mashtree.dnd
 # Run mashtree bootstrap mode (only 100 times in class, in pratice 1000)
-mashtree_bootstrap.pl --kmerlength 11 --reps 100 HIV/seqs/*.fasta -- --min-depth 0 > HIV/mashtree.bootstrap.dnd
+mashtree_bootstrap.pl --reps 100 HIV/samples/*.fasta -- --min-depth 0 --kmerlength 11 > HIV/mashtree.bootstrap.dnd
 ```
 
 ## Plotting the Trees
 ```{.bash code-line-numbers="|2|4"}
 # Plot mashtree output
-Rscript create_tree_HIV.R -t HIV/mashtree.dnd -a HIV/annotation.csv -o HIV/
+Rscript create_tree_HIV.R -t HIV/mashtree.dnd -a HIV/annotation.csv -o HIV/ --confidence none
 # Plot mashtree bootstrap output
-Rscript create_tree_HIV.R -t HIV/mashtree.bootstrap.dnd -a HIV/annotation.csv -o HIV/
+Rscript create_tree_HIV.R -t HIV/mashtree.bootstrap.dnd -a HIV/annotation.csv -o HIV/ --confidence color
 ```
 
 ## Plots
-*Work in progress*
+<div style="position: relative; width: 80%; height: 500px; margin: auto; text-align:center;">
+
+<figure class="fragment fade-out" data-fragment-index="1" 
+        style="position:absolute; top:0; left:0; width:100%; margin:0;">
+  <a href="images/mashtree_phylo_tree_large.png" target="_blank">
+    <img src="images/mashtree_phylo_tree_large.png" 
+         style="width:45%; height:auto;" />
+  </a>
+  <figcaption style="font-size:0.5em; margin-top:0.5em;">
+    HIV phylogenetic tree - mashtree version
+  </figcaption>
+</figure>
+
+<figure class="fragment" data-fragment-index="1" 
+        style="position:absolute; top:0; left:0; width:100%; margin:0;">
+  <a href="images/mashtree.bootstrap_phylo_tree_large.png" target="_blank">
+    <img src="images/mashtree.bootstrap_phylo_tree_large.png" 
+         style="width:45%; height:auto;" />
+  </a>
+  <figcaption style="font-size:0.5em; margin-top:0.5em;">
+    HIV phylogenetic tree - mashtree bootstrap version
+  </figcaption>
+</figure>
+
+</div>
 
 ## Practical applications
 ::: {.incremental}
