@@ -148,7 +148,7 @@ Aside from gaining a fundamental understanding of biology, other reasons include
   - <div style="text-align:center; width:100%; margin:auto;">
     <figure>
       <a href="https://www.nlm.nih.gov/ncbi/workshops/2023-08_BLAST_evol/ortho_para.html" target="_blank">
-        <img src="https://www.nlm.nih.gov/ncbi/workshops/2023-08_BLAST_evol/img/ortholog_paralog.jpg" style="width:90%; height:auto;">
+        <img src="https://www.nlm.nih.gov/ncbi/workshops/2023-08_BLAST_evol/img/ortholog_paralog.jpg" style="width:62%; height:auto;">
       </a>
       <figcaption style="font-size:0.5em; margin-top:0.5em;">
         Gene 1 in the ancestral species undergoes a duplication event generating Gene 1a and Gene 1b. The ancestral species splits into two species, each with its own copy of Gene 1a and Gene 1b. Gene 1a in species one is the ortholog of Gene 1a in species two; Gene 1a and Gene 1b are paralogs; All four genes are homologs.
