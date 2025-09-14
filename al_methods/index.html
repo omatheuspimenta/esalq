@@ -892,10 +892,13 @@ HIV sequences are from <a href="https://www.hiv.lanl.gov/content/index">Los Alam
 </div></section>
 <section id="install-softwares" class="slide level2">
 <h2>Install softwares</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="co"># To install mashtree (conda version)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-code-line-numbers="|2|4|6-7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="co"># To install mashtree (conda version)</span></span>
 <span id="cb2-2"><a href=""></a><span class="ex">conda</span> create <span class="at">-n</span> mashtree <span class="at">-c</span> bioconda mashtree</span>
 <span id="cb2-3"><a href=""></a><span class="co"># To install mike just clone the github repository</span></span>
-<span id="cb2-4"><a href=""></a><span class="fu">git</span> clone https://github.com/Argonum-Clever2/mike.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-4"><a href=""></a><span class="fu">git</span> clone https://github.com/Argonum-Clever2/mike.git</span>
+<span id="cb2-5"><a href=""></a><span class="co"># To install all dependencies to reproduce this class execute the .sh files</span></span>
+<span id="cb2-6"><a href=""></a><span class="ex">./install_miniconda.sh</span> <span class="co"># install miniconda</span></span>
+<span id="cb2-7"><a href=""></a><span class="ex">./install_r_env.sh</span> <span class="co"># create r env in conda and install all R packages used in the examples</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="example---mike-in-mkpx" class="slide level2">
 <h2>Example - <code>mike</code> in MKPX</h2>

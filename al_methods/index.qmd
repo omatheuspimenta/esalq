@@ -593,11 +593,14 @@ HIV
 
 ## Install softwares
 
-```{.bash}
+```{.bash code-line-numbers="|2|4|6-7"}
 # To install mashtree (conda version)
 conda create -n mashtree -c bioconda mashtree
 # To install mike just clone the github repository
 git clone https://github.com/Argonum-Clever2/mike.git
+# To install all dependencies to reproduce this class execute the .sh files
+./install_miniconda.sh # install miniconda
+./install_r_env.sh # create r env in conda and install all R packages used in the examples
 ```
 
 ## Example - `mike` in MKPX
