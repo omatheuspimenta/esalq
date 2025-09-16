@@ -604,7 +604,7 @@ git clone https://github.com/Argonum-Clever2/mike.git
 ```
 
 ## Example - `mike` in MKPX
-```{.bash code-line-numbers="|2|4-6|8|10|12|14|16|18"}
+```{.bash code-line-numbers="|2|4-6|8|10|12|14|16|18-19"}
 # Create a absolute path for every file
 realpath MKPX/seqs/* > seqs_MKPX.txt
 # Run the KMC kmers sketch
@@ -621,7 +621,8 @@ realpath MKPX/output_mike/* > mike_MKPX.txt
 ./mike compute -l mike_MKPX.txt -L mike_MKPX.txt -d MKPX/
 # Compute distance (mike)
 ./mike dist -l mike_MKPX.txt -L mike_MKPX.txt -d MKPX/
-# Create newick file with R
+# Create newick file with R (activate conda env before)
+conda activate R4
 Rscript draw.r -f MKPX/dist.txt -o MKPX/dist.nwk
 ```
 
@@ -701,7 +702,9 @@ mashtree_bootstrap.pl --reps 100 HIV/samples/*.fasta -- --min-depth 0 --kmerleng
 ```
 
 ## Plotting the Trees
-```{.bash code-line-numbers="|2|4"}
+```{.bash code-line-numbers="|2|4|6"}
+# Activate conda env
+conda activate R4
 # Plot mashtree output
 Rscript create_tree_HIV.R -t HIV/mashtree.dnd -a HIV/annotation.csv -o HIV/ --confidence none
 # Plot mashtree bootstrap output
