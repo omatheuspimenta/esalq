@@ -163,7 +163,7 @@ Aside from gaining a fundamental understanding of biology, other reasons include
   - <div style="text-align:center; width:100%; margin:auto;">
     <figure>
       <a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank">
-        <img src="https://www.bioinformatics.nl/bif20306/_images/ortho-para.svg" style="width:90%; height:auto;">
+        <img src="images/ortho-para.svg" style="width:90%; height:auto;">
       </a>
       <figcaption style="font-size:0.5em; margin-top:0.5em;">
         The challenge of paralogs: (A) Paralogous genes are created by gene duplication events. Gene X is duplicated in a (recent) common ancestor (RCA) of species A and B resulting in paralogous genes X and X’. Species A and B inherit both copies of the gene (unless one or the other is lost somewhere along the way). (B) Phylogenetic analysis of the X/X’ gene family gives two parallel phylogenies. All sequences of gene X are orthologues of each other, as are all sequences of gene X’. However, X and X’ are paralogues. Both the X and X’ subtrees show the true relationships among the three species. The subtrees are also each other’s natural outgroup, and as a result each subtree is rooted with the other (reciprocally rooting). (C ) A tree of the X/X’ gene family can be misleading if not all the sequences are included (because of incomplete sampling or gene loss). If the broken branches are missing, then the true species relationships are misrepresented.
@@ -227,7 +227,7 @@ Aside from gaining a fundamental understanding of biology, other reasons include
 - <span class="fragment">
   <figure>
   <a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank">
-    <img src="https://www.bioinformatics.nl/bif20306/_images/bifurcating_alt.svg" width="100%">
+    <img src="images/bifurcating_alt.svg" width="100%">
   </a>  
     <figcaption style="font-size:0.5em; text-align:center;">
      Having to assess such large numbers of trees falls under the category of ‘NP complete’ problems which cannot be solved in a lifetime even with unlimited resources.
