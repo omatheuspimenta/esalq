@@ -91,7 +91,7 @@ toc-depth: 1
 
 <figure>
   <a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank">
-    <img src="https://www.bioinformatics.nl/bif20306/_images/tree-types.png" style="width:90%; height:auto;">
+    <img src="images/tree-types.png" style="width:90%; height:auto;">
   </a>
   <figcaption style="font-size:0.5em; margin-top:0.5em;">
     A rooted phylogenetic tree with its main parts and characteristics indicated. Here, the OTUs are GenBank plant chloroplast gene accessions, the names of which have been condensed. For the same data, the tree is given as additive tree (top) and as an ultrametric tree (bottom left) with branch lengths corresponding to time. On the right, flipped, the same tree as cladogram, with branch lengths only indicating the structure of the trees.

@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Matheus Pimenta">
-  <meta name="dcterms.date" content="2025-09-15">
+  <meta name="dcterms.date" content="2025-09-17">
   <title>Phylogenetics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -233,7 +233,7 @@ Matheus Pimenta <a href="https://orcid.org/0000-0003-0698-6360" class="quarto-ti
     </div>
 </div>
 
-  <p class="date">September 15, 2025</p>
+  <p class="date">September 17, 2025</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of Contents</h2>
@@ -299,7 +299,7 @@ Monkeypox phylogenetic tree - Sep.&nbsp;2025
 <h2>Anatomy of a Phylogenetic Tree - I</h2>
 <div style="text-align:center; width:100%; margin:auto;">
 <figure>
-<a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="https://www.bioinformatics.nl/bif20306/_images/tree-types.png" style="width:90%; height:auto;"> </a>
+<a href="https://www.bioinformatics.nl/bif20306/chapter3.html" target="_blank"> <img src="images/tree-types.png" style="width:90%; height:auto;"> </a>
 <figcaption style="font-size:0.5em; margin-top:0.5em;">
 A rooted phylogenetic tree with its main parts and characteristics indicated. Here, the OTUs are GenBank plant chloroplast gene accessions, the names of which have been condensed. For the same data, the tree is given as additive tree (top) and as an ultrametric tree (bottom left) with branch lengths corresponding to time. On the right, flipped, the same tree as cladogram, with branch lengths only indicating the structure of the trees.
 </figcaption>
@@ -902,7 +902,7 @@ HIV sequences are from <a href="https://www.hiv.lanl.gov/content/index">Los Alam
 </section>
 <section id="example---mike-in-mkpx" class="slide level2">
 <h2>Example - <code>mike</code> in MKPX</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-code-line-numbers="|2|4-6|8|10|12|14|16|18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="co"># Create a absolute path for every file</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-code-line-numbers="|2|4-6|8|10|12|14|16|18-19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="co"># Create a absolute path for every file</span></span>
 <span id="cb3-2"><a href=""></a><span class="fu">realpath</span> MKPX/seqs/<span class="pp">*</span> <span class="op">&gt;</span> seqs_MKPX.txt</span>
 <span id="cb3-3"><a href=""></a><span class="co"># Run the KMC kmers sketch</span></span>
 <span id="cb3-4"><a href=""></a><span class="cf">while</span> <span class="bu">read</span> <span class="va">seq</span><span class="kw">;</span> <span class="cf">do</span></span>
@@ -918,8 +918,9 @@ HIV sequences are from <a href="https://www.hiv.lanl.gov/content/index">Los Alam
 <span id="cb3-14"><a href=""></a><span class="ex">./mike</span> compute <span class="at">-l</span> mike_MKPX.txt <span class="at">-L</span> mike_MKPX.txt <span class="at">-d</span> MKPX/</span>
 <span id="cb3-15"><a href=""></a><span class="co"># Compute distance (mike)</span></span>
 <span id="cb3-16"><a href=""></a><span class="ex">./mike</span> dist <span class="at">-l</span> mike_MKPX.txt <span class="at">-L</span> mike_MKPX.txt <span class="at">-d</span> MKPX/</span>
-<span id="cb3-17"><a href=""></a><span class="co"># Create newick file with R</span></span>
-<span id="cb3-18"><a href=""></a><span class="ex">Rscript</span> draw.r <span class="at">-f</span> MKPX/dist.txt <span class="at">-o</span> MKPX/dist.nwk</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-17"><a href=""></a><span class="co"># Create newick file with R (activate conda env before)</span></span>
+<span id="cb3-18"><a href=""></a><span class="ex">conda</span> activate R4</span>
+<span id="cb3-19"><a href=""></a><span class="ex">Rscript</span> draw.r <span class="at">-f</span> MKPX/dist.txt <span class="at">-o</span> MKPX/dist.nwk</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="example---mashtree-in-mkpx" class="slide level2">
 <h2>Example - <code>mashtree</code> in MKPX</h2>
@@ -980,10 +981,12 @@ Monkeypox phylogenetic tree - mashtree bootstrap version
 </section>
 <section id="plotting-the-trees-1" class="slide level2">
 <h2>Plotting the Trees</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-code-line-numbers="|2|4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href=""></a><span class="co"># Plot mashtree output</span></span>
-<span id="cb7-2"><a href=""></a><span class="ex">Rscript</span> create_tree_HIV.R <span class="at">-t</span> HIV/mashtree.dnd <span class="at">-a</span> HIV/annotation.csv <span class="at">-o</span> HIV/ <span class="at">--confidence</span> none</span>
-<span id="cb7-3"><a href=""></a><span class="co"># Plot mashtree bootstrap output</span></span>
-<span id="cb7-4"><a href=""></a><span class="ex">Rscript</span> create_tree_HIV.R <span class="at">-t</span> HIV/mashtree.bootstrap.dnd <span class="at">-a</span> HIV/annotation.csv <span class="at">-o</span> HIV/ <span class="at">--confidence</span> color</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-code-line-numbers="|2|4|6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href=""></a><span class="co"># Activate conda env</span></span>
+<span id="cb7-2"><a href=""></a><span class="ex">conda</span> activate R4</span>
+<span id="cb7-3"><a href=""></a><span class="co"># Plot mashtree output</span></span>
+<span id="cb7-4"><a href=""></a><span class="ex">Rscript</span> create_tree_HIV.R <span class="at">-t</span> HIV/mashtree.dnd <span class="at">-a</span> HIV/annotation.csv <span class="at">-o</span> HIV/ <span class="at">--confidence</span> none</span>
+<span id="cb7-5"><a href=""></a><span class="co"># Plot mashtree bootstrap output</span></span>
+<span id="cb7-6"><a href=""></a><span class="ex">Rscript</span> create_tree_HIV.R <span class="at">-t</span> HIV/mashtree.bootstrap.dnd <span class="at">-a</span> HIV/annotation.csv <span class="at">-o</span> HIV/ <span class="at">--confidence</span> color</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="plots-1" class="slide level2">
 <h2>Plots</h2>
