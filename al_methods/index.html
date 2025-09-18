@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Matheus Pimenta">
-  <meta name="dcterms.date" content="2025-09-17">
+  <meta name="dcterms.date" content="2025-09-18">
   <title>Phylogenetics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -233,7 +233,7 @@ Matheus Pimenta <a href="https://orcid.org/0000-0003-0698-6360" class="quarto-ti
     </div>
 </div>
 
-  <p class="date">September 17, 2025</p>
+  <p class="date">September 18, 2025</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of Contents</h2>
@@ -906,7 +906,7 @@ HIV sequences are from <a href="https://www.hiv.lanl.gov/content/index">Los Alam
 <span id="cb3-2"><a href=""></a><span class="fu">realpath</span> MKPX/seqs/<span class="pp">*</span> <span class="op">&gt;</span> seqs_MKPX.txt</span>
 <span id="cb3-3"><a href=""></a><span class="co"># Run the KMC kmers sketch</span></span>
 <span id="cb3-4"><a href=""></a><span class="cf">while</span> <span class="bu">read</span> <span class="va">seq</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb3-5"><a href=""></a>    <span class="ex">python</span> kmc.py <span class="at">-k</span> 21 <span class="at">-f</span> <span class="st">"</span><span class="va">$seq</span><span class="st">"</span> <span class="at">-d</span> ../MKPX/output_kmers/</span>
+<span id="cb3-5"><a href=""></a>    <span class="ex">python</span> kmc.py <span class="at">-k</span> 21 <span class="at">-f</span> <span class="st">"</span><span class="va">$seq</span><span class="st">"</span> <span class="at">-d</span> MKPX/output_kmers/<span class="kw">;</span></span>
 <span id="cb3-6"><a href=""></a><span class="cf">done</span> <span class="op">&lt;</span> seqs_MKPX.txt</span>
 <span id="cb3-7"><a href=""></a><span class="co"># Create absolute path for every kmer file</span></span>
 <span id="cb3-8"><a href=""></a><span class="fu">realpath</span> MKPX/output_kmers/<span class="pp">*</span> <span class="op">&gt;</span> kmers_MKPX.txt</span>

@@ -609,7 +609,7 @@ git clone https://github.com/Argonum-Clever2/mike.git
 realpath MKPX/seqs/* > seqs_MKPX.txt
 # Run the KMC kmers sketch
 while read seq; do
-    python kmc.py -k 21 -f "$seq" -d ../MKPX/output_kmers/
+    python kmc.py -k 21 -f "$seq" -d MKPX/output_kmers/;
 done < seqs_MKPX.txt
 # Create absolute path for every kmer file
 realpath MKPX/output_kmers/* > kmers_MKPX.txt
