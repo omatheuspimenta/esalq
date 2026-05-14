@@ -1,0 +1,79 @@
+---
+title: "Introdução à Bioinformática"
+subtitle: ""
+format: 
+  clean-revealjs:
+    transition: slide
+    background-transition: fade
+    highlight-style: github
+    code-line-numbers: true
+    slide-number: true
+    chalkboard: true
+    controls: true
+    logo: "images/logo.jpg" 
+    footer: "Introdução à Bioinformática | Matheus Pimenta"
+    margin: 0.1
+    min-scale: 0.2
+    max-scale: 2.0
+    menu: true
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: Matheus Pimenta
+    orcid: 0000-0003-0698-6360
+    email: omatheuspimenta@outlook.com
+    affiliations: Escola Superior de Agricultura "Luiz de Queiroz", Universidade de São Paulo
+bibliography: references.bib
+date: last-modified
+toc: true
+toc-title: "Sumário"
+toc-depth: 1
+---
+
+# Bioinformática - Conceitos Básicos
+
+## Conceitos Básicos - I
+
+XXX
+
+# Representação de Dados Biológicos
+
+## XXXX
+
+# Alinhamento de Sequências
+
+## XXX
+
+# Métodos Livres de Alinhamento
+
+## XXX
+
+# Modelos Probabilísticos
+
+## XXX
+
+# Grafos e Redes Complexas
+
+## XXX
+
+# Machine Learning e Deep Learning
+
+## XXX
+
+
+# Conclusão
+
+## Perspectivas Futuras
+
+
+
+## Obrigado pela atenção!
+::: {style="text-align: center; margin-top: 30px;"}
+**Matheus Pimenta**  
+📧 omatheuspimenta@outlook.com  
+ESALQ/USP
+:::
+
+## Leituras Recomendadas
+
