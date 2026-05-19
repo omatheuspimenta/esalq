@@ -10,8 +10,8 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Matheus Pimenta">
-  <meta name="dcterms.date" content="2026-05-14">
-  <title>Introdução à Bioinformática</title>
+  <meta name="dcterms.date" content="2026-05-19">
+  <title>Introdução à Bioinformática: dados, algoritmos e aprendizado de máquina em biologia</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,7 +29,93 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-5ae9c59b2727fcd5357d4f034d95f9e0.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -130,7 +216,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introdução à Bioinformática</h1>
+  <h1 class="title">Introdução à Bioinformática: dados, algoritmos e aprendizado de máquina em biologia</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -146,19 +232,19 @@ Matheus Pimenta <a href="https://orcid.org/0000-0003-0698-6360" class="quarto-ti
     </div>
 </div>
 
-  <p class="date">2026-05-14</p>
+  <p class="date">2026-05-19</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Sumário</h2>
 <ul>
 <li><a href="#/bioinformática---conceitos-básicos" id="/toc-bioinformática---conceitos-básicos">Bioinformática - Conceitos Básicos</a></li>
-<li><a href="#/representação-de-dados-biológicos" id="/toc-representação-de-dados-biológicos">Representação de Dados Biológicos</a></li>
-<li><a href="#/alinhamento-de-sequências" id="/toc-alinhamento-de-sequências">Alinhamento de Sequências</a></li>
-<li><a href="#/métodos-livres-de-alinhamento" id="/toc-métodos-livres-de-alinhamento">Métodos Livres de Alinhamento</a></li>
-<li><a href="#/modelos-probabilísticos" id="/toc-modelos-probabilísticos">Modelos Probabilísticos</a></li>
-<li><a href="#/grafos-e-redes-complexas" id="/toc-grafos-e-redes-complexas">Grafos e Redes Complexas</a></li>
+<li><a href="#/representação-de-dados-biológicos" id="/toc-representação-de-dados-biológicos">Representação de dados biológicos</a></li>
+<li><a href="#/alinhamento-de-sequências" id="/toc-alinhamento-de-sequências">Alinhamento de sequências</a></li>
+<li><a href="#/métodos-livres-de-alinhamento" id="/toc-métodos-livres-de-alinhamento">Métodos livres de alinhamento</a></li>
+<li><a href="#/modelos-probabilísticos-hmms" id="/toc-modelos-probabilísticos-hmms">Modelos probabilísticos: HMMs</a></li>
+<li><a href="#/grafos-e-redes-complexas" id="/toc-grafos-e-redes-complexas">Grafos e redes complexas</a></li>
 <li><a href="#/machine-learning-e-deep-learning" id="/toc-machine-learning-e-deep-learning">Machine Learning e Deep Learning</a></li>
-<li><a href="#/conclusão" id="/toc-conclusão">Conclusão</a></li>
+<li><a href="#/perspectivas-e-encerramento" id="/toc-perspectivas-e-encerramento">Perspectivas e encerramento</a></li>
 </ul>
 </nav>
 </section>
@@ -167,76 +253,2814 @@ Matheus Pimenta <a href="https://orcid.org/0000-0003-0698-6360" class="quarto-ti
 <h1>Bioinformática - Conceitos Básicos</h1>
 
 </section>
-<section id="conceitos-básicos---i" class="slide level2">
-<h2>Conceitos Básicos - I</h2>
-<p>XXX</p>
+<section id="section" class="slide level2" data-background-color="#1a1a2e">
+<h2></h2>
+<div style="text-align: center; margin-top: 15%;">
+<p><span style="font-size: 1.3em; color: #a0a0c0;">A biologia gerou mais dados do que</span></p>
+<p><span style="font-size: 1.3em; color: #a0a0c0;">humanos conseguem analisar.</span></p>
+<p><br></p>
+<p><span style="font-size: 2em; color: #e0e0ff; font-weight: 700;"><strong>O que fazemos com isso?</strong></span></p>
+</div>
+<aside class="notes">
+<p><strong>Tempo: ~30 segundos — gancho inicial</strong></p>
+<p>O objetivo é criar uma pergunta na cabeça do aluno antes de qualquer definição.</p>
+<p>“Alguém aqui já usou o NCBI, o BLAST, ou fez análise de sequências?”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="por-que-a-bioinformática-existe" class="slide level2">
+<h2>Por que a bioinformática existe?</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>O problema central:</strong></p>
+<ul>
+<li>Técnicas experimentais modernas produzem dados em escala industrial</li>
+<li>Um único experimento de RNA-seq gera <strong>gigabytes</strong> de dados brutos</li>
+<li>Análise manual é fisicamente impossível</li>
+<li>Ferramentas computacionais deixaram de ser <em>complemento</em> e passaram a ser <strong>condição</strong> para fazer biologia moderna</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<blockquote>
+<p><em>“Biology is becoming an information science.”</em></p>
+<p>— <span class="citation" data-cites="sboner2011">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Sboner et al. 2011</a>)</span></p>
+</blockquote>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 minuto</strong></p>
+<p>Não é sobre biologia computacional “teórica” é sobre o que acontece em qualquer laboratório de genômica hoje. Um experimento de sequenciamento de nova geração (NGS) que custa R$800 gera um arquivo que nenhum humano consegue olhar linha a linha.</p>
+<p>Referência: Sboner et al.&nbsp;(2011), artigo muito citado que discute o custo real do sequenciamento considerando análise, não só geração de dados.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-queda-do-custo-de-sequenciamento" class="slide level2">
+<h2>A queda do custo de sequenciamento</h2>
+
+<img data-src="images/image1.png" class="quarto-figure quarto-figure-center r-stretch" width="600"></section>
+<section id="a-queda-do-custo-de-sequenciamento-1" class="slide level2">
+<h2>A queda do custo de sequenciamento</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Projeto Genoma Humano (1990–2003):</strong></p>
+<ul>
+<li>Duração: 13 anos</li>
+<li>Custo: ~US$ 3 bilhões</li>
+<li>Consórcio internacional de 20 países <span class="citation" data-cites="lander2001">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Lander et al. 2001</a>)</span></li>
+</ul>
+<p><strong>Hoje (2024):</strong></p>
+<ul>
+<li>Duração: <strong>&lt; 24 horas</strong></li>
+<li>Custo: <strong>~US$ 100–200</strong> por genoma completo</li>
+<li>Equipamento cabe em uma bancada de laboratório</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lei de Moore vs.&nbsp;sequenciamento</strong></p>
+</div>
+<div class="callout-content">
+<p>O custo de sequenciamento caiu <strong>mais rápido</strong> do que a Lei de Moore a partir de 2008, quando o sequenciamento de segunda geração (NGS) foi introduzido.</p>
+<p>Fonte: NHGRI (2023)</p>
+</div>
+</div>
+</div>
+<p><img src="https://www.genome.gov/sites/default/files/inline-images/2022_Sequencing_cost_per_Mb.jpg" alt="Sequencing cost per Mb" width="500"></p>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 minuto</strong></p>
+<p>A comparação com a Lei de Moore é poderosa porque os alunos de biologia geralmente conhecem a analogia do custo de computação.</p>
+<p>Pode abrir o site do NHGRI ao vivo: https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost</p>
+<p>A curva de custo mostra uma quebra em 2008 que é abrupta, é o momento em que o sequenciamento Illumina escalou comercialmente. Isso é visualmente muito mais forte do que qualquer argumento verbal.</p>
+<p><strong>Dado adicional:</strong> o GenBank dobra de tamanho a cada 18 meses desde 1982 <span class="citation" data-cites="benson2013">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Benson et al. 2013</a>)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-queda-do-custo-de-sequenciamento-2" class="slide level2">
+<h2>A queda do custo de sequenciamento</h2>
+
+<img data-src="images/image2.png" class="quarto-figure quarto-figure-center r-stretch" width="600"></section>
+<section id="o-que-é-bioinformática" class="slide level2">
+<h2>O que é bioinformática?</h2>
+
+<img data-src="images/image5.png" class="quarto-figure quarto-figure-center r-stretch" width="600"></section>
+<section id="o-que-é-bioinformática-1" class="slide level2">
+<h2>O que é bioinformática?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Definição operacional:</strong></p>
+<blockquote>
+<p>Bioinformática é o desenvolvimento e aplicação de métodos computacionais, matemáticos e estatísticos para adquirir, armazenar, organizar, analisar e interpretar dados biológicos.</p>
+</blockquote>
+<p>— adaptado de <span class="citation" data-cites="luscombe2001">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Luscombe, Greenbaum, and Gerstein 2001</a>)</span></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Três pilares:</strong></p>
+<pre><code>        Biologia
+           △
+          / \
+         /   \
+        /  BI \
+       /       \
+      ▽─────────▽
+Computação  Estatística</code></pre>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~45 segundos</strong></p>
+<p>Esta definição é propositalmente ampla. Deixe claro que bioinformática não é só análise de sequências de DNA, inclui imagens (bioimagem computacional), estruturas 3D, redes de proteínas, dados clínicos integrados com genômica (medicina de precisão), etc.</p>
+<p>O diagrama simples dos três pilares é mais honesto do que um Diagrama de Venn elaborado. “Onde vocês se posicionam nesse triângulo?”</p>
+<p>Referência: Luscombe, N.M., Greenbaum, D. &amp; Gerstein, M. (2001). What is bioinformatics? A proposed definition and overview of the field. <em>Methods of Information in Medicine</em>, 40(4), 346–358.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="por-que-biólogos-precisam-entender-os-métodos" class="slide level2">
+<h2>Por que biólogos precisam entender os métodos?</h2>
+<ul>
+<li class="fragment"><p><strong>Ferramentas são caixas-pretas</strong> — saber usar o BLAST não é o mesmo que entender o que o E-value significa</p></li>
+<li class="fragment"><p><strong>Parâmetros importam</strong> — um k-mer de tamanho errado ou um threshold inadequado muda completamente o resultado biológico</p></li>
+<li class="fragment"><p><strong>Interpretação depende do método</strong> — alinhamento global vs.&nbsp;local produzem conclusões diferentes sobre o mesmo par de sequências</p></li>
+<li class="fragment"><p><strong>Colaboração efetiva</strong> — biólogos que entendem os limites dos métodos fazem perguntas melhores aos bioinformatas</p></li>
+<li class="fragment"><p><strong>Reprodutibilidade</strong> — a crise de reprodutibilidade em biologia molecular tem componente computacional significativo <span class="citation" data-cites="baker2016">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Baker 2016</a>)</span></p></li>
+</ul>
+<aside class="notes">
+<p><strong>Tempo: ~1 minuto</strong></p>
+<p>O ponto sobre reprodutibilidade costuma gerar discussão: 70% dos pesquisadores afirmam ter tentado replicar um experimento de outro grupo e falhado (Baker, 2016, Nature). Uma parcela significativa disso envolve análise computacional mal documentada ou parâmetros não reportados.</p>
+<p><strong>Encerramento do bloco:</strong> Principais ferramentas e ideias da bioinformática, não para você sair daqui programando, mas para você sair sabendo <em>o que está acontecendo</em> quando roda uma análise.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="representação-de-dados-biológicos" class="title-slide slide level1 center">
-<h1>Representação de Dados Biológicos</h1>
-
+<h1>Representação de dados biológicos</h1>
+<p>Como traduzimos a biologia para o computador?</p>
+<aside class="notes">
+<p>Antes de falar em algoritmos e métodos, precisamos entender como a biologia se transforma em dado computacional. Toda a bioinformática começa nessa abstração.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="xxxx" class="slide level2">
-<h2>XXXX</h2>
+<section id="a-abstração-fundamental" class="slide level2">
+<h2>A abstração fundamental</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Biologia → Estrutura de dados</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Objeto biológico</th>
+<th>Representação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DNA / RNA</td>
+<td>String sobre <span class="math inline">\(\{A, T, C, G\}\)</span></td>
+</tr>
+<tr class="even">
+<td>Proteína</td>
+<td>String sobre 20 símbolos</td>
+</tr>
+<tr class="odd">
+<td>Estrutura 3D</td>
+<td>Coordenadas atômicas <span class="math inline">\((x, y, z)\)</span></td>
+</tr>
+<tr class="even">
+<td>Interações moleculares</td>
+<td>Grafo <span class="math inline">\(G = (V, E)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Expressão gênica</td>
+<td>Matriz <span class="math inline">\(n \times m\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Por que isso importa?</strong></p>
+</div>
+<div class="callout-content">
+<p>Cada escolha de representação define quais perguntas podemos fazer e quais algoritmos podemos usar.</p>
+<p>Uma sequência como <em>string</em> permite busca de padrões. Como <em>vetor de frequências</em>, permite distâncias. Como <em>grafo de k-mers</em>, permite montagem.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p>Este slide é conceitual e fundamental. A mensagem central é que a representação não é neutra: ela habilita certos métodos e inviabiliza outros.</p>
+<p>Exemplo rápido para ilustrar: a mesma sequência de DNA pode ser representada como string (para alinhamento), como conjunto de k-mers (para montagem de genoma), ou como vetor de frequências (para classificação taxonômica). São três representações diferentes do mesmo dado, cada uma adequada a um problema diferente.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="formatos-de-arquivo-sequências" class="slide level2">
+<h2>Formatos de arquivo: sequências</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>FASTA</strong> — o formato mais básico</p>
+<pre><code>&gt;NM_007294.4 BRCA1, Homo sapiens
+ATGGATTTATCTGCTCTTCGCGTTGAAGAAG
+TACAAAATGTCATTAATGCTATGCAGAAAATC</code></pre>
+<ul>
+<li>Cabeçalho: linha iniciada com <code>&gt;</code></li>
+<li>Sequência: uma ou mais linhas</li>
+<li>Aceita DNA, RNA e proteínas</li>
+<li>Sem informação de qualidade</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>FASTQ</strong> — sequenciamento de nova geração</p>
+<pre><code>@SRR001666.1 HWI-EAS27:3:1:0:1020/1
+GTTGCTTCTGGCGTGGGTGGGGGGG
++
+IIIIIIIIIIIIIIIIIIIIIIIIH</code></pre>
+<ul>
+<li><code>@</code> + identificador do read</li>
+<li>Sequência bruta</li>
+<li><code>+</code> separador</li>
+<li>Qualidade Phred por base: <span class="math inline">\(Q = -10 \log_{10}(P_e)\)</span></li>
+</ul>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>FASTA</strong> é o pão com manteiga da bioinformática. Toda análise começa aqui. O nome é uma contração de “FAST-All” (o programa original Fast-A de Lipman &amp; Pearson, 1985).</p>
+<p><strong>FASTQ</strong>: o score de qualidade Phred é logarítmico. Q20 = 99% de acerto por base; Q30 = 99,9%. Um arquivo FASTQ de uma corrida de sequenciamento típica tem facilmente 30–50 GB. É aqui que entra a necessidade computacional.</p>
+<p><strong>Para contextualizar aos alunos de biologia:</strong> quando vocês mandam uma amostra para sequenciar e recebem “os dados”, o que chegou é um ou mais arquivos FASTQ. Tudo que a bioinformática faz depois começa lendo essas linhas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="formatos-de-arquivo-além-das-sequências" class="slide level2">
+<h2>Formatos de arquivo: além das sequências</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<!-- **PDB / mmCIF — estruturas 3D**
+
+```
+ATOM      1  N   MET A   1      
+  38.000  74.212  19.898  1.00
+ATOM      2  CA  MET A   1      
+  38.983  73.134  19.854  1.00
+```
+
+- Coordenadas $(x, y, z)$ por átomo
+- Arquivo médio: ~1–5 MB por estrutura
+- Banco: [rcsb.org](https://rcsb.org) — >220.000 estruturas -->
+<p><strong>GFF3 / GTF — anotação genômica</strong></p>
+<pre><code>chr1  Ensembl  gene  11869  14409  .  +
+  .  ID=ENSG00000223972</code></pre>
+<ul>
+<li>Define onde estão genes, éxons, UTRs</li>
+<li>Sempre associado a um genoma de referência</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Formatos de redes biológicas</strong></p>
+<pre><code># SIF (Simple Interaction Format)
+TP53  pp  MDM2
+TP53  pp  CDKN1A
+BRCA1 pp  TP53
+
+# GraphML / edge list (STRING DB)
+source  target  score
+9606.ENSP00000269305  
+9606.ENSP00000379512  0.999</code></pre>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Padrão de fato</strong></p>
+</div>
+<div class="callout-content">
+<p>Quase toda análise em bioinformática começa convertendo entre esses formatos. Saber ler e escrever FASTA, FASTQ e GFF é habilidade básica.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p>Não precisa entrar em detalhe técnico de todos os formatos. O ponto pedagógico é: cada tipo de dado biológico tem seu formato padrão, e esses formatos são a entrada dos algoritmos que vamos ver nos próximos blocos.</p>
+<p><strong>Dado prático para mencionar:</strong> o banco PDB tem hoje mais de 220.000 estruturas depositadas manualmente. Com o AlphaFold DB, esse número saltou para mais de 200 milhões de estruturas preditas, dois slides de diferença entre “o que a biologia experimental gerou em 50 anos” e “o que o aprendizado de máquina gerou em 2 anos”. Guarda esse gancho para o Bloco 7.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="bancos-de-dados-públicos" class="slide level2">
+<h2>Bancos de dados públicos</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Banco</th>
+<th>Conteúdo</th>
+<th>Referência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GenBank / NCBI</strong></td>
+<td>Sequências nucleotídicas</td>
+<td><span class="citation" data-cites="benson2013">Benson et al. (<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">2013</a>)</span></td>
+</tr>
+<tr class="even">
+<td><strong>UniProt / Swiss-Prot</strong></td>
+<td>Proteínas anotadas</td>
+<td><span class="citation" data-cites="uniprot2023">UniProt Consortium (<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">2023</a>)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>PDB</strong></td>
+<td>Estruturas 3D</td>
+<td><span class="citation" data-cites="berman2000">Berman et al. (<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">2000</a>)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Ensembl</strong></td>
+<td>Genomas anotados</td>
+<td><span class="citation" data-cites="cunningham2022">Cunningham et al. (<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">2022</a>)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>SRA</strong></td>
+<td>Dados brutos de NGS</td>
+<td><span class="citation" data-cites="leinonen2011">Leinonen et al. (<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">2011</a>)</span></td>
+</tr>
+<tr class="even">
+<td><strong>STRING</strong></td>
+<td>Redes de interação</td>
+<td><span class="citation" data-cites="szklarczyk2023">Szklarczyk et al. (<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">2023</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:45%;">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Ciência aberta na prática</strong></p>
+</div>
+<div class="callout-content">
+<p>Todo resultado publicado hoje exige depósito dos dados em banco público antes da aceitação do artigo.</p>
+<p>GenBank dobra de tamanho a cada ~18 meses desde 1982 <span class="citation" data-cites="benson2013">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Benson et al. 2013</a>)</span>. O SRA armazena atualmente mais de <strong>50 petabytes</strong> de dados de sequenciamento.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>Mensagem principal:</strong> esses bancos são infraestrutura científica global. São financiados publicamente (NCBI = NIH, EBI = EMBL) e de acesso livre.</p>
+<p><strong>Por que isso importa para biólogos:</strong> antes de fazer um experimento, vale verificar se o dado já existe depositado. A reanálise de dados públicos é uma área crescente e legítima de pesquisa.</p>
+<p><strong>Gancho para a próxima seção:</strong> “Agora que sabemos como a biologia vira dado, a pergunta é: o que fazemos com essas sequências? A operação mais fundamental é compará-las e é isso que o alinhamento faz.”</p>
+<p><strong>Nota sobre o SRA:</strong> o Sequence Read Archive do NCBI cresceu de forma exponencial com a queda do custo de sequenciamento. Hoje é um dos maiores repositórios científicos do mundo em volume de dados.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="bancos-de-dados-públicos-1" class="slide level2">
+<h2>Bancos de dados públicos</h2>
+
+<img data-src="images/image6.jpeg" class="quarto-figure quarto-figure-center r-stretch" width="600"></section>
+<section class="slide level2">
+
 </section></section>
 <section>
 <section id="alinhamento-de-sequências" class="title-slide slide level1 center">
-<h1>Alinhamento de Sequências</h1>
-
+<h1>Alinhamento de sequências</h1>
+<p>A operação fundamental da bioinformática clássica</p>
+<aside class="notes">
+<p><strong>Transição do bloco anterior:</strong> “Agora que sabemos que sequências são strings sobre um alfabeto finito e que existem bilhões delas depositadas em bancos públicos, a pergunta natural é: como <em>comparamos</em> essas sequências? É exatamente isso que o alinhamento faz.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="xxx" class="slide level2">
-<h2>XXX</h2>
+<section id="por-que-alinhar-sequências" class="slide level2">
+<h2>Por que alinhar sequências?</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Princípio central:</strong></p>
+<blockquote>
+<p>Sequências similares compartilham <strong>ancestral comum</strong> ou <strong>função conservada</strong></p>
+</blockquote>
+<pre><code>Humano: MVLSPADKTNVKAAW-GKVGAHAGEYGAEAL
+Rato:   MVLSGEDKSNIKAAW-GKIGGHGAEYGAEAL
+Galinha:MVLSAADKNNVKGIF-TKIAGHAEEYGAETL
+        ****  ** * ***  ** *  ** *****</code></pre>
+<ul>
+<li><code>*</code> posição 100% conservada</li>
+<li><code></code> substituição ou gap</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><strong>Dois tipos de alinhamento:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>Global</th>
+<th>Local</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Abrangência</td>
+<td>Sequência inteira</td>
+<td>Região de interesse</td>
+</tr>
+<tr class="even">
+<td>Método</td>
+<td>Needleman–Wunsch</td>
+<td>Smith–Waterman</td>
+</tr>
+<tr class="odd">
+<td>Uso típico</td>
+<td>Sequências homólogas</td>
+<td>Domínios, motivos</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Aplicações práticas</strong></p>
+</div>
+<div class="callout-content">
+<p>Busca em bancos de dados, inferência filogenética, anotação funcional, detecção de variantes.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p>O exemplo do alinhamento de hemoglobinas é ótimo para audiência de biologia, eles conhecem a proteína. Mencionar que esse alinhamento múltiplo foi o ponto de partida para entender que a hemoglobina de diferentes vertebrados descende de um ancestral comum.</p>
+<p><strong>Ponto conceitual importante:</strong> alinhamento é uma <em>hipótese</em> sobre homologia, não uma certeza. Um bom alinhamento computacional não prova ancestralidade, é evidência a ser interpretada.</p>
+<p>A distinção global/local vai ser usada nos dois slides seguintes para motivar Needleman–Wunsch e Smith–Waterman separadamente.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="por-que-alinhar-sequências-1" class="slide level2">
+<h2>Por que alinhar sequências?</h2>
+
+<img data-src="images/image7.jpeg" class="quarto-figure quarto-figure-center r-stretch" width="600"></section>
+<section id="programação-dinâmica-needlemanwunsch" class="slide level2">
+<h2>Programação dinâmica — Needleman–Wunsch</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>A recorrência:</strong></p>
+<p><span class="math display">\[F(i,j) = \max \begin{cases} F(i-1,\,j-1) + s(x_i, y_j) \\ F(i-1,\,j) - d \\ F(i,\,j-1) - d \end{cases}\]</span></p>
+<ul>
+<li><span class="math inline">\(s(x_i, y_j)\)</span>: score de match/mismatch</li>
+<li><span class="math inline">\(d\)</span>: penalidade de gap</li>
+<li>Preenchimento: linha por linha</li>
+<li><strong>Traceback:</strong> caminho de volta revela o alinhamento</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div style="margin-top: 200px;">
+
+</div>
+<p><strong>Exemplo</strong> (<span class="math inline">\(+1\)</span> match, <span class="math inline">\(-1\)</span> mismatch, <span class="math inline">\(-2\)</span> gap):</p>
+<pre><code>        A   C   G   T
+    0  -2  -4  -6  -8
+A  -2   1  -1  -3  -5
+G  -4  -1   0   0  -2
+T  -6  -3  -2  -1   1</code></pre>
+<p>Alinhamento ótimo:</p>
+<pre><code>ACGT
+A-GT   score = 1</code></pre>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~2 min</strong></p>
+<p><strong>Para a audiência de biologia:</strong> não precisa derivar a recorrência. O ponto é que a programação dinâmica garante encontrar o alinhamento ótimo, algo que força bruta nunca conseguiria em tempo razoável.</p>
+<p><strong>Intuição da tabela:</strong> cada célula responde “qual o melhor score para alinhar os primeiros <span class="math inline">\(i\)</span> caracteres de X com os primeiros <span class="math inline">\(j\)</span> de Y?”. As três opções da recorrência correspondem a: (1) alinhar <span class="math inline">\(x_i\)</span> com <span class="math inline">\(y_j\)</span>, (2) inserir um gap em Y, (3) inserir um gap em X.</p>
+<p><strong>Complexidade:</strong> O(n·m) em tempo e espaço, viável para sequências de centenas de aminoácidos, inviável para genomas inteiros.</p>
+<p><strong>Smith–Waterman:</strong> a única mudança é inicializar com 0 em vez de valores negativos, e zerar <span class="math inline">\(F(i,j)\)</span> se ficar negativo. Isso permite encontrar a melhor <em>sub-sequência</em> alinhada, não o alinhamento global completo. Vale mencionar que SW é mais sensível que NW para encontrar domínios conservados.</p>
+<p>Referências clássicas: <span class="citation" data-cites="needleman1970">Needleman and Wunsch (<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">1970</a>)</span> e <span class="citation" data-cites="smith1981">Smith and Waterman (<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">1981</a>)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="matrizes-de-substituição-e-penalidade-de-gap" class="slide level2">
+<h2>Matrizes de substituição e penalidade de gap</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<p><strong>Por que não usar +1/–1 simples?</strong></p>
+<p>Substituições não são equiprováveis:</p>
+<p><strong>BLOSUM62</strong> <span class="citation" data-cites="henikoff1992">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Henikoff and Henikoff 1992</a>)</span>:</p>
+<ul>
+<li>Derivada de blocos de alinhamentos reais (BLOCKS DB)</li>
+<li>O número indica identidade mínima usada (62%)</li>
+<li>Mais comum para proteínas divergentes</li>
+<li><strong>PAM</strong>: modelo evolutivo alternativo</li>
+</ul>
+</div><div class="column" style="width:48%;">
+<p><strong>Gap penalty</strong></p>
+<ul>
+<li>Gap open: custo de iniciar um gap</li>
+<li>Gap extend: custo de estender um gap existente</li>
+</ul>
+</div></div>
+<p>:::</p>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>BLOSUM vs PAM:</strong> ambas funcionam, mas BLOSUM62 tornou-se o padrão para buscas em bancos de proteínas porque foi derivada empiricamente de alinhamentos reais, não de um modelo evolutivo. Para proteínas muito similares, use BLOSUM80; para muito divergentes, BLOSUM45.</p>
+<p><strong>Gap affine:</strong> o gap open costuma ser 11 e o gap extend 1 no BLAST padrão para proteínas. Isso reflete a observação de que uma inserção/deleção de 5 aminoácidos numa proteína é biologicamente mais plausível do que cinco inserções/deleções independentes de 1 aminoácido cada.</p>
+<p><strong>Para engajar a turma:</strong> “como vocês decidiriam se uma substituição é conservadora ou radical?” isso leva à discussão de propriedades físico-químicas dos aminoácidos, terreno familiar para biologia.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="blast-escala-para-bilhões-de-sequências" class="slide level2">
+<h2>BLAST — escala para bilhões de sequências</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>O problema de escala:</strong></p>
+<ul>
+<li>GenBank: &gt; 4 × 10¹² bases (2024)</li>
+<li>NW contra o GenBank: <strong>inviável</strong></li>
+<li>BLAST <span class="citation" data-cites="altschul1990">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Altschul et al. 1990</a>)</span>: heurística em três etapas</li>
+</ul>
+<ol type="1">
+<li><strong>Seeding</strong> — encontra <em>words</em> (k-mers) de alto score na query</li>
+<li><strong>Extension</strong> — estende o alinhamento sem gaps (HSP)</li>
+<li><strong>Evaluation</strong> — calcula E-value e filtra resultados</li>
+</ol>
+</div><div class="column" style="width:45%;">
+<p><strong>E-value: a estatística do BLAST</strong></p>
+<p><span class="math display">\[E = m \cdot n \cdot e^{-\lambda S}\]</span></p>
+<ul>
+<li><span class="math inline">\(m\)</span>, <span class="math inline">\(n\)</span>: tamanhos da query e do banco</li>
+<li><span class="math inline">\(S\)</span>: bit-score do alinhamento</li>
+<li><span class="math inline">\(\lambda\)</span>: parâmetro normalizador</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Interpretando o E-value</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(E = 10^{-5}\)</span>: espera-se 0,00001 hit ao acaso num banco deste tamanho.</p>
+<p><strong>Não é p-value.</strong> Quanto menor, mais significativo.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>A heurística do BLAST:</strong> a ideia central é que alinhamentos biologicamente significativos geralmente contêm ao menos um trecho de k nucleotídeos (ou aminoácidos) sem gaps com score alto. O BLAST encontra esses trechos (“seeds”) de forma rápida com tabelas de hash, depois estende. Isso elimina a necessidade de calcular a matriz de programação dinâmica completa para cada sequência do banco.</p>
+<p><strong>E-value na prática:</strong> para busca de homólogos remotos, use E &lt; 1e-3. Para validação de hits em análises mais exploratórias, E &lt; 0,1 pode ser aceitável. Nunca reporte um hit como significativo sem checar o E-value.</p>
+<p><strong>Variantes do BLAST:</strong> - <code>blastn</code>: nucleotídeo × nucleotídeo - <code>blastp</code>: proteína × proteína - <code>blastx</code>: nucleotídeo (6 frames) × proteína - <code>tblastn</code>: proteína × nucleotídeo (6 frames) - <code>tblastx</code>: nucleotídeo (6 frames) × nucleotídeo (6 frames)</p>
+<p>Para alunos de biologia que vão usar o BLAST experimentalmente: o BLAST do NCBI online usa os mesmos algoritmos que a versão de linha de comando, a diferença é escala e automação.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="blast-escala-para-bilhões-de-sequências-1" class="slide level2">
+<h2>BLAST — escala para bilhões de sequências</h2>
+
+<img data-src="images/image8.png" class="quarto-figure quarto-figure-center r-stretch" width="600"></section>
+<section id="alinhamento-múltiplo-e-aplicações" class="slide level2">
+<h2>Alinhamento múltiplo e aplicações</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>MSA — Multiple Sequence Alignment</strong></p>
+<ul>
+<li>Estende o problema para <span class="math inline">\(N\)</span> sequências simultâneas</li>
+<li>Ótimo exato: <span class="math inline">\(O(2^N \cdot L^N)\)</span></li>
+<li><strong>Heurísticas progressivas:</strong>
+<ul>
+<li>MUSCLE <span class="citation" data-cites="edgar2004">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Edgar 2004</a>)</span></li>
+<li>MAFFT <span class="citation" data-cites="katoh2013">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Katoh and Standley 2013</a>)</span></li>
+</ul></li>
+</ul>
+<p><strong>Princípio:</strong> alinhar primeiro os pares mais similares, depois incorporar os demais (<em>guide tree</em>)</p>
+</div><div class="column" style="width:45%;">
+<p><strong>Aplicações do alinhamento</strong></p>
+<pre><code>MSA
+ ├── Inferência filogenética
+ │    └── (IQ-TREE, RAxML)
+ ├── Detecção de conservação
+ │    └── (pressão seletiva por sítio)
+ ├── Anotação funcional
+ │    └── (sítios ativos conservados)
+ └── Profile HMMs
+      └── (HMMER)</code></pre>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Limitação fundamental</strong></p>
+</div>
+<div class="callout-content">
+<p>Alinhamento assume que posições homólogas estão na <em>mesma coluna</em>. Rearranjos, duplicações e recombinações violam essa premissa.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>ClustalW vs MAFFT:</strong> ClustalW foi dominante por décadas mas é lento para muitas sequências. MAFFT e MUSCLE são as escolhas atuais para análises rotineiras; MUSCLE3 é rápido sem sacrificar muito em qualidade.</p>
+<p><strong>Conexão com o próximo bloco:</strong> o slide fecha com “Profile HMMs → Bloco 5”. Mencionar verbalmente: “O MSA não é o fim é a <em>entrada</em> para muitos outros métodos. Um dos mais poderosos é o Profile HMM, que veremos em breve.”</p>
+<p><strong>Limitação:</strong> é importante que alunos de biologia entendam que quando uma região de um gene sofreu rearranjo, inserção de transposon, ou conversão gênica, o alinhamento pode produzir colunas biologicamente sem sentido. Isso não é falha do algoritmo é uma limitação inerente à representação.</p>
+<p>“O alinhamento é poderoso, mas tem um custo computacional que cresce com o tamanho das sequências. Quando precisamos comparar genomas inteiros ou milhões de reads de metagenômica, precisamos de uma abordagem diferente e é aí que entram os métodos livres de alinhamento.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
 </section></section>
 <section>
 <section id="métodos-livres-de-alinhamento" class="title-slide slide level1 center">
-<h1>Métodos Livres de Alinhamento</h1>
-
+<h1>Métodos livres de alinhamento</h1>
+<p>Escalando para genomas, metagenomas e além</p>
+<aside class="notes">
+<p><strong>Transição do bloco anterior:</strong> “Vimos que o alinhamento por programação dinâmica é ótimo mas tem preço. O custo O(n·m) que funciona perfeitamente para comparar duas proteínas se torna proibitivo quando a escala vai para metagenômica e genômica. Como resolvemos isso?”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="xxx-1" class="slide level2">
-<h2>XXX</h2>
+<section id="o-problema-de-escala" class="slide level2">
+<h2>O problema de escala</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Onde o alinhamento falha:</strong></p>
+<ul>
+<li><strong>Metagenômica:</strong> classificar <span class="math inline">\(10^7\)</span> reads contra <span class="math inline">\(10^5\)</span> genomas de referência</li>
+<li><strong>Montagem de novo:</strong> comparar todos os pares de <span class="math inline">\(10^9\)</span> reads curtos</li>
+<li><strong>Genômica comparativa:</strong> distância entre 10.000 genomas bacterianos</li>
+</ul>
+<p><strong>Custo do alinhamento par-a-par:</strong></p>
+<p><span class="math display">\[T(n, m) = O(n \cdot m)\]</span></p>
+</div><div class="column" style="width:45%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Método</th>
+<th>Complexidade</th>
+<th>Escalabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Smith–Waterman</td>
+<td><span class="math inline">\(O(n \cdot m)\)</span></td>
+<td>✗ Genomas</td>
+</tr>
+<tr class="even">
+<td>BLAST</td>
+<td><span class="math inline">\(O(n \cdot m \cdot \varepsilon)\)</span></td>
+<td>△ Moderada</td>
+</tr>
+<tr class="odd">
+<td><strong>k-mer / Mash</strong></td>
+<td><span class="math inline">\(O(n + m)\)</span></td>
+<td>✓ Metagenômica</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição</strong></p>
+</div>
+<div class="callout-content">
+<p>Métodos livres de alinhamento trocam <em>precisão de posição</em> por <em>velocidade e escalabilidade</em> a pergunta deixa de ser “onde essas sequências diferem?” e passa a ser “o quão parecidas elas são?”.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p>Com <span class="math inline">\(n = m = 3 \times 10^9\)</span> (genoma humano): <span class="math display">\[T \approx 9 \times 10^{18} \text{ operações}\]</span></p>
+<p><strong>Para motivar a transição:</strong> pergunte à turma “quantas comparações par-a-par são necessárias para comparar 1.000 genomas entre si?” A resposta é C(1000,2) = 499.500. Com alinhamento, isso é fisicamente inviável em tempo hábil. Com k-mers, é possível em minutos em um laptop.</p>
+<p><strong>Ponto pedagógico:</strong> não é que o alinhamento seja “ruim” é que existe a ferramenta certa para cada escala e pergunta. Para confirmar a identidade de dois genes homólogos, alinhamento é o caminho. Para triagem rápida de um metagenoma inteiro, k-mers são a escolha.</p>
+<p>O <span class="math inline">\(\varepsilon\)</span> no BLAST representa a fração da matriz de DP que é realmente calculada (por causa do seeding). Ainda assim, para comparação de genomas inteiros, é lento demais.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="k-mers-a-unidade-fundamental" class="slide level2">
+<h2>k-mers: a unidade fundamental</h2>
+
+<img data-src="images/image9.png" class="quarto-figure quarto-figure-center r-stretch" width="600"></section>
+<section id="k-mers-a-unidade-fundamental-1" class="slide level2">
+<h2>k-mers: a unidade fundamental</h2>
+<p><strong>Definição:</strong></p>
+<p>Dado uma sequência <span class="math inline">\(S\)</span> de comprimento <span class="math inline">\(L\)</span> e um inteiro <span class="math inline">\(k\)</span>, os <strong>k-mers</strong> são todas as subsequências contíguas de comprimento <span class="math inline">\(k\)</span>:</p>
+<p><span class="math display">\[\text{k-mers}(S) = \{S[i \,{:}\, i+k] \mid 0 \leq i \leq L - k\}\]</span></p>
+<p><strong>Exemplo</strong> (<span class="math inline">\(k = 3\)</span>):</p>
+<pre><code>S = G A T T A C A
+    ├──┤           GAT
+      ├──┤         ATT
+        ├──┤       TTA
+          ├──┤     TAC
+            ├──┤   ACA</code></pre>
+<p>Total: <span class="math inline">\(L - k + 1 = 7 - 3 + 1 = 5\)</span> k-mers</p>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>A assinatura genômica é real:</strong> composições de dinucleotídeos e tetranucleotídeos variam entre organismos de forma suficientemente consistente para permitir classificação taxonômica. Isso foi observado empiricamente antes dos métodos computacionais, bactérias de ambientes extremos, por exemplo, têm composições GC muito distintas.</p>
+<p><strong>Por que k-mers funcionam?</strong> Dois genomas evolutivamente próximos compartilham a maioria dos seus k-mers (com k suficientemente grande). Dois genomas distantes têm poucos k-mers em comum. Isso é o princípio por trás do Mash e do Kraken2.</p>
+<p><strong>Sobre o tamanho de k:</strong> com <span class="math inline">\(k = 31\)</span>, a probabilidade de que um 31-mer específico apareça ao acaso em outro genoma é <span class="math inline">\(4^{-31} \approx 10^{-19}\)</span>, praticamente nula. Por isso k-mers grandes são muito específicos e permitem classificação taxonômica confiável.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="k-mers-a-unidade-fundamental-2" class="slide level2">
+<h2>k-mers: a unidade fundamental</h2>
+<p><strong>Vetor de frequências como assinatura:</strong></p>
+<p>Para <span class="math inline">\(k = 2\)</span>, DNA: <span class="math inline">\(4^2 = 16\)</span> possíveis 2-mers</p>
+<pre><code>         AA AC AG AT CA CG CT ...
+Genoma A [0  3  1  2  0  4  1 ...]
+Genoma B [0  3  1  1  0  4  2 ...]
+Genoma C [2  0  3  0  1  0  3 ...]</code></pre>
+<ul>
+<li>A e B têm perfis similares → provavelmente relacionados</li>
+<li>C tem perfil distinto → organismo diferente</li>
+</ul>
+<p><strong>Escolha de <span class="math inline">\(k\)</span>:</strong></p>
+<ul>
+<li><span class="math inline">\(k\)</span> pequeno: rápido, mas inespecífico (<span class="math inline">\(4^4 = 256\)</span> possíveis)</li>
+<li><span class="math inline">\(k\)</span> grande: específico, mas memória cresce (<span class="math inline">\(4^{21} \approx 4 \times 10^{12}\)</span>)</li>
+<li>Prática: <span class="math inline">\(k = 21\)</span>–<span class="math inline">\(31\)</span> para classificação taxonômica</li>
+</ul>
+</section>
+<section id="aplicações-kraken2-jellyfish-e-minhash" class="slide level2">
+<h2>Aplicações: Kraken2, Jellyfish e MinHash</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Kraken2</strong> — classificação taxonômica <span class="citation" data-cites="wood2019">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Wood, Lu, and Langmead 2019</a>)</span></p>
+<ul>
+<li>Mapeia cada k-mer de um read ao nó mais específico da árvore taxonômica que contém esse k-mer</li>
+<li>Banco de dados: k-mers de todos os genomas de referência (NCBI RefSeq)</li>
+<li>Velocidade: <span class="math inline">\(&gt; 10^6\)</span> reads/segundo em laptop comum</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Jellyfish</strong> — contagem de k-mers <span class="citation" data-cites="marcais2011">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Marçais and Kingsford 2011</a>)</span></p>
+<ul>
+<li>Contagem paralela e eficiente de k-mers em FASTQ</li>
+<li>Histograma de frequências → estimativa do tamanho do genoma</li>
+</ul>
+<p><span class="math display">\[G \approx \frac{N - E}{M}\]</span></p>
+<p>onde <span class="math inline">\(N\)</span> = total de k-mers, <span class="math inline">\(E\)</span> = k-mers com erro, <span class="math inline">\(M\)</span> = cobertura média</p>
+</div></div>
+<p>:::</p>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>Kraken2 na prática:</strong> é hoje o padrão para análises de microbioma e metagenômica. Um dos gargalos não é tempo de CPU, mas memória RAM: o banco de dados de k-mers do RefSeq completo ocupa ~70 GB de RAM. Existe uma versão de banco reduzido (~8 GB) para análises exploratórias.</p>
+<p><strong>Jellyfish e tamanho de genoma:</strong> o histograma de frequências de k-mers tem um pico no valor de cobertura média. K-mers com frequência 1 são provavelmente erros de sequenciamento. Este é um método padrão para estimar tamanho de genoma <em>antes</em> da montagem relevante para projetos de sequenciamento de organismos não-modelo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="aplicações-kraken2-jellyfish-e-minhash-1" class="slide level2">
+<h2>Aplicações: Kraken2, Jellyfish e MinHash</h2>
+<p><strong>MinHash / Mash</strong> — comparação em escala <span class="citation" data-cites="ondov2016">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Ondov et al. 2016</a>)</span></p>
+<ol type="1">
+<li>Extraia todos os k-mers de dois genomas</li>
+<li>Aplique uma função hash a cada k-mer</li>
+<li>Retenha apenas os <span class="math inline">\(s\)</span> menores hashes (<strong>sketch</strong>)</li>
+<li>Estime a similaridade de Jaccard:</li>
+<li>Converta para distância evolutiva:</li>
+</ol>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Resultado prático</strong></p>
+</div>
+<div class="callout-content">
+<p>Comparar 10.000 genomas bacterianos par-a-par com Mash leva <strong>minutos</strong>, com BLAST, levaria meses.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>MinHash:</strong> a elegância do método é que o sketch é muito menor que o conjunto original de k-mers, tipicamente <span class="math inline">\(s = 1000\)</span> hashes representam um genoma inteiro com boa precisão estatística. A estimativa de Jaccard a partir do sketch tem erro controlado: <span class="math inline">\(SE(\hat{J}) \approx \sqrt{J(1-J)/s}\)</span>.</p>
+<p><strong>Conexão com Machine Learning:</strong> vetores de frequência de k-mers são <em>features</em> naturais para ML e esse gancho vai aparecer no Bloco 7.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="distâncias-baseadas-em-compressão" class="slide level2">
+<h2>Distâncias baseadas em compressão</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Complexidade de Kolmogorov</strong> <span class="citation" data-cites="li2004">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Li and Vitányi 2004</a>)</span></p>
+<p>A complexidade <span class="math inline">\(K(x)\)</span> de uma string <span class="math inline">\(x\)</span> é o comprimento do menor programa que a gera</p>
+<p><strong>Intuição central:</strong></p>
+<blockquote>
+<p>Sequências similares contêm informação redundante entre si, comprimem <em>melhor juntas</em> do que separadas.</p>
+</blockquote>
+</div><div class="column" style="width:45%;">
+<p><strong>NCD — Normalized Compression Distance</strong> <span class="citation" data-cites="cilibrasi2005">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Cilibrasi and Vitányi 2005</a>)</span></p>
+<p><strong>Vantagem</strong></p>
+<blockquote>
+<p>Não requer alinhamento nem banco de referência. Funciona para qualquer tipo de sequência DNA, proteínas, linguagem natural, música.</p>
+</blockquote>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>Por que Kolmogorov na bioinformática?</strong> Porque a complexidade de Kolmogorov é a medida teórica de <em>quantidade de informação</em> de uma string. Duas sequências biologicamente relacionadas compartilham informação (ancestral comum) e, portanto, têm menor complexidade conjunta do que a soma das complexidades individuais.</p>
+<p><strong>Limitação prática:</strong> a NCD depende do compressor usado. Compressores diferentes dão resultados ligeiramente diferentes. Para sequências biológicas, LZW (base do gzip) funciona bem; para sequências longas, bzip2 (baseado em Burrows-Wheeler) costuma ser mais preciso.</p>
+<p><strong>Aplicação real:</strong> o artigo de Cilibrasi &amp; Vitányi (2005) usou NCD para reconstruir árvores filogenéticas de vírus, mitocôndrias e genomas completos sem nenhum alinhamento e os resultados foram comparáveis aos de métodos clássicos baseados em alinhamento.</p>
+<p><strong>Para a audiência:</strong> a mensagem que fica é: “informação compartilhada entre sequências ≈ história evolutiva compartilhada”. O compressor é apenas o instrumento de medição.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="escalabilidade-alinhamento-vs.-k-mer" class="slide level2">
+<h2>Escalabilidade: alinhamento vs.&nbsp;k-mer</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="864"><aside class="notes">
+<p><strong>Tempo: ~30 s</strong></p>
+<p>O gráfico é propositalmente em escala log–log para que as diferenças de ordem de grandeza fiquem visíveis. Na escala linear, Smith–Waterman desapareceria no eixo enquanto k-mer ainda seria uma linha reta.</p>
+<p><strong>Mensagem rápida para o slide:</strong> “Na região sombreada, que corresponde à escala de um experimento de metagenômica típico, Smith–Waterman é inviável, BLAST é lento, e k-mer escala linearmente.”</p>
+<p><strong>Nota técnica:</strong> os tempos no gráfico são relativos (normalizados arbitrariamente), o ponto é a <em>inclinação</em> das curvas em escala log, não os valores absolutos. Em log–log, O(n) é uma reta de inclinação 1, O(n log n) de inclinação ~1 (ligeiramente curva), e O(n²) de inclinação 2.</p>
+<p><strong>Transição para o Bloco 5:</strong> “Voltamos agora à análise de sequências individuais, mas com uma abordagem probabilística. Quando queremos não só comparar, mas <em>modelar</em> a estrutura estatística de famílias de sequências, a ferramenta são os Hidden Markov Models.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
 </section></section>
 <section>
-<section id="modelos-probabilísticos" class="title-slide slide level1 center">
-<h1>Modelos Probabilísticos</h1>
-
+<section id="modelos-probabilísticos-hmms" class="title-slide slide level1 center">
+<h1>Modelos probabilísticos: HMMs</h1>
+<p>Quando a biologia tem estados que não podemos observar diretamente</p>
+<aside class="notes">
+<p><strong>Transição do bloco anterior:</strong> “Até agora trabalhamos com métodos que olham diretamente para as sequências, alinhamento, k-mers, compressão. Agora vamos um nível acima: e se a sequência que observamos for apenas a <em>superfície</em> de um processo mais profundo que não enxergamos? Esse é o território dos modelos ocultos de Markov.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="xxx-2" class="slide level2">
-<h2>XXX</h2>
+<section id="modelos-probabilísticos-hmms-1" class="slide level2">
+<h2>Modelos probabilísticos: HMMs</h2>
+
+<img data-src="images/image10.png" class="quarto-figure quarto-figure-center r-stretch" width="600"></section>
+<section id="a-intuição-o-que-está-escondido" class="slide level2">
+<h2>A intuição: o que está <em>escondido</em>?</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>O problema central em biologia:</strong></p>
+<p>Observamos nucleotídeos. O que <em>não</em> observamos:</p>
+<ul>
+<li>Se estamos numa <strong>ilha CpG</strong> ou num região comum</li>
+<li>Se um trecho é <strong>éxon</strong>, <strong>íntron</strong> ou região intergênica</li>
+<li>Se uma posição numa proteína pertence a um <strong>domínio funcional</strong></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><strong>Estrutura geral:</strong></p>
+<pre><code>Estados ocultos:
+  ┌───┐  a₁₁  ┌───┐
+  │ S₁│ ←───→ │ S₂│
+  └─┬─┘       └─┬─┘
+    │ b₁(x)     │ b₂(x)
+    ↓           ↓
+Observações:
+  A T C G ...  A T C G ...</code></pre>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Analogia da gramática</strong></p>
+</div>
+<div class="callout-content">
+<p>Um HMM é uma <strong>gramática probabilística</strong>: estados são categorias gramaticais, transições são regras sintáticas, emissões são as palavras. A sequência de DNA é o texto, a estrutura subjacente é o que queremos descobrir.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>A analogia da gramática</strong> é a mais acessível para alunos de biologia. Explique assim: “Em português, um sujeito pode ser seguido de verbo, e um verbo pode ser seguido de objeto, isso é uma transição. Cada categoria gramatical produz certas palavras com certas probabilidades, isso é emissão. Dado uma frase, podemos <em>inferir</em> a estrutura gramatical mesmo sem marcadores explícitos. O HMM faz exatamente isso com sequências biológicas.”</p>
+<p><strong>Por que Markov?</strong> A propriedade de Markov diz que o próximo estado depende <em>apenas</em> do estado atual, não do histórico completo. Isso é uma simplificação, a biologia é mais complexa, mas é suficiente para capturar muita estrutura real.</p>
+<p><strong>Por que oculto?</strong> Porque os estados (éxon, íntron, ilha CpG) não estão escritos na sequência, precisamos <em>inferir</em> qual estado gerou cada posição. Se os estados fossem observáveis, seria um simples modelo de Markov.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-intuição-o-que-está-escondido-1" class="slide level2">
+<h2>A intuição: o que está <em>escondido</em>?</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Um HMM é definido por três componentes:</strong></p>
+<p><span class="math display">\[\lambda = (A,\; B,\; \pi)\]</span></p>
+<ul>
+<li><span class="math inline">\(A\)</span>: matriz de <strong>transição</strong> entre estados ocultos</li>
+<li><span class="math inline">\(B\)</span>: matriz de <strong>emissão</strong> (símbolo observado dado o estado)</li>
+<li><span class="math inline">\(\pi\)</span>: distribuição de <strong>estados iniciais</strong></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><strong>Estrutura geral:</strong></p>
+<pre><code>Estados ocultos:
+  ┌───┐  a₁₁  ┌───┐
+  │ S₁│ ←───→ │ S₂│
+  └─┬─┘       └─┬─┘
+    │ b₁(x)     │ b₂(x)
+    ↓           ↓
+Observações:
+  A T C G ...  A T C G ...</code></pre>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Analogia da gramática</strong></p>
+</div>
+<div class="callout-content">
+<p>Um HMM é uma <strong>gramática probabilística</strong>: estados são categorias gramaticais, transições são regras sintáticas, emissões são as palavras. A sequência de DNA é o texto, a estrutura subjacente é o que queremos descobrir.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>A analogia da gramática</strong> é a mais acessível para alunos de biologia. Explique assim: “Em português, um sujeito pode ser seguido de verbo, e um verbo pode ser seguido de objeto, isso é uma transição. Cada categoria gramatical produz certas palavras com certas probabilidades, isso é emissão. Dado uma frase, podemos <em>inferir</em> a estrutura gramatical mesmo sem marcadores explícitos. O HMM faz exatamente isso com sequências biológicas.”</p>
+<p><strong>Por que Markov?</strong> A propriedade de Markov diz que o próximo estado depende <em>apenas</em> do estado atual, não do histórico completo. Isso é uma simplificação, a biologia é mais complexa, mas é suficiente para capturar muita estrutura real.</p>
+<p><strong>Por que oculto?</strong> Porque os estados (éxon, íntron, ilha CpG) não estão escritos na sequência, precisamos <em>inferir</em> qual estado gerou cada posição. Se os estados fossem observáveis, seria um simples modelo de Markov.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="exemplo-ilhas-cpg" class="slide level2">
+<h2>Exemplo: ilhas CpG</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<p><strong>Dois estados ocultos:</strong></p>
+<ul>
+<li><strong>I</strong> (island): região com CpG não metilado, GC-rica</li>
+<li><strong>N</strong> (non-island): resto do genoma, CpG suprimido por metilação</li>
+</ul>
+<p><strong>Probabilidades de emissão <span class="math inline">\(B\)</span>:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Base</th>
+<th style="text-align: center;">P(base | <strong>I</strong>)</th>
+<th style="text-align: center;">P(base | <strong>N</strong>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">0.30</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">0.20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">0.20</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">0.30</td>
+</tr>
+</tbody>
+</table>
+<p><em>(versão simplificada — modelos reais usam dinucleotídeos)</em></p>
+</div><div class="column" style="width:48%;">
+<p><strong>Probabilidades de transição <span class="math inline">\(A\)</span>:</strong></p>
+<pre><code>           → I      → N
+De I      0.90    0.10
+De N      0.02    0.98</code></pre>
+<p><strong>Interpretação biológica:</strong></p>
+<ul>
+<li>De I → I (0.90): ilhas são regiões contíguas longas</li>
+<li>De N → N (0.98): a maior parte do genoma é não-ilha</li>
+<li>De N → I (0.02): transições são raras, fronteiras bem definidas</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>Por que CpG é suprimido fora das ilhas?</strong> Citosinas em contexto CpG podem ser metiladas (5-metilcitosina). Metilcitosina desaminada espontaneamente vira timina, causando mutação C→T. Ao longo da evolução, regiões metiladas acumulam mutações C→T, suprimindo CpG. Ilhas CpG escapam dessa pressão por serem geralmente não metiladas (regiões promotoras ativas).</p>
+<p><strong>Conexão com epigenética:</strong> ilhas CpG são biologicamente importantes, ~60% dos promotores de genes humanos estão associados a ilhas CpG. Hipermetilação de ilhas CpG em promotores é um mecanismo de silenciamento gênico em câncer.</p>
+<p><strong>O modelo simplificado aqui usa emissões de nucleotídeos simples.</strong> Na prática (como no artigo clássico de Durbin et al., 1998), usa-se emissões de dinucleotídeos para capturar melhor a supressão de CpG. O princípio é o mesmo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="exemplo-ilhas-cpg-1" class="slide level2">
+<h2>Exemplo: ilhas CpG</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<p><strong>Dois estados ocultos:</strong></p>
+<ul>
+<li><strong>I</strong> (island): região com CpG não metilado, GC-rica</li>
+<li><strong>N</strong> (non-island): resto do genoma, CpG suprimido por metilação</li>
+</ul>
+<p><strong>Probabilidades de emissão <span class="math inline">\(B\)</span>:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Base</th>
+<th style="text-align: center;">P(base | <strong>I</strong>)</th>
+<th style="text-align: center;">P(base | <strong>N</strong>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">0.30</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">0.20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">0.20</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">0.30</td>
+</tr>
+</tbody>
+</table>
+<p><em>(versão simplificada — modelos reais usam dinucleotídeos)</em></p>
+</div><div class="column" style="width:48%;">
+<p><strong>Probabilidades de transição <span class="math inline">\(A\)</span>:</strong></p>
+<pre><code>           → I      → N
+De I      0.90    0.10
+De N      0.02    0.98</code></pre>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>A pergunta do HMM</strong></p>
+</div>
+<div class="callout-content">
+<p>Dada a sequência observada <code>ACGCGCGTATAT...</code>, qual a sequência mais provável de estados <strong>I/N</strong> que a gerou?</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>Por que CpG é suprimido fora das ilhas?</strong> Citosinas em contexto CpG podem ser metiladas (5-metilcitosina). Metilcitosina desaminada espontaneamente vira timina — causando mutação C→T. Ao longo da evolução, regiões metiladas acumulam mutações C→T, suprimindo CpG. Ilhas CpG escapam dessa pressão por serem geralmente não metiladas (regiões promotoras ativas).</p>
+<p><strong>Conexão com epigenética:</strong> ilhas CpG são biologicamente importantes — ~60% dos promotores de genes humanos estão associados a ilhas CpG. Hipermetilação de ilhas CpG em promotores é um mecanismo de silenciamento gênico em câncer.</p>
+<p><strong>O modelo simplificado aqui usa emissões de nucleotídeos simples.</strong> Na prática (como no artigo clássico de Durbin et al., 1998), usa-se emissões de dinucleotídeos para capturar melhor a supressão de CpG. O princípio é o mesmo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="os-três-problemas-do-hmm" class="slide level2">
+<h2>Os três problemas do HMM</h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><strong>1. Avaliação</strong><br>
+<em>“Qual a probabilidade desta sequência dado o modelo?”</em><br>
+<strong>Algoritmo Forward</strong></p>
+<p>Soma sobre todos os caminhos possíveis de estados que poderiam ter gerado a sequência.</p>
+<p>Útil para: comparar qual modelo (organismo) melhor explica um read.</p>
+</div><div class="column" style="width:33%;">
+<p><strong>2. Decodificação</strong><br>
+<em>“Qual a sequência de estados mais provável?”</em></p>
+<p><strong>Algoritmo de Viterbi</strong></p>
+<p>Programação dinâmica: encontra o caminho de estados com maior probabilidade conjunta.</p>
+<p>Útil para: anotar regiões — éxon, íntron, CpG, domínio.</p>
+</div><div class="column" style="width:33%;">
+<p><strong>3. Treinamento</strong><br>
+<em>“Quais parâmetros melhor explicam os dados?”</em><br>
+<strong>Baum–Welch (EM)</strong></p>
+<p>EM: itera entre estimar os estados ocultos e re-estimar os parâmetros.</p>
+<p>Útil para: aprender um modelo a partir de sequências sem anotação.</p>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>Viterbi vs.&nbsp;Forward:</strong> Viterbi encontra o <em>melhor</em> caminho único (max-product); Forward soma <em>todos</em> os caminhos possíveis (sum-product). Para anotação biológica (onde está o éxon?), usamos Viterbi. Para pontuação de uma sequência contra um modelo de família proteica, usamos Forward.</p>
+<p><strong>Baum–Welch:</strong> é um caso especial do algoritmo EM (Expectation-Maximization). O passo E estima a probabilidade de cada estado em cada posição; o passo M re-estima os parâmetros <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(\pi\)</span> usando essas probabilidades como pesos. Converge a um ótimo local, não garantidamente global.</p>
+<p><strong>Para a audiência:</strong> “Esses três algoritmos, Forward, Viterbi, Baum-Welch, aparecem em praticamente todo software de bioinformática que usa HMMs. Você não precisa implementá-los, mas saber <em>para que servem</em> muda a forma como você interpreta os resultados.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="os-três-problemas-do-hmm-1" class="slide level2">
+<h2>Os três problemas do HMM</h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><strong>1. Avaliação</strong><br>
+<em>“Qual a probabilidade desta sequência dado o modelo?”</em><br>
+<strong>Algoritmo Forward</strong></p>
+</div><div class="column" style="width:33%;">
+<p><strong>2. Decodificação</strong><br>
+<em>“Qual a sequência de estados mais provável?”</em></p>
+<p><strong>Algoritmo de Viterbi</strong></p>
+</div><div class="column" style="width:33%;">
+<p><strong>3. Treinamento</strong><br>
+<em>“Quais parâmetros melhor explicam os dados?”</em><br>
+<strong>Baum–Welch (EM)</strong></p>
+</div></div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Viterbi na prática</strong></p>
+</div>
+<div class="callout-content">
+<p>É análogo à programação dinâmica do alinhamento, preenche uma matriz de scores, mas agora as linhas são <strong>estados</strong> e as colunas são <strong>posições na sequência</strong>.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>Viterbi vs.&nbsp;Forward:</strong> Viterbi encontra o <em>melhor</em> caminho único (max-product); Forward soma <em>todos</em> os caminhos possíveis (sum-product). Para anotação biológica (onde está o éxon?), usamos Viterbi. Para pontuação de uma sequência contra um modelo de família proteica, usamos Forward.</p>
+<p><strong>Baum–Welch:</strong> é um caso especial do algoritmo EM (Expectation-Maximization). O passo E estima a probabilidade de cada estado em cada posição; o passo M re-estima os parâmetros <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(\pi\)</span> usando essas probabilidades como pesos. Converge a um ótimo local, não garantidamente global.</p>
+<p><strong>Para a audiência:</strong> “Esses três algoritmos, Forward, Viterbi, Baum-Welch, aparecem em praticamente todo software de bioinformática que usa HMMs. Você não precisa implementá-los, mas saber <em>para que servem</em> muda a forma como você interpreta os resultados.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="profile-hmms-e-hmmer" class="slide level2">
+<h2>Profile HMMs e HMMER</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Da MSA ao Profile HMM</strong> <span class="citation" data-cites="eddy2011">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Eddy 2011</a>)</span>:</p>
+<pre><code>MSA de 3 sequências:
+  seq1  ACDEFGHIKLM
+  seq2  ACD--GHIKLM
+  seq3  ACDEFGHIK-M
+       ↓  ↓  ↓  ↓  ↓
+       M  D  M  I  M   ← tipo de estado</code></pre>
+<p>Cada coluna da MSA vira um <strong>estado de match (M)</strong>:</p>
+<ul>
+<li>Probabilidades de emissão = frequência de aminoácidos na coluna</li>
+<li>Colunas com muitos gaps → <strong>estado de deleção (D)</strong></li>
+<li>Inserções entre colunas → <strong>estado de inserção (I)</strong></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><strong>Estrutura do Profile HMM:</strong></p>
+<pre><code>     M₁ → M₂ → M₃ → ... → Mₙ
+    ↗↑↘  ↗↑↘  ↗↑↘        ↗↑↘
+  I₀  D₁  I₁  D₂  I₂  ...  Dₙ</code></pre>
+<p><strong>HMMER</strong> — busca de homólogos distantes:</p>
+<ul>
+<li>Muito mais sensível que BLAST para proteínas divergentes</li>
+<li>Pfam: banco de &gt; 19.000 famílias de domínios como Profile HMMs <span class="citation" data-cites="mistry2021">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Mistry et al. 2021</a>)</span></li>
+</ul>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>Por que Profile HMMs são mais sensíveis que BLAST?</strong> Porque capturam a <em>variabilidade</em> de cada posição na família. Uma posição que aceita Lys ou Arg (mas nunca Pro) terá emissões altas para K e R e quase zero para P. O BLAST trata cada aminoácido como uma substituição genérica usando BLOSUM, o Profile HMM usa a distribuição real aprendida dos dados.</p>
+<p><strong>Pfam na prática:</strong> quando você roda InterPro ou HMMER em uma proteína nova, está comparando ela contra milhares de Profile HMMs. O resultado é uma anotação de domínios, “essa proteína tem um domínio kinase C-terminal e um domínio de ligação a ATP N-terminal”. Isso é muito mais informativo do que um BLAST hit genérico.</p>
+<p><strong>Stochasic e Stockholm format (.sto):</strong> o HMMER usa o formato Stockholm para MSA de entrada, similar ao FASTA mas com anotações de conservação por coluna. Vale mencionar brevemente para alunos que forem usar a ferramenta.</p>
+<p><strong>Conexão com o próximo bloco:</strong> Profile HMMs são modelos de sequências lineares. E quando o que queremos modelar é uma <em>rede</em> de interações, não uma sequência, mas um grafo? Esse é o tema do Bloco 6.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="aplicações-dos-hmms-em-biologia" class="slide level2">
+<h2>Aplicações dos HMMs em biologia</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Predição de genes</strong> <span class="citation" data-cites="stanke2008">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Stanke et al. 2008</a>)</span></p>
+<pre><code>Genoma:
+──────[éxon]──[íntron]──[éxon]──
+        ↑                  ↑
+   estado M           estado M
+   (alta prob.         (alta prob.
+    de códon)           de códon)
+
+Ferramentas: GENSCAN, Augustus, GlimmerHMM</code></pre>
+<p><strong>Detecção de ilhas CpG</strong></p>
+<ul>
+<li>Identificação de promotores e regiões regulatórias</li>
+<li>Relevante para epigenômica e estudo de expressão gênica</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Anotação de domínios funcionais</strong></p>
+<ul>
+<li>Pfam + HMMER: ~80% das proteínas humanas têm ao menos um domínio anotado</li>
+<li>InterPro integra múltiplos bancos de Profile HMMs</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>Predição de genes como HMM:</strong> o modelo tem estados para: região intergênica, início de gene (ATG), éxon, sítio doador de splicing (5’), íntron, sítio aceptor (3’), éxon continuado, stop codon, fim de gene. As transições codificam as restrições biológicas (éxon não pode ir diretamente para outro éxon sem íntron, etc.). Augustus, por exemplo, treina esses parâmetros de forma específica para cada organismo.</p>
+<p><strong>Covariance Models (CMs):</strong> são HMMs em árvore, não lineares. Eles modelam tanto a sequência quanto a estrutura secundária de RNA, capturando pares de bases complementares. O Rfam usa CMs para anotar tRNAs, rRNAs, riboswitches, miRNAs, etc.</p>
+<p><strong>Gancho para Bloco 7:</strong> “A limitação dos HMMs é que a propriedade de Markov restringe a memória, o estado atual depende apenas do estado anterior. RNNs e Transformers superam isso, mantendo contexto de sequência muito mais longo. Mas o princípio de <em>estado latente que gera observações</em> continua sendo o mesmo.”</p>
+<p><strong>Transição para o Bloco 6:</strong> “HMMs modelam sequências lineares de DNA e proteínas. Mas a biologia é cheia de relações não-lineares, proteínas que interagem, genes que se regulam mutuamente, metabolitos conectados em vias. Para isso, precisamos de outra linguagem matemática: grafos e redes.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="aplicações-dos-hmms-em-biologia-1" class="slide level2">
+<h2>Aplicações dos HMMs em biologia</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Predição de genes</strong> <span class="citation" data-cites="stanke2008">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Stanke et al. 2008</a>)</span></p>
+<pre><code>Genoma:
+──────[éxon]──[íntron]──[éxon]──
+        ↑                  ↑
+   estado M           estado M
+   (alta prob.         (alta prob.
+    de códon)           de códon)
+
+Ferramentas: GENSCAN, Augustus, GlimmerHMM</code></pre>
+<p><strong>Detecção de ilhas CpG</strong></p>
+<ul>
+<li>Identificação de promotores e regiões regulatórias</li>
+<li>Relevante para epigenômica e estudo de expressão gênica</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Estrutura de RNA</strong></p>
+<ul>
+<li>Covariance Models (CMs): extensão dos HMMs para capturar pares de bases</li>
+<li>Rfam: banco de famílias de RNA não-codificante <span class="citation" data-cites="kalvari2021">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Kalvari et al. 2021</a>)</span></li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>HMMs como fundação</strong></p>
+</div>
+<div class="callout-content">
+<p>Redes neurais recorrentes (RNNs) e Transformers podem ser entendidos como generalizações não-lineares dos HMMs, com capacidade de capturar dependências de longo alcance que HMMs clássicos não conseguem.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>Predição de genes como HMM:</strong> o modelo tem estados para: região intergênica, início de gene (ATG), éxon, sítio doador de splicing (5’), íntron, sítio aceptor (3’), éxon continuado, stop codon, fim de gene. As transições codificam as restrições biológicas (éxon não pode ir diretamente para outro éxon sem íntron, etc.). Augustus, por exemplo, treina esses parâmetros de forma específica para cada organismo.</p>
+<p><strong>Covariance Models (CMs):</strong> são HMMs em árvore, não lineares. Eles modelam tanto a sequência quanto a estrutura secundária de RNA, capturando pares de bases complementares. O Rfam usa CMs para anotar tRNAs, rRNAs, riboswitches, miRNAs, etc.</p>
+<p><strong>Gancho para Bloco 7:</strong> “A limitação dos HMMs é que a propriedade de Markov restringe a memória, o estado atual depende apenas do estado anterior. RNNs e Transformers superam isso, mantendo contexto de sequência muito mais longo. Mas o princípio de <em>estado latente que gera observações</em> continua sendo o mesmo.”</p>
+<p><strong>Transição para o Bloco 6:</strong> “HMMs modelam sequências lineares de DNA e proteínas. Mas a biologia é cheia de relações não-lineares, proteínas que interagem, genes que se regulam mutuamente, metabolitos conectados em vias. Para isso, precisamos de outra linguagem matemática: grafos e redes.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
 </section></section>
 <section>
 <section id="grafos-e-redes-complexas" class="title-slide slide level1 center">
-<h1>Grafos e Redes Complexas</h1>
-
+<h1>Grafos e redes complexas</h1>
+<p>Quando a biologia é naturalmente um problema de rede</p>
+<aside class="notes">
+<p><strong>Transição do bloco anterior:</strong> “HMMs modelam sequências lineares — uma posição após a outra. Mas grande parte da biologia não é linear: proteínas interagem entre si, genes se regulam mutuamente, metabolitos estão conectados em vias ramificadas. Para representar e analisar essas relações, precisamos de grafos.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="xxx-3" class="slide level2">
-<h2>XXX</h2>
+<section id="grafos-de-de-bruijn-montagem-de-genomas" class="slide level2">
+<h2>Grafos de De Bruijn: montagem de genomas</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<p><strong>O problema da montagem:</strong></p>
+<p>Sequenciamento produz milhões de reads curtos precisamos reconstruir o genoma original sem tê-lo como referência.</p>
+<p><strong>Grafo de De Bruijn</strong> <span class="citation" data-cites="zerbino2008">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Zerbino and Birney 2008</a>)</span>:</p>
+<ul>
+<li><strong>Nós:</strong> <span class="math inline">\((k-1)\)</span>-mers únicos</li>
+<li><strong>Arestas:</strong> <span class="math inline">\(k\)</span>-mers que conectam dois <span class="math inline">\((k-1)\)</span>-mers sobrepostos</li>
+</ul>
+</div><div class="column" style="width:48%;">
+<p><strong>Exemplo</strong> (<span class="math inline">\(k = 3\)</span>, reads: <code>ATCG</code>, <code>TCGA</code>, <code>CGAT</code>):</p>
+<pre><code>   ATC       TCG       CGA       GAT
+AT ──→ TC ──→ CG ──→ GA ──→ AT
+ ↑                              │
+ └──────────────────────────────┘</code></pre>
+<p>Caminho Euleriano → sequência montada: <code>ATCGAT</code></p>
+<p><strong>Por que grafos funcionam aqui?</strong><br>
+Cada read define um <strong>caminho</strong> no grafo. A montagem é encontrar o caminho que percorre cada aresta exatamente uma vez, o <strong>caminho Euleriano</strong>.</p>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 15 s</strong></p>
+<p><strong>Por que De Bruijn e não overlap graph?</strong> O grafo de overlap (OLC — Overlap-Layout-Consensus) conecta reads que se sobrepõem diretamente. Funciona bem para reads longas (PacBio, Oxford Nanopore). Para reads curtas (Illumina), o número de sobreposições par-a-par é astronomicamente grande, O(n²). O grafo de De Bruijn resolve isso indiretamente via k-mers: em vez de comparar reads entre si, cada read é fragmentada em k-mers e o grafo é construído em O(n·L/k), muito mais eficiente.</p>
+<p><strong>Repetições são o grande problema:</strong> se uma sequência <code>ACGTACGT</code> aparece em duas regiões do genoma, os k-mers dela criam um nó no grafo de De Bruijn que tem duas entradas e duas saídas, o assembler não sabe qual saída seguir. Isso cria “bolhas” e “tips” no grafo que precisam ser resolvidas heuristicamente.</p>
+<p><strong>SPAdes:</strong> usa múltiplos valores de k simultaneamente (multik-mer), o que aumenta drasticamente a qualidade da montagem. É o padrão atual para montagem de genomas bacterianos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="grafos-de-de-bruijn-montagem-de-genomas-1" class="slide level2">
+<h2>Grafos de De Bruijn: montagem de genomas</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>O problema da montagem:</strong></p>
+<p>Sequenciamento produz milhões de reads curtos precisamos reconstruir o genoma original sem tê-lo como referência.</p>
+<p><strong>Grafo de De Bruijn</strong> <span class="citation" data-cites="zerbino2008">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Zerbino and Birney 2008</a>)</span>:</p>
+<ul>
+<li><strong>Nós:</strong> <span class="math inline">\((k-1)\)</span>-mers únicos</li>
+<li><strong>Arestas:</strong> <span class="math inline">\(k\)</span>-mers que conectam dois <span class="math inline">\((k-1)\)</span>-mers sobrepostos</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Complicações reais</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Erros de sequenciamento → arestas espúrias</li>
+<li>Regiões repetitivas → bifurcações no grafo</li>
+<li>Cobertura não uniforme → nós com poucos reads</li>
+</ul>
+<p><strong>SPAdes</strong> <span class="citation" data-cites="bankevich2012">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Bankevich et al. 2012</a>)</span> e <strong>Velvet</strong> <span class="citation" data-cites="zerbino2008">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Zerbino and Birney 2008</a>)</span> resolvem isso com múltiplos valores de <span class="math inline">\(k\)</span> e simplificação iterativa do grafo.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 15 s</strong></p>
+<p><strong>Por que De Bruijn e não overlap graph?</strong> O grafo de overlap (OLC — Overlap-Layout-Consensus) conecta reads que se sobrepõem diretamente. Funciona bem para reads longas (PacBio, Oxford Nanopore). Para reads curtas (Illumina), o número de sobreposições par-a-par é astronomicamente grande — O(n²). O grafo de De Bruijn resolve isso indiretamente via k-mers: em vez de comparar reads entre si, cada read é fragmentada em k-mers e o grafo é construído em O(n·L/k), muito mais eficiente.</p>
+<p><strong>Repetições são o grande problema:</strong> se uma sequência <code>ACGTACGT</code> aparece em duas regiões do genoma, os k-mers dela criam um nó no grafo de De Bruijn que tem duas entradas e duas saídas — o assembler não sabe qual saída seguir. Isso cria “bolhas” e “tips” no grafo que precisam ser resolvidas heuristicamente.</p>
+<p><strong>SPAdes:</strong> usa múltiplos valores de k simultaneamente (multik-mer), o que aumenta drasticamente a qualidade da montagem. É o padrão atual para montagem de genomas bacterianos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="redes-biológicas-tipos-e-exemplos" class="slide level2">
+<h2>Redes biológicas: tipos e exemplos</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rede</th>
+<th>Nós</th>
+<th>Arestas</th>
+<th>Banco</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>PPI</strong></td>
+<td>Proteínas</td>
+<td>Interação física</td>
+<td>STRING, BioGRID</td>
+</tr>
+<tr class="even">
+<td><strong>Metabólica</strong></td>
+<td>Metabolitos</td>
+<td>Reações</td>
+<td>KEGG, BiGG</td>
+</tr>
+<tr class="odd">
+<td><strong>Co-expressão</strong></td>
+<td>Genes</td>
+<td>Correlação de expressão</td>
+<td>WGCNA</td>
+</tr>
+<tr class="even">
+<td><strong>Regulatória</strong></td>
+<td>TFs, genes</td>
+<td>Regulação transcricional</td>
+<td>JASPAR, RegulonDB</td>
+</tr>
+<tr class="odd">
+<td><strong>Genômica</strong></td>
+<td>Genes</td>
+<td>Co-ocorrência / sintenia</td>
+<td>OrthoFinder</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Representação formal:</strong></p>
+<p><span class="math display">\[G = (V,\, E,\, w) \quad \text{ou} \quad G = (V,\, E)\]</span></p>
+<ul>
+<li>Dirigido vs.&nbsp;não-dirigido</li>
+<li>Ponderado vs.&nbsp;binário</li>
+<li>Uni- vs.&nbsp;bipartido</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>PPI na prática</strong></p>
+</div>
+<div class="callout-content">
+<p>A rede PPI humana (interactoma) tem:</p>
+<ul>
+<li>~20.000 proteínas como nós</li>
+<li>~300.000–600.000 interações estimadas</li>
+<li>Apenas ~10% documentadas experimentalmente</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Co-expressão ≠ interação física</strong></p>
+</div>
+<div class="callout-content">
+<p>WGCNA <span class="citation" data-cites="langfelder2008">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Langfelder and Horvath 2008</a>)</span> agrupa genes com perfis de expressão similares entre condições, não implica contato direto entre as proteínas. Módulos de co-expressão são hipóteses funcionais, não interações confirmadas.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>STRING DB:</strong> integra evidências experimentais, co-expressão, co-ocorrência filogenética e predições de literatura. Cada interação tem um score de confiança de 0 a 1000. Muito usado para enriquecimento e visualização de redes PPI.</p>
+<p><strong>KEGG:</strong> mapas de vias metabólicas e de sinalização curados manualmente. Muito usado em análises de enriquecimento após RNA-seq e proteômica.</p>
+<p><strong>WGCNA (Weighted Gene Co-expression Network Analysis):</strong> constrói uma rede onde o peso de cada aresta é a correlação de Pearson elevada a uma potência <span class="math inline">\(\beta\)</span> (soft thresholding) escolhida para que a rede resultante tenha propriedades livre de escala. Muito popular em transcriptômica — permite encontrar módulos de genes co-regulados e correlacioná-los com traits fenotípicos.</p>
+<p><strong>Bipartido:</strong> redes de interação droga-alvo, vírus-hospedeiro, miRNA-mRNA são bipartidas — dois tipos de nós, e arestas só existem entre tipos diferentes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="propriedades-emergentes-das-redes-biológicas" class="slide level2">
+<h2>Propriedades emergentes das redes biológicas</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Distribuição de grau livre de escala</strong> <span class="citation" data-cites="barabasi1999">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Barabási and Albert 1999</a>)</span>:</p>
+<p><span class="math display">\[P(k) \sim k^{-\gamma}, \quad \gamma \approx 2\text{–}3\]</span></p>
+<ul>
+<li>Maioria dos nós tem poucos vizinhos</li>
+<li>Poucos nós (<strong>hubs</strong>) têm centenas de conexões</li>
+<li>Resultado de <strong>crescimento preferencial</strong>: novos nós conectam-se preferencialmente a nós já bem conectados</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Hubs biológicos:</strong></p>
+<blockquote>
+<p>Proteínas hub (alto grau) tendem a ser <strong>essenciais</strong>, sua remoção leva à morte celular <span class="citation" data-cites="jeong2001">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Jeong et al. 2001</a>)</span></p>
+</blockquote>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 15 s</strong></p>
+<p><strong>Livre de escala vs.&nbsp;aleatória (Erdős-Rényi):</strong> numa rede aleatória, a distribuição de grau é Poisson — concentrada em torno da média, sem hubs. Redes livres de escala têm uma cauda pesada (power law) — hubs com grau muito acima da média são raros mas existem e são fundamentalmente importantes.</p>
+<p><strong>Por que hubs são essenciais?</strong> A hipótese “centrality-lethality” de Jeong et al.&nbsp;(2001) mostrou em S. cerevisiae que proteínas com mais interações (alto grau) têm maior probabilidade de ser essenciais quando deletadas. A intuição é que hubs integram muitos processos celulares simultaneamente — removê-los desestrutura o interactoma.</p>
+<p><strong>Coeficiente de agrupamento:</strong> <span class="math inline">\(C_i = 1\)</span> significa que todos os vizinhos de <span class="math inline">\(i\)</span> também são vizinhos entre si (clique). <span class="math inline">\(C_i = 0\)</span> significa que nenhum par de vizinhos de <span class="math inline">\(i\)</span> está conectado diretamente.</p>
+<p><strong>Aplicação em farmacologia:</strong> hubs como alvos terapêuticos são uma faca de dois gumes — alta eficácia potencial, mas também alta toxicidade (o hub provavelmente participa de vias essenciais em tecidos saudáveis). Alvos na periferia da rede (baixo grau, módulo específico de tecido) podem ser mais seletivos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="propriedades-emergentes-das-redes-biológicas-1" class="slide level2">
+<h2>Propriedades emergentes das redes biológicas</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Mundo pequeno</strong> <span class="citation" data-cites="watts1998">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Watts and Strogatz 1998</a>)</span>:</p>
+<p>Apesar do tamanho, redes biológicas têm:</p>
+<ul>
+<li><strong>Caminho médio curto</strong> <span class="math inline">\(\langle d \rangle \sim \log N\)</span></li>
+<li><strong>Alto coeficiente de agrupamento</strong> <span class="math inline">\(C \gg C_{\text{aleatória}}\)</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Implicação funcional</strong></p>
+</div>
+<div class="callout-content">
+<p>Alto agrupamento → módulos funcionais coesos. Caminho curto → propagação rápida de sinais através da célula.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 15 s</strong></p>
+<p><strong>Livre de escala vs.&nbsp;aleatória (Erdős-Rényi):</strong> numa rede aleatória, a distribuição de grau é Poisson, concentrada em torno da média, sem hubs. Redes livres de escala têm uma cauda pesada (power law), hubs com grau muito acima da média são raros mas existem e são fundamentalmente importantes.</p>
+<p><strong>Por que hubs são essenciais?</strong> A hipótese “centrality-lethality” de Jeong et al.&nbsp;(2001) mostrou em S. cerevisiae que proteínas com mais interações (alto grau) têm maior probabilidade de ser essenciais quando deletadas. A intuição é que hubs integram muitos processos celulares simultaneamente, removê-los desestrutura o interactoma.</p>
+<p><strong>Coeficiente de agrupamento:</strong> <span class="math inline">\(C_i = 1\)</span> significa que todos os vizinhos de <span class="math inline">\(i\)</span> também são vizinhos entre si (clique). <span class="math inline">\(C_i = 0\)</span> significa que nenhum par de vizinhos de <span class="math inline">\(i\)</span> está conectado diretamente.</p>
+<p><strong>Aplicação em farmacologia:</strong> hubs como alvos terapêuticos são uma faca de dois gumes, alta eficácia potencial, mas também alta toxicidade (o hub provavelmente participa de vias essenciais em tecidos saudáveis). Alvos na periferia da rede (baixo grau, módulo específico de tecido) podem ser mais seletivos.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="análise-de-redes-métricas-e-aplicações" class="slide level2">
+<h2>Análise de redes: métricas e aplicações</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Medidas de centralidade:</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Medida</th>
+<th>Definição</th>
+<th>Interpreta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Grau <span class="math inline">\(k_i\)</span></td>
+<td>Número de vizinhos</td>
+<td>Conectividade local</td>
+</tr>
+<tr class="even">
+<td>Betweenness <span class="math inline">\(b_i\)</span></td>
+<td>Fração de caminhos mínimos que passam por <span class="math inline">\(i\)</span></td>
+<td>Ponte / gargalo</td>
+</tr>
+<tr class="odd">
+<td>Eigenvector <span class="math inline">\(e_i\)</span></td>
+<td>Influência ponderada pelos vizinhos</td>
+<td>Hub de hubs</td>
+</tr>
+<tr class="even">
+<td>Closeness <span class="math inline">\(c_i\)</span></td>
+<td>Inverso da distância média aos demais</td>
+<td>Acesso global</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Detecção de comunidades (módulos):</strong></p>
+<ul>
+<li>Louvain, Leiden, Girvan–Newman</li>
+<li>Otimização da modularidade <span class="math inline">\(Q\)</span>:</li>
+</ul>
+<p><span class="math display">\[Q = \frac{1}{2m}\sum_{ij}\left[A_{ij} - \frac{k_i k_j}{2m}\right]\delta(c_i, c_j)\]</span></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Robustez e vulnerabilidade:</strong></p>
+<pre><code>Ataque a hubs:
+  Remover os 5% mais conectados
+  → rede fragmenta rapidamente
+
+Falha aleatória:
+  Remover 5% de nós aleatórios
+  → rede permanece conectada
+
+Redes livre de escala são:
+  ✓ Robustas a falhas aleatórias
+  ✗ Frágeis a ataques direcionados</code></pre>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Aplicação clínica</strong></p>
+</div>
+<div class="callout-content">
+<p>Módulos funcionais = grupos de genes/proteínas atuando juntos em uma via. Perturbação de um módulo → fenótipo de doença. Alvo de drogas bem-sucedido muitas vezes é um hub de módulo doença-específico.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>Modularidade Q:</strong> varia entre -0.5 e 1. Q &gt; 0.3 indica estrutura modular significativa. O algoritmo de Louvain é O(n log n) e é o mais usado atualmente. O algoritmo de Leiden corrigiu um problema do Louvain onde comunidades internas podiam não ser bem conectadas internamente.</p>
+<p><strong>Betweenness centrality:</strong> proteínas com alta betweenness são pontes entre módulos funcionais diferentes. Em farmacologia, essas proteínas são especialmente interessantes porque modular uma ponte pode afetar a comunicação entre vias de forma seletiva.</p>
+<p><strong>Robustez:</strong> essa propriedade das redes livre de escala tem consequências biológicas: organismos são robustos a mutações aleatórias (equivalentes a falhas aleatórias) mas vulneráveis a deleção de genes essenciais (equivalente a ataque a hubs). Também tem consequência epidemiológica, vírus que se espalham por redes de contato livre de escala são difíceis de eliminar por vacinação aleatória mas vulneráveis a vacinação dirigida a super-spreaders.</p>
+<p><strong>Ferramentas:</strong> igraph (R e Python), NetworkX (Python), Cytoscape (visualização), STRING para redes PPI.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="exemplo-sars-cov-2-e-o-interactoma-humano" class="slide level2">
+<h2>Exemplo: SARS-CoV-2 e o interactoma humano</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Gordon et al.&nbsp;(2020)</strong> <span class="citation" data-cites="gordon2020">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Gordon et al. 2020</a>)</span>:</p>
+<ul>
+<li>Expressaram as <strong>26 proteínas</strong> do SARS-CoV-2 em células humanas</li>
+<li>Identificaram <strong>332 proteínas humanas</strong> interagentes por AP-MS</li>
+<li>Mapearam essas proteínas no interactoma humano (STRING)</li>
+</ul>
+<p><strong>Resultado da análise de rede:</strong></p>
+<ul>
+<li>Proteínas virais formam um <strong>módulo coeso</strong> na rede humana</li>
+<li>Concentradas em: transporte de vesículas, tradução, mitocôndria, resposta ao DNA</li>
+<li>69 drogas aprovadas ou em ensaio clínico atingem proteínas do módulo</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><strong>Estratégia bioinformática:</strong></p>
+<pre><code>26 proteínas virais
+        ↓ AP-MS
+332 alvos humanos
+        ↓ mapeamento
+Interactoma humano
+        ↓ análise de rede
+Módulos funcionais
+        ↓ enrichment
+Vias perturbadas
+        ↓ drug repurposing
+69 candidatos a droga</code></pre>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Drug repurposing via redes</strong></p>
+</div>
+<div class="callout-content">
+<p>Redes de interação vírus–hospedeiro são hoje o ponto de partida padrão para reaproveitamento de drogas em doenças infecciosas emergentes.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>AP-MS (Affinity Purification Mass Spectrometry):</strong> cada proteína viral foi expressa com uma tag de afinidade, puxada junto com tudo que interage com ela, e as proteínas interagentes foram identificadas por espectrometria de massas. Isso dá uma fotografia das interações proteína-proteína vírus-hospedeiro.</p>
+<p><strong>Por que isso é importante metodologicamente?</strong> É um exemplo perfeito de como bioinformática (análise de redes) transforma dados experimentais (AP-MS) em hipóteses tratáveis (drug repurposing). Sem a análise de rede, os 332 alvos humanos seriam apenas uma lista. Com a rede, eles se organizam em módulos que revelam mecanismo biológico e oportunidades terapêuticas.</p>
+<p><strong>Resultado clínico:</strong> alguns dos 69 candidatos de fato mostraram atividade antiviral em ensaios celulares subsequentes, incluindo drogas como o Apilimod (inibidor de PIKfyve, envolvido em tráfico de vesículas, que o vírus usa para entrar na célula).</p>
+<p><strong>Transição para o Bloco 7:</strong> “Tanto em redes como em sequências, chegamos a um ponto onde as perguntas se tornam tão complexas que métodos analíticos tradicionais não bastam. É aí que entram machine learning e deep learning, e o exemplo mais dramático disso é o AlphaFold.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
 </section></section>
 <section>
 <section id="machine-learning-e-deep-learning" class="title-slide slide level1 center">
 <h1>Machine Learning e Deep Learning</h1>
-
+<p>Quando os dados ensinam o modelo e o modelo surpreende a biologia</p>
+<aside class="notes">
+<p><strong>Transição do bloco anterior:</strong> “Vimos redes biológicas com milhares de proteínas e centenas de milhares de interações. Analisar padrões nessa escala exige métodos que aprendem estrutura diretamente dos dados. É isso que machine learning faz e nos últimos anos, deep learning redefiniu o que é possível na biologia.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="xxx-4" class="slide level2">
-<h2>XXX</h2>
+<section id="ml-clássico-em-bioinformática" class="slide level2">
+<h2>ML clássico em bioinformática</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>O pipeline padrão:</strong></p>
+<pre><code>Dados biológicos
+      ↓ engenharia de features
+Matriz X  (amostras × features)
+      ↓ treinamento
+Modelo aprendido
+      ↓ validação cruzada
+Predição / Classificação</code></pre>
+<p><strong>Features típicas em bioinformática:</strong></p>
+<ul>
+<li>Frequências de k-mers e AAs</li>
+<li>Perfis de conservação (Profile HMMs)</li>
+<li>Contagens de expressão gênica (RNA-seq)</li>
+<li>Propriedades estruturais e físico-químicas</li>
+</ul>
+</div><div class="column" style="width:45%;">
+
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>Por que Random Forest é tão popular?</strong> Funciona bem com muitas features (p &gt;&gt; n, comum em ômicos), lida bem com features correlacionadas, produz importância de feature nativamente, e é relativamente robusto a overfitting. Em transcriptômica, tipicamente temos 20.000 genes (features) para algumas dezenas a centenas de amostras esse regime de “p &gt;&gt; n” é onde RF brilha.</p>
+<p><strong>UMAP:</strong> hoje substituiu largamente o t-SNE para visualização de dados de single-cell RNA-seq. Preserva melhor a estrutura global dos dados enquanto separa clusters. Um plot UMAP de 50.000 células com tipos celulares coloridos é um dos resultados mais comuns em biologia celular moderna.</p>
+<p><strong>Data leakage em bioinformática:</strong> se você treina um classificador de proteínas virais com sequências de Influenza A e testa em Influenza B, os resultados parecem bons. Mas se testar em um vírus de uma família diferente, o desempenho pode cair dramaticamente. A proteína que o modelo aprendeu pode ser a composição de aminoácidos específica de Orthomyxoviridae, não uma propriedade universal de vírus.</p>
+<p><strong>Gancho para DL:</strong> “ML clássico funciona bem quando sabemos <em>quais</em> features extrair. O problema é quando não sabemos quando a representação relevante está escondida nos dados. Deep learning aprende as features automaticamente.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ml-clássico-em-bioinformática-1" class="slide level2">
+<h2>ML clássico em bioinformática</h2>
+<p><strong>Algoritmos mais usados:</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Método</th>
+<th>Aplicação típica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Random Forest</td>
+<td>Predição de genes essenciais, classificação de variantes</td>
+</tr>
+<tr class="even">
+<td>SVM</td>
+<td>Detecção de sítios de splicing, predição de enhancers</td>
+</tr>
+<tr class="odd">
+<td>Regressão logística</td>
+<td>Associação genótipo-fenótipo (GWAS)</td>
+</tr>
+<tr class="even">
+<td>k-means / hierárquico</td>
+<td>Clustering de amostras em RNA-seq</td>
+</tr>
+<tr class="odd">
+<td>PCA / UMAP</td>
+<td>Redução de dimensionalidade, visualização de ômicos</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Validação é crítica</strong></p>
+</div>
+<div class="callout-content">
+<p>Em bioinformática, <em>data leakage</em> é frequente: usar sequências do mesmo organismo em treino e teste superestima o desempenho.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>Por que Random Forest é tão popular?</strong> Funciona bem com muitas features (p &gt;&gt; n, comum em ômicos), lida bem com features correlacionadas, produz importância de feature nativamente, e é relativamente robusto a overfitting. Em transcriptômica, tipicamente temos 20.000 genes (features) para algumas dezenas a centenas de amostras esse regime de “p &gt;&gt; n” é onde RF brilha.</p>
+<p><strong>UMAP:</strong> hoje substituiu largamente o t-SNE para visualização de dados de single-cell RNA-seq. Preserva melhor a estrutura global dos dados enquanto separa clusters. Um plot UMAP de 50.000 células com tipos celulares coloridos é um dos resultados mais comuns em biologia celular moderna.</p>
+<p><strong>Data leakage em bioinformática:</strong> se você treina um classificador de proteínas virais com sequências de Influenza A e testa em Influenza B, os resultados parecem bons. Mas se testar em um vírus de uma família diferente, o desempenho pode cair dramaticamente. A proteína que o modelo aprendeu pode ser a composição de aminoácidos específica de Orthomyxoviridae, não uma propriedade universal de vírus.</p>
+<p><strong>Gancho para DL:</strong> “ML clássico funciona bem quando sabemos <em>quais</em> features extrair. O problema é quando não sabemos quando a representação relevante está escondida nos dados. Deep learning aprende as features automaticamente.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="redes-neurais-para-sequências-biológicas" class="slide level2">
+<h2>Redes neurais para sequências biológicas</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>CNNs — motifs locais:</strong></p>
+<pre><code>Sequência: A T C G G A T C A G
+           ─────────────────────
+Filter 1:  ████         → detecta ATCG
+Filter 2:      ████     → detecta CGGA
+Filter 3:          ████ → detecta ATCA</code></pre>
+<ul>
+<li>Filtros aprendem <strong>motifs de sequência</strong> automaticamente</li>
+<li>Análogos a matrizes de posição-peso (PWMs), mas aprendidas</li>
+<li>Aplicação: DeepBind <span class="citation" data-cites="alipanahi2015">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Alipanahi et al. 2015</a>)</span> — predição de sítios de ligação de TFs</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>RNNs / LSTMs — contexto longo:</strong></p>
+<ul>
+<li>Leem a sequência posição por posição mantendo memória</li>
+<li>Capturam dependências de longo alcance (e.g., pares de bases em RNA)</li>
+<li>Limitação: paralelização difícil, sequências muito longas ainda são desafio</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>CNN → PWM:</strong> filtros convolucionais de uma CNN treinada para predizer ligação de TFs aprendem, após o treinamento, representações muito similares às PWMs (Position Weight Matrices) que bioinformatas constroem manualmente. Isso validou a abordagem: o modelo redescobre estruturas conhecidas, e também encontra novas.</p>
+<p><strong>Mecanismo de atenção:</strong> a ideia central é que para entender a posição <span class="math inline">\(i\)</span> de uma sequência, pode ser necessário olhar para posições muito distantes. “ATCG…2000 bases…CGAT”, a segunda tetrâmera pode ser importante para interpretar a primeira (e.g., estrutura secundária de RNA). RNNs têm dificuldade com isso; Transformers resolvem elegantemente.</p>
+<p><strong>ESM-2 (Evolutionary Scale Modeling):</strong> treinado em 250 milhões de sequências de proteínas sem nenhuma anotação, usando masked language modeling (como BERT). O modelo aprende representações que capturam estrutura e função e embeddings de proteínas evolutivamente similares ficam próximos no espaço latente, <em>sem ter sido treinado para isso</em>.</p>
+<p><strong>Analogia para a turma:</strong> “Um modelo de linguagem treinado em português aprende, sem que ninguém explique explicitamente, que ‘rei’ e ‘rainha’ têm significados relacionados e que ‘médico:paciente’ é similar a ‘professor:aluno’. ESM-2 faz o mesmo para proteínas: aprende que certas sequências têm papéis análogos, sem nenhuma supervisão de função.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="redes-neurais-para-sequências-biológicas-1" class="slide level2">
+<h2>Redes neurais para sequências biológicas</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Modelos de linguagem para biologia:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Modelo</th>
+<th>Domínio</th>
+<th>Referência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DNABERT</td>
+<td>DNA</td>
+<td><span class="citation" data-cites="ji2021">Ji et al. (<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">2021</a>)</span></td>
+</tr>
+<tr class="even">
+<td>ESM-2 / ESMFold</td>
+<td>Proteínas</td>
+<td><span class="citation" data-cites="lin2023">Lin et al. (<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">2023</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>ProtTrans</td>
+<td>Proteínas</td>
+<td><span class="citation" data-cites="elnaggar2021">Elnaggar et al. (<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">2022</a>)</span></td>
+</tr>
+<tr class="even">
+<td>Nucleotide Transformer</td>
+<td>Genômica</td>
+<td><span class="citation" data-cites="dalla2023">Dalla-Torre et al. (<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">2023</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<p><strong>Transformers — atenção global:</strong></p>
+<p><span class="math display">\[\text{Attention}(Q, K, V) = \text{softmax}\!\left(\frac{QK^T}{\sqrt{d_k}}\right)V\]</span></p>
+<ul>
+<li>Cada posição “atende” a todas as outras simultaneamente</li>
+<li>Captura dependências de qualquer distância</li>
+<li>Paralelizável: escala para sequências longas</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>CNN → PWM:</strong> filtros convolucionais de uma CNN treinada para predizer ligação de TFs aprendem, após o treinamento, representações muito similares às PWMs (Position Weight Matrices) que bioinformatas constroem manualmente. Isso validou a abordagem: o modelo redescobre estruturas conhecidas, e também encontra novas.</p>
+<p><strong>Mecanismo de atenção:</strong> a ideia central é que para entender a posição <span class="math inline">\(i\)</span> de uma sequência, pode ser necessário olhar para posições muito distantes. “ATCG…2000 bases…CGAT”, a segunda tetrâmera pode ser importante para interpretar a primeira (e.g., estrutura secundária de RNA). RNNs têm dificuldade com isso; Transformers resolvem elegantemente.</p>
+<p><strong>ESM-2 (Evolutionary Scale Modeling):</strong> treinado em 250 milhões de sequências de proteínas sem nenhuma anotação, usando masked language modeling (como BERT). O modelo aprende representações que capturam estrutura e função e embeddings de proteínas evolutivamente similares ficam próximos no espaço latente, <em>sem ter sido treinado para isso</em>.</p>
+<p><strong>Analogia para a turma:</strong> “Um modelo de linguagem treinado em português aprende, sem que ninguém explique explicitamente, que ‘rei’ e ‘rainha’ têm significados relacionados e que ‘médico:paciente’ é similar a ‘professor:aluno’. ESM-2 faz o mesmo para proteínas: aprende que certas sequências têm papéis análogos, sem nenhuma supervisão de função.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="alphafold2-o-problema-que-durou-50-anos" class="slide level2">
+<h2>AlphaFold2: o problema que durou 50 anos</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>O problema do dobramento:</strong><br>
+Dada a sequência de aminoácidos, qual é a estrutura 3D da proteína?</p>
+<ul>
+<li>Proposto por <strong>Anfinsen</strong> (1972, Nobel): estrutura é determinada pela sequência</li>
+<li><strong>CASP</strong> (Critical Assessment of Structure Prediction): competição bienal desde 1994</li>
+<li><strong>CASP14 (2020):</strong> AlphaFold2 atingiu TM-score &gt; 0.92 na maioria dos alvos, <strong>equivalente a qualidade experimental</strong> <span class="citation" data-cites="jumper2021">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Jumper et al. 2021</a>)</span></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><strong>O salto do CASP14:</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>Por que o problema era difícil?</strong> O espaço conformacional de uma proteína de 100 aminoácidos é astronomicamente grande, argumento de Levinthal: se cada ligação tivesse apenas 3 posições, haveria <span class="math inline">\(3^{100} \approx 10^{48}\)</span> conformações possíveis. A busca exaustiva levaria mais tempo que a idade do universo. A célula dobra a proteína em milissegundos, há um caminho guiado, um funil de energia livre.</p>
+<p><strong>GDT-TS score:</strong> Global Distance Test, mede a fração de resíduos que estão dentro de um limiar de distância da estrutura experimental. Score de 90%+ indica qualidade comparável a cristalografia de raios-X ou crioEM.</p>
+<p><strong>A virada conceitual do AlphaFold2:</strong> não é apenas uma rede neural. É uma arquitetura que integra explicitamente a informação evolutiva (MSA de sequências relacionadas) para inferir restrições de co-evolução, posições que evoluem juntas provavelmente estão em contato no espaço 3D.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="alphafold2-arquitetura-em-três-atos" class="slide level2">
+<h2>AlphaFold2: arquitetura em três atos</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>1. Entrada:</strong></p>
+<pre><code>Sequência alvo
+      ↓ busca em UniRef / BFD
+MSA de sequências homólogas
+      +
+Templates estruturais (PDB)</code></pre>
+<p><strong>2. Evoformer</strong> (48 blocos):</p>
+<ul>
+<li>Processa MSA e par de resíduos simultaneamente</li>
+<li>Atenção cruzada: informação da MSA informa os pares, e vice-versa</li>
+<li>Co-evolução → restrições de distância entre resíduos</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><strong>3. Structure Module</strong> (8 blocos):</p>
+<ul>
+<li>Cada resíduo é uma moldura rígida no espaço 3D</li>
+<li>Atualização iterativa de posição e orientação</li>
+<li>Predição de pLDDT por resíduo (confiança local)</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>Evoformer:</strong> o nome vem de “evolution” + “transformer”. O bloco processa duas representações em paralelo: (1) a MSA — uma matriz de sequências × posições; (2) o par de resíduos — uma matriz posição × posição. O mecanismo de atenção cruza as informações entre as duas representações iterativamente. A intuição é que co-evolução entre colunas da MSA indica proximidade espacial entre os resíduos correspondentes.</p>
+<p><strong>pLDDT (predicted Local Distance Difference Test):</strong> é uma estimativa da confiança da rede em cada resíduo individualmente, não um erro real. Um pLDDT baixo não necessariamente significa que a predição está errada — pode significar que a região é genuinamente desordenada e não tem uma estrutura única. Isso é informação biológica valiosa por si só.</p>
+<p><strong>AlphaFold DB:</strong> em julho de 2022, o banco passou de ~1 milhão para &gt;200 milhões de estruturas — cobrindo praticamente todo o espaço de proteínas conhecidas. Em menos de 2 anos, o AlphaFold dobrou estruturalmente mais proteínas do que cristalografia de raios-X em 70 anos.</p>
+<p><strong>Para contextualizar:</strong> “Isso não eliminou a biologia estrutural experimental. Cristalografia e crioEM ainda são necessários para casos de alta precisão, ligantes, dinâmica, e validação. Mas o AlphaFold mudou o ponto de partida — agora você não começa do zero.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="alphafold2-arquitetura-em-três-atos-1" class="slide level2">
+<h2>AlphaFold2: arquitetura em três atos</h2>
+<p><strong>pLDDT — confiança por resíduo:</strong></p>
+<p><span class="math display">\[\text{pLDDT} \in [0, 100]\]</span></p>
+<pre><code>&gt; 90  Muito alta (azul escuro)
+&gt; 70  Confiante  (azul claro)
+&gt; 50  Baixa      (amarelo)
+&lt; 50  Muito baixa (laranja)</code></pre>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Limitações importantes</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Regiões <strong>intrinsecamente desordenadas</strong>: pLDDT baixo, estrutura não confiável</li>
+<li><strong>Complexos multi-proteicos</strong>: AlphaFold-Multimer é menos preciso</li>
+<li><strong>Dinâmica conformacional</strong>: prediz apenas uma conformação</li>
+<li><strong>Proteínas de membrana</strong>: sub-representadas no treinamento (PDB)</li>
+</ul>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>Evoformer:</strong> o nome vem de “evolution” + “transformer”. O bloco processa duas representações em paralelo: (1) a MSA — uma matriz de sequências × posições; (2) o par de resíduos — uma matriz posição × posição. O mecanismo de atenção cruza as informações entre as duas representações iterativamente. A intuição é que co-evolução entre colunas da MSA indica proximidade espacial entre os resíduos correspondentes.</p>
+<p><strong>pLDDT (predicted Local Distance Difference Test):</strong> é uma estimativa da confiança da rede em cada resíduo individualmente, não um erro real. Um pLDDT baixo não necessariamente significa que a predição está errada — pode significar que a região é genuinamente desordenada e não tem uma estrutura única. Isso é informação biológica valiosa por si só.</p>
+<p><strong>AlphaFold DB:</strong> em julho de 2022, o banco passou de ~1 milhão para &gt;200 milhões de estruturas — cobrindo praticamente todo o espaço de proteínas conhecidas. Em menos de 2 anos, o AlphaFold dobrou estruturalmente mais proteínas do que cristalografia de raios-X em 70 anos.</p>
+<p><strong>Para contextualizar:</strong> “Isso não eliminou a biologia estrutural experimental. Cristalografia e crioEM ainda são necessários para casos de alta precisão, ligantes, dinâmica, e validação. Mas o AlphaFold mudou o ponto de partida — agora você não começa do zero.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="além-do-alphafold-biologia-com-llms" class="slide level2">
+<h2>Além do AlphaFold: biologia com LLMs</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<p><strong>Modelos de linguagem para proteínas:</strong></p>
+<ul>
+<li><strong>ESM-2 / ESMFold</strong> <span class="citation" data-cites="lin2023">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Lin et al. 2023</a>)</span>: folding direto da sequência sem MSA, muito mais rápido que AlphaFold2</li>
+<li><strong>ProteinMPNN</strong>: dado uma estrutura, projeta sequências que a adotam (design inverso)</li>
+<li><strong>RFdiffusion</strong> <span class="citation" data-cites="watson2023">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Watson et al. 2023</a>)</span>: gera estruturas de proteínas do zero com difusão</li>
+</ul>
+</div><div class="column" style="width:48%;">
+<p><strong>Impacto no agronegócio e biotecnologia:</strong></p>
+<ul>
+<li>Design de enzimas industriais (biocombustível, detergentes)</li>
+<li>Antígenos para vacinas de nova geração</li>
+<li>Pesticidas biológicos específicos por alvo</li>
+<li>Rastreamento de patógenos em microbioma agrícola</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 30 s</strong></p>
+<p><strong>ESMFold vs.&nbsp;AlphaFold2:</strong> ESMFold é ~60× mais rápido que AlphaFold2 porque não precisa rodar uma busca de MSA — usa apenas os embeddings do ESM-2. A qualidade é ligeiramente inferior para proteínas com muitas sequências homólogas conhecidas, mas para proteínas “orfãs” (sem homólogos), ESMFold pode ser superior porque não depende de informação evolutiva de segunda mão.</p>
+<p><strong>RFdiffusion:</strong> usa difusão estocástica — parte de ruído aleatório e itera em direção a uma estrutura de proteína plausível, condicionado a restrições de função. É como o DALL-E ou Stable Diffusion, mas para estruturas proteicas. Publicado em 2023, já foi usado para criar proteínas com atividades de ligação, catálise e montagem sem precedente natural.</p>
+<p><strong>Para a audiência de ESALQ/USP:</strong> conectar com biotecnologia agrícola é estratégico. Design de enzimas para degradação de biomassa lignocelulósica, proteínas de resistência a pragas projetadas para cultura específica, antígenos de patógenos de plantas — tudo isso é bioinformática + DL aplicada ao agronegócio, que é o core da instituição.</p>
+<p><strong>Transição para o Bloco 8:</strong> “Chegamos ao estado da arte. Para encerrar, quero mostrar onde vocês se encaixam nesse cenário, ferramentas, comunidades, carreiras, e o que a bioinformática significa especificamente para a biologia brasileira e para a ESALQ.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
 </section></section>
 <section>
-<section id="conclusão" class="title-slide slide level1 center">
-<h1>Conclusão</h1>
-
+<section id="perspectivas-e-encerramento" class="title-slide slide level1 center">
+<h1>Perspectivas e encerramento</h1>
+<p>Onde vocês se encaixam nesse cenário</p>
+<aside class="notes">
+<p><strong>Transição do bloco anterior:</strong> “Vimos o estado da arte, AlphaFold, LLMs para proteínas, design de novo. Para encerrar, quero trazer isso para perto de vocês: quais ferramentas estão disponíveis agora, onde a bioinformática está no Brasil, e como um biólogo pode entrar nesse campo.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="perspectivas-futuras" class="slide level2">
-<h2>Perspectivas Futuras</h2>
+<section id="ferramentas-open-source-para-começar-hoje" class="slide level2">
+<h2>Ferramentas open-source para começar hoje</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Ecossistemas principais:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Linguagem</th>
+<th>Pacote</th>
+<th>Para quê</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>R</td>
+<td>Bioconductor</td>
+<td>RNA-seq, ChIP-seq, microarray</td>
+</tr>
+<tr class="even">
+<td>R</td>
+<td>DESeq2 / edgeR</td>
+<td>Expressão diferencial</td>
+</tr>
+<tr class="odd">
+<td>R</td>
+<td>WGCNA</td>
+<td>Redes de co-expressão</td>
+</tr>
+<tr class="even">
+<td>Python</td>
+<td>Biopython <span class="citation" data-cites="cock2009">(<a href="#/leituras-recomendadas" role="doc-biblioref" onclick="">Cock et al. 2009</a>)</span></td>
+<td>Manipulação de sequências</td>
+</tr>
+<tr class="odd">
+<td>Python</td>
+<td>Scanpy</td>
+<td>Single-cell RNA-seq</td>
+</tr>
+<tr class="even">
+<td>Python</td>
+<td>NetworkX</td>
+<td>Análise de redes</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<p><strong>Plataformas visuais (sem linha de comando):</strong></p>
+<ul>
+<li><strong>Galaxy</strong> — pipeline web para NGS, metagenômica, proteômica</li>
+<li><strong>Cytoscape</strong> — visualização e análise de redes biológicas</li>
+<li><strong>UGENE</strong> — suite integrada para análise de sequências</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 15 s</strong></p>
+<p><strong>Bioconductor:</strong> lançado em 2001, é o maior repositório de software bioinformático em R. Hoje tem mais de 2.200 pacotes, todos com documentação padronizada e testes automatizados. É onde a maioria das análises de expressão gênica, ChIP-seq e anotação genômica em R vive.</p>
+<p><strong>Galaxy:</strong> especialmente importante para grupos sem infraestrutura computacional ou sem programadores. Permite rodar pipelines complexos de NGS via interface web, reproduzível e versionado. Usado extensivamente em grupos de biologia molecular que não têm bioinformata dedicado.</p>
+<p><strong>Nextflow / nf-core:</strong> o padrão atual em pipelines de produção. O nf-core/rnaseq, por exemplo, implementa um pipeline completo de RNA-seq com QC, trimagem, alinhamento, quantificação e expressão diferencial, tudo em um comando, com containers Docker ou Singularity para reprodutibilidade total.</p>
+<p>“Vocês não precisam começar do zero. Existe infraestrutura pronta, documentada e gratuita. O que faz a diferença é entender <em>o que o pipeline está fazendo</em> e é exatamente isso que vimos hoje.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="obrigado-pela-atenção" class="slide level2">
-<h2>Obrigado pela atenção!</h2>
-<div style="text-align: center; margin-top: 30px;">
-<p><strong>Matheus Pimenta</strong><br>
-📧 omatheuspimenta@outlook.com<br>
-ESALQ/USP</p>
+<section id="ferramentas-open-source-para-começar-hoje-1" class="slide level2">
+<h2>Ferramentas open-source para começar hoje</h2>
+<p><strong>Fluxos de trabalho reprodutíveis:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href=""></a><span class="co"># Nextflow — pipeline NGS em uma linha</span></span>
+<span id="cb27-2"><a href=""></a><span class="ex">nextflow</span> run nf-core/rnaseq <span class="dt">\</span></span>
+<span id="cb27-3"><a href=""></a>  <span class="at">--input</span> samplesheet.csv <span class="dt">\</span></span>
+<span id="cb27-4"><a href=""></a>  <span class="at">--genome</span> GRCh38 <span class="dt">\</span></span>
+<span id="cb27-5"><a href=""></a>  <span class="at">-profile</span> docker</span>
+<span id="cb27-6"><a href=""></a></span>
+<span id="cb27-7"><a href=""></a><span class="co"># Snakemake — pipeline em Python</span></span>
+<span id="cb27-8"><a href=""></a><span class="ex">rule</span> align:</span>
+<span id="cb27-9"><a href=""></a>    <span class="ex">input:</span> <span class="st">"data/{sample}.fastq.gz"</span></span>
+<span id="cb27-10"><a href=""></a>    <span class="ex">output:</span> <span class="st">"results/{sample}.bam"</span></span>
+<span id="cb27-11"><a href=""></a>    <span class="ex">shell:</span> <span class="st">"bwa mem ref.fa {input} &gt; {output}"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<p><strong>nf-core</strong></p>
+</div>
+<div class="callout-content">
+<p>Repositório de pipelines Nextflow validados e curados para análises padrão em bioinformática como RNA-seq, metagenômica, ChIP-seq, amplicon, variantes. Gratuito e amplamente usado em produção.</p>
+<p><a href="https://nf-co.re">nf-co.re</a></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min 15 s</strong></p>
+<p><strong>Bioconductor:</strong> lançado em 2001, é o maior repositório de software bioinformático em R. Hoje tem mais de 2.200 pacotes, todos com documentação padronizada e testes automatizados. É onde a maioria das análises de expressão gênica, ChIP-seq e anotação genômica em R vive.</p>
+<p><strong>Galaxy:</strong> especialmente importante para grupos sem infraestrutura computacional ou sem programadores. Permite rodar pipelines complexos de NGS via interface web, reproduzível e versionado. Usado extensivamente em grupos de biologia molecular que não têm bioinformata dedicado.</p>
+<p><strong>Nextflow / nf-core:</strong> o padrão atual em pipelines de produção. O nf-core/rnaseq, por exemplo, implementa um pipeline completo de RNA-seq com QC, trimagem, alinhamento, quantificação e expressão diferencial, tudo em um comando, com containers Docker ou Singularity para reprodutibilidade total.</p>
+<p>“Vocês não precisam começar do zero. Existe infraestrutura pronta, documentada e gratuita. O que faz a diferença é entender <em>o que o pipeline está fazendo</em> e é exatamente isso que vimos hoje.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="leituras-recomendadas" class="slide level2">
+<section id="bioinformática-no-brasil" class="slide level2">
+<h2>Bioinformática no Brasil</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Grupos e instituições de referência:</strong></p>
+<ul>
+<li><strong>ESALQ/USP</strong> — genômica de plantas, fitopatologia, metagenômica de solo</li>
+<li><strong>IQ-USP / LaBiECC</strong> — bioinformática estrutural e comparativa</li>
+<li><strong>LNCC (RJ)</strong> — laboratório nacional, HPC para bioinformática</li>
+<li><strong>Fiocruz</strong> — genômica de parasitos, vigilância epidemiológica</li>
+<li><strong>UNICAMP / IAG</strong> — bioinformática evolutiva e de populações</li>
+<li><strong>EMBRAPA</strong> — genomica aplicada ao melhoramento vegetal e animal</li>
+</ul>
+<p><strong>Redes e iniciativas:</strong></p>
+<ul>
+<li><strong>Rede Genômica FAPESP</strong> — projetos de sequenciamento de organismos tropicais</li>
+<li><strong>BioInformatics Training Network (ELIXIR-BR)</strong> — formação em bioinformática</li>
+<li><strong>Plataforma de Genômica da FIOCRUZ</strong> — sequenciamento de patógenos (SARS-CoV-2, Dengue, Mpox)</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Por que o Brasil tem vantagem comparativa?</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>Maior biodiversidade do planeta</strong>: Amazônia, Cerrado, Mata Atlântica, Pantanal — organismos não-modelo, microbiomas únicos, enzimas com propriedades industriais inexploradas</li>
+<li><strong>Agronegócio de escala global</strong>: melhoramento de soja, cana, milho, eucalipto, bovinos — todos com programas ativos de genômica</li>
+<li><strong>Doenças tropicais</strong>: Dengue, Zika, Chagas, Leishmaniose — pesquisa de ponta com relevância local</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>ESALQ no contexto:</strong> a ESALQ tem tradição fortíssima em genética e melhoramento. A bioinformática entra como amplificador, o mesmo laboratório que antes sequenciava marcadores SSR para seleção assistida hoje faz GWAS com chips de 100.000 SNPs, imputa haplótipos em painéis de referência, e usa modelos de predição genômica. O dado mudou de escala, mas a biologia é a mesma.</p>
+<p><strong>Rede Genômica FAPESP:</strong> projetos como o Projeto Genoma da Xylella fastidiosa (2000 — primeiro patógeno vegetal sequenciado, feito inteiramente por um consórcio brasileiro) e projetos subsequentes de cana-de-açúcar, eucalipto, boi, camarão, etc., colocaram o Brasil no mapa da genômica global.</p>
+<p><strong>Biodiversidade como ativo científico:</strong> estima-se que a Amazônia abriga &gt;10% das espécies do planeta, com microbiomas de solo únicos que produzem enzimas industriais, antibióticos e metabólitos sem análogos conhecidos. A bioinformática é a ferramenta para explorar esse patrimônio.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="onde-estudar-e-como-entrar-no-campo" class="slide level2">
+<h2>Onde estudar e como entrar no campo</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Aprendizado autodirigido:</strong></p>
+<ul>
+<li><a href="https://rosalind.info"><strong>Rosalind</strong></a> — problemas de bioinformática com verificação automática, do básico ao avançado. Gratuito.</li>
+<li><a href="https://www.ebi.ac.uk/training"><strong>EMBL-EBI Training</strong></a> — cursos online gratuitos em análise de sequências, expressão, estrutura</li>
+<li><a href="https://bioconductor.org/packages/release/workflows"><strong>Bioconductor Workflows</strong></a> — tutoriais completos em R com dados reais</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Carreiras em bioinformática:</strong></p>
+<pre><code>Academia
+  ├── Pesquisa (genômica, proteômica,
+  │   transcriptômica, metagenômica)
+  └── Bioinformática de infraestrutura
+      (pipelines, bancos de dados)
+
+Setor privado
+  ├── Genômica clínica
+  │   (Mendelics, HMV, Dasa Genômica)
+  ├── Agronegócio
+  │   (EMBRAPA, Bayer, Syngenta, Corteva)
+  ├── Biotecnologia / Biotech
+  │   (startups de design de proteínas,
+  │    terapias gênicas, diagnóstico)
+  └── Bioinformática industrial
+      (enzimas, fermentação, microbioma)
+
+Saúde pública
+  └── Vigilância epidemiológica,
+      sequenciamento de patógenos (SVS/MS)</code></pre>
+</div></div>
+<aside class="notes">
+<p><strong>Tempo: ~1 min</strong></p>
+<p><strong>Rosalind:</strong> desenvolvido por Pavel Pevzner e Phillip Compeau — os mesmos autores do livro “Bioinformatics Algorithms”. Os problemas são organizados em trilhas (Python, algoritmos de bioinformática, genômica) e verificados automaticamente. É o melhor ponto de partida para aprender programando.</p>
+<p><strong>Mercado no Brasil:</strong> a bioinformática clínica cresceu muito com o barateamento do sequenciamento. Empresas como Mendelics (diagnóstico genético) e Dasa Genômica processam hoje dezenas de milhares de exomas e painéis gênicos por ano. A demanda por bioinformatas com background biológico — pessoas que entendem tanto os dados quanto a clínica, é muito maior que a oferta.</p>
+<p>O caminho mais direto é iniciar com R/Bioconductor (a maioria dos labs de genômica usa R), aprender o básico de linha de comando Unix, e trabalhar com dados reais de IC. Um projeto de GWAS, RNA-seq ou montagem de genoma em IC já é suficiente para entrar num mestrado ou no mercado.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="recapitulando-o-mapa-da-bioinformática" class="slide level2">
+<h2>Recapitulando: o mapa da bioinformática</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><aside class="notes">
+<p><strong>Tempo: ~30 s</strong></p>
+<p>Este slide é de revisão rápida. A ideia é que a turma veja visualmente como os blocos se conectam: dados são a entrada; alinhamento, k-mers e HMMs são as operações fundamentais sobre sequências; grafos e ML são as camadas de análise; função, estrutura e drug design são as saídas de aplicação.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="mensagem-final" class="slide level2 center">
+<h2>Mensagem final</h2>
+<div style="text-align: center; margin-top: 8%;">
+<p><span style="font-size: 1.25em; color: var(--text-color);">Vocês já têm o vocabulário biológico.</span></p>
+<p><br></p>
+<p><span style="font-size: 1.25em; color: var(--text-color);">A bioinformática é a ferramenta</span> <span style="font-size: 1.25em; color: var(--text-color);">para <strong>escalar</strong> o que vocês já sabem.</span></p>
+<p>Muito obrigado pela atenção! <br><br></p>
+<div class="columns">
+<div class="column" style="width:25%;">
+
+</div><div class="column" style="width:50%;">
+<center>
+<p>Matheus Pimenta<br>
+<a href="mailto:matheuspimenta@outlook.com">matheuspimenta@outlook.com</a></p>
+</center>
+</div><div class="column" style="width:25%;">
+
+</div></div>
+</div>
+<aside class="notes">
+<p><strong>Tempo: ~30 s</strong></p>
+<p>“Tudo que vimos hoje, alinhamento, k-mers, HMMs, redes, AlphaFold, são ferramentas. O que dá sentido a essas ferramentas é a pergunta biológica que vocês fazem. Um bioinformata sem background biológico não sabe o que perguntar. Vocês têm o que é mais difícil de aprender. O resto é técnica e técnica se aprende.”</p>
+<p>“Qual dos métodos que vimos hoje vocês achariam mais útil para a área de pesquisa de vocês?”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="leituras-recomendadas" class="slide level2 smaller scrollable">
 <h2>Leituras Recomendadas</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-alipanahi2015" class="csl-entry" role="listitem">
+Alipanahi, Babak, Andrew Delong, Matthew T. Weirauch, and Brendan J. Frey. 2015. <span>“Predicting the Sequence Specificities of <span>DNA</span>- and <span>RNA</span>-Binding Proteins by Deep Learning.”</span> <em>Nature Biotechnology</em> 33 (8): 831–38. <a href="https://doi.org/10.1038/nbt.3300">https://doi.org/10.1038/nbt.3300</a>.
+</div>
+<div id="ref-altschul1990" class="csl-entry" role="listitem">
+Altschul, Stephen F., Warren Gish, Webb Miller, Eugene W. Myers, and David J. Lipman. 1990. <span>“Basic Local Alignment Search Tool.”</span> <em>Journal of Molecular Biology</em> 215 (3): 403–10. <a href="https://doi.org/10.1016/S0022-2836(05)80360-2">https://doi.org/10.1016/S0022-2836(05)80360-2</a>.
+</div>
+<div id="ref-baker2016" class="csl-entry" role="listitem">
+Baker, Monya. 2016. <span>“1,500 Scientists Lift the Lid on Reproducibility.”</span> <em>Nature</em> 533 (7604): 452–54. <a href="https://doi.org/10.1038/533452a">https://doi.org/10.1038/533452a</a>.
+</div>
+<div id="ref-bankevich2012" class="csl-entry" role="listitem">
+Bankevich, Anton, Sergey Nurk, Dmitry Antipov, Alexey A. Gurevich, Mikhail Dvorkin, Alexander S. Kulikov, Valery M. Lesin, et al. 2012. <span>“SPAdes: A New Genome Assembly Algorithm and Its Applications to Single-Cell Sequencing.”</span> <em>Journal of Computational Biology</em> 19 (5): 455–77. <a href="https://doi.org/10.1089/cmb.2012.0021">https://doi.org/10.1089/cmb.2012.0021</a>.
+</div>
+<div id="ref-barabasi1999" class="csl-entry" role="listitem">
+Barabási, Albert-László, and Réka Albert. 1999. <span>“Emergence of Scaling in Random Networks.”</span> <em>Science</em> 286 (5439): 509–12. <a href="https://doi.org/10.1126/science.286.5439.509">https://doi.org/10.1126/science.286.5439.509</a>.
+</div>
+<div id="ref-benson2013" class="csl-entry" role="listitem">
+Benson, Dennis A., Mark Cavanaugh, Karen Clark, Ilene Karsch-Mizrachi, David J. Lipman, James Ostell, and Eric W. Sayers. 2013. <span>“<span>GenBank</span>.”</span> <em>Nucleic Acids Research</em> 41 (D1): D36–42. <a href="https://doi.org/10.1093/nar/gks1195">https://doi.org/10.1093/nar/gks1195</a>.
+</div>
+<div id="ref-berman2000" class="csl-entry" role="listitem">
+Berman, Helen M., John Westbrook, Zukang Feng, Gary Gilliland, T. N. Bhat, Helge Weissig, Ilya N. Shindyalov, and Philip E. Bourne. 2000. <span>“The <span>Protein Data Bank</span>.”</span> <em>Nucleic Acids Research</em> 28 (1): 235–42. <a href="https://doi.org/10.1093/nar/28.1.235">https://doi.org/10.1093/nar/28.1.235</a>.
+</div>
+<div id="ref-cilibrasi2005" class="csl-entry" role="listitem">
+Cilibrasi, Rudi, and Paul M. B. Vitányi. 2005. <span>“Clustering by Compression.”</span> <em><span>IEEE</span> Transactions on Information Theory</em> 51 (4): 1523–45. <a href="https://doi.org/10.1109/TIT.2004.838101">https://doi.org/10.1109/TIT.2004.838101</a>.
+</div>
+<div id="ref-cock2009" class="csl-entry" role="listitem">
+Cock, Peter J. A., Tiago Antao, Jeffrey T. Chang, Brad A. Chapman, Cymon J. Cox, Andrew Dalke, Iddo Friedberg, et al. 2009. <span>“Biopython: Freely Available <span>Python</span> Tools for Computational Molecular Biology and Bioinformatics.”</span> <em>Bioinformatics</em> 25 (11): 1422–23. <a href="https://doi.org/10.1093/bioinformatics/btp163">https://doi.org/10.1093/bioinformatics/btp163</a>.
+</div>
+<div id="ref-cunningham2022" class="csl-entry" role="listitem">
+Cunningham, Fiona, James E. Allen, Jamie Allen, Jorge Alvarez-Jarreta, M. Ridwan Amode, Irina M. Armean, et al. 2022. <span>“Ensembl 2022.”</span> <em>Nucleic Acids Research</em> 50 (D1): D988–95. <a href="https://doi.org/10.1093/nar/gkab1049">https://doi.org/10.1093/nar/gkab1049</a>.
+</div>
+<div id="ref-dalla2023" class="csl-entry" role="listitem">
+Dalla-Torre, Hugo, Liam Gonzalez, Javier Avsec Revilla, Ishan Bhatt, Bhatt Bhatt, Guillaume Croce, Christian Dallago, Gonzalo Benegas, Sami Zouari, et al. 2023. <span>“The <span>Nucleotide Transformer</span>: Building and Evaluating Robust Foundation Models for Human Genomics.”</span> <em>bioRxiv</em>. <a href="https://doi.org/10.1101/2023.01.11.523679">https://doi.org/10.1101/2023.01.11.523679</a>.
+</div>
+<div id="ref-eddy2011" class="csl-entry" role="listitem">
+Eddy, Sean R. 2011. <span>“Accelerated Profile <span>HMM</span> Searches.”</span> <em><span>PLOS</span> Computational Biology</em> 7 (10): e1002195. <a href="https://doi.org/10.1371/journal.pcbi.1002195">https://doi.org/10.1371/journal.pcbi.1002195</a>.
+</div>
+<div id="ref-edgar2004" class="csl-entry" role="listitem">
+Edgar, Robert C. 2004. <span>“<span>MUSCLE</span>: Multiple Sequence Alignment with High Accuracy and High Throughput.”</span> <em>Nucleic Acids Research</em> 32 (5): 1792–97. <a href="https://doi.org/10.1093/nar/gkh340">https://doi.org/10.1093/nar/gkh340</a>.
+</div>
+<div id="ref-elnaggar2021" class="csl-entry" role="listitem">
+Elnaggar, Ahmed, Michael Heinzinger, Christian Dallago, Ghalia Rehawi, Yu Wang, Llion Jones, Tom Gibbs, et al. 2022. <span>“<span>ProtTrans</span>: Towards Cracking the Language of Life’s Code Through Self-Supervised Deep Learning and High Performance Computing.”</span> <em><span>IEEE</span> Transactions on Pattern Analysis and Machine Intelligence</em> 44 (10): 7112–27. <a href="https://doi.org/10.1109/TPAMI.2021.3095381">https://doi.org/10.1109/TPAMI.2021.3095381</a>.
+</div>
+<div id="ref-gordon2020" class="csl-entry" role="listitem">
+Gordon, David E., Gwendolyn M. Jang, Mehdi Bouhaddou, Jiewei Xu, Kristin Obernier, Katherine M. White, Matthew J. O’Meara, et al. 2020. <span>“A <span>SARS-CoV-2</span> Protein Interaction Map Reveals Targets for Drug Repurposing.”</span> <em>Nature</em> 583 (7816): 459–68. <a href="https://doi.org/10.1038/s41586-020-2286-9">https://doi.org/10.1038/s41586-020-2286-9</a>.
+</div>
+<div id="ref-henikoff1992" class="csl-entry" role="listitem">
+Henikoff, Steven, and Jorja G. Henikoff. 1992. <span>“Amino Acid Substitution Matrices from Protein Blocks.”</span> <em>Proceedings of the National Academy of Sciences</em> 89 (22): 10915–19. <a href="https://doi.org/10.1073/pnas.89.22.10915">https://doi.org/10.1073/pnas.89.22.10915</a>.
+</div>
+<div id="ref-jeong2001" class="csl-entry" role="listitem">
+Jeong, Hawoong, Sean P. Mason, Albert-László Barabási, and Zoltán N. Oltvai. 2001. <span>“Lethality and Centrality in Protein Networks.”</span> <em>Nature</em> 411 (6833): 41–42. <a href="https://doi.org/10.1038/35075138">https://doi.org/10.1038/35075138</a>.
+</div>
+<div id="ref-ji2021" class="csl-entry" role="listitem">
+Ji, Yanrong, Zhihan Zhou, Han Liu, and Ramana V. Davuluri. 2021. <span>“<span>DNABERT</span>: Pre-Trained Bidirectional Encoder Representations from Transformers Model for <span>DNA</span>-Language in Genome.”</span> <em>Bioinformatics</em> 37 (15): 2112–20. <a href="https://doi.org/10.1093/bioinformatics/btab083">https://doi.org/10.1093/bioinformatics/btab083</a>.
+</div>
+<div id="ref-jumper2021" class="csl-entry" role="listitem">
+Jumper, John, Richard Evans, Alexander Pritzel, Tim Green, Michael Figurnov, Olaf Ronneberger, Kathryn Tunyasuvunakool, et al. 2021. <span>“Highly Accurate Protein Structure Prediction with <span>AlphaFold</span>.”</span> <em>Nature</em> 596 (7873): 583–89. <a href="https://doi.org/10.1038/s41586-021-03819-2">https://doi.org/10.1038/s41586-021-03819-2</a>.
+</div>
+<div id="ref-kalvari2021" class="csl-entry" role="listitem">
+Kalvari, Ioanna, Eric P. Nawrocki, Nancy Ontiveros-Palacios, Joanna Argasinska, Kevin Lamkiewicz, Manja Marz, Sam Griffiths-Jones, et al. 2021. <span>“Rfam 14: Expanded Coverage of Metagenomic, Viral and microRNA Families.”</span> <em>Nucleic Acids Research</em> 49 (D1): D192–200. <a href="https://doi.org/10.1093/nar/gkaa1047">https://doi.org/10.1093/nar/gkaa1047</a>.
+</div>
+<div id="ref-katoh2013" class="csl-entry" role="listitem">
+Katoh, Kazutaka, and Daron M. Standley. 2013. <span>“<span>MAFFT</span> Multiple Sequence Alignment Software Version 7: Improvements in Performance and Usability.”</span> <em>Molecular Biology and Evolution</em> 30 (4): 772–80. <a href="https://doi.org/10.1093/molbev/mst010">https://doi.org/10.1093/molbev/mst010</a>.
+</div>
+<div id="ref-lander2001" class="csl-entry" role="listitem">
+Lander, Eric S., Lauren M. Linton, Bruce Birren, et al. 2001. <span>“Initial Sequencing and Analysis of the Human Genome.”</span> <em>Nature</em> 409 (6822): 860–921. <a href="https://doi.org/10.1038/35057062">https://doi.org/10.1038/35057062</a>.
+</div>
+<div id="ref-langfelder2008" class="csl-entry" role="listitem">
+Langfelder, Peter, and Steve Horvath. 2008. <span>“WGCNA: An <span>R</span> Package for Weighted Correlation Network Analysis.”</span> <em>BMC Bioinformatics</em> 9: 559. <a href="https://doi.org/10.1186/1471-2105-9-559">https://doi.org/10.1186/1471-2105-9-559</a>.
+</div>
+<div id="ref-leinonen2011" class="csl-entry" role="listitem">
+Leinonen, Rasko, Hideaki Sugawara, Martin Shumway, and International Nucleotide Sequence Database Collaboration. 2011. <span>“The Sequence Read Archive.”</span> <em>Nucleic Acids Research</em> 39 (suppl 1): D19–21. <a href="https://doi.org/10.1093/nar/gkq1019">https://doi.org/10.1093/nar/gkq1019</a>.
+</div>
+<div id="ref-li2004" class="csl-entry" role="listitem">
+Li, Ming, and Paul M. B. Vitányi. 2004. <span>“Similarity of Objects and the Meaning of Words.”</span> <em><span>IEEE</span> Transactions on Information Theory</em> 50 (8): 1569–91. <a href="https://doi.org/10.1109/TIT.2004.828146">https://doi.org/10.1109/TIT.2004.828146</a>.
+</div>
+<div id="ref-lin2023" class="csl-entry" role="listitem">
+Lin, Zeming, Halil Akin, Roshan Rao, Brian Hie, Zhongkai Zhu, Wenting Lu, Nikita Smetanin, et al. 2023. <span>“Evolutionary-Scale Prediction of Atomic-Level Protein Structure with a Language Model.”</span> <em>Science</em> 379 (6637): 1123–30. <a href="https://doi.org/10.1126/science.ade2574">https://doi.org/10.1126/science.ade2574</a>.
+</div>
+<div id="ref-luscombe2001" class="csl-entry" role="listitem">
+Luscombe, Nicholas M., Dov Greenbaum, and Mark Gerstein. 2001. <span>“What Is Bioinformatics? <span>A</span> Proposed Definition and Overview of the Field.”</span> <em>Methods of Information in Medicine</em> 40 (4): 346–58. <a href="https://doi.org/10.1055/s-0038-1634431">https://doi.org/10.1055/s-0038-1634431</a>.
+</div>
+<div id="ref-marcais2011" class="csl-entry" role="listitem">
+Marçais, Guillaume, and Carl Kingsford. 2011. <span>“A Fast, Lock-Free Approach for Efficient Parallel Counting of Occurrences of k-Mers.”</span> <em>Bioinformatics</em> 27 (6): 764–70. <a href="https://doi.org/10.1093/bioinformatics/btr011">https://doi.org/10.1093/bioinformatics/btr011</a>.
+</div>
+<div id="ref-mistry2021" class="csl-entry" role="listitem">
+Mistry, Jaina, Sara Chuguransky, Lowri Williams, Matloob Qureshi, Erik L. L. Sonnhammer, Silvio C. E. Tosatto, Lisanna Paladin, et al. 2021. <span>“Pfam: The Protein Families Database in 2021.”</span> <em>Nucleic Acids Research</em> 49 (D1): D412–19. <a href="https://doi.org/10.1093/nar/gkaa913">https://doi.org/10.1093/nar/gkaa913</a>.
+</div>
+<div id="ref-needleman1970" class="csl-entry" role="listitem">
+Needleman, Saul B., and Christian D. Wunsch. 1970. <span>“A General Method Applicable to the Search for Similarities in the Amino Acid Sequence of Two Proteins.”</span> <em>Journal of Molecular Biology</em> 48 (3): 443–53. <a href="https://doi.org/10.1016/0022-2836(70)90057-4">https://doi.org/10.1016/0022-2836(70)90057-4</a>.
+</div>
+<div id="ref-ondov2016" class="csl-entry" role="listitem">
+Ondov, Brian D., Todd J. Treangen, Páll Melsted, Adam B. Mallonee, Nicholas H. Bergman, Sergey Koren, and Adam M. Phillippy. 2016. <span>“Mash: Fast Genome and Metagenome Distance Estimation Using <span>MinHash</span>.”</span> <em>Genome Biology</em> 17: 132. <a href="https://doi.org/10.1186/s13059-016-0997-x">https://doi.org/10.1186/s13059-016-0997-x</a>.
+</div>
+<div id="ref-sboner2011" class="csl-entry" role="listitem">
+Sboner, Andrea, Xi Joanna Mu, Dov Greenbaum, Dhruv L. Bhatt, and Mark B. Gerstein. 2011. <span>“The Real Cost of Sequencing: Higher Than You Think!”</span> <em>Genome Biology</em> 12 (8): 125. <a href="https://doi.org/10.1186/gb-2011-12-8-125">https://doi.org/10.1186/gb-2011-12-8-125</a>.
+</div>
+<div id="ref-smith1981" class="csl-entry" role="listitem">
+Smith, Temple F., and Michael S. Waterman. 1981. <span>“Identification of Common Molecular Subsequences.”</span> <em>Journal of Molecular Biology</em> 147 (1): 195–97. <a href="https://doi.org/10.1016/0022-2836(81)90087-5">https://doi.org/10.1016/0022-2836(81)90087-5</a>.
+</div>
+<div id="ref-stanke2008" class="csl-entry" role="listitem">
+Stanke, Mario, Mark Diekhans, Robert Baertsch, and David Haussler. 2008. <span>“Using Native and Syntenically Mapped c<span>DNA</span> Alignments to Improve de Novo Gene Finding.”</span> <em>Bioinformatics</em> 24 (5): 637–44. <a href="https://doi.org/10.1093/bioinformatics/btn013">https://doi.org/10.1093/bioinformatics/btn013</a>.
+</div>
+<div id="ref-szklarczyk2023" class="csl-entry" role="listitem">
+Szklarczyk, Damian, Rebecca Kirsch, Mikaela Koutrouli, Katerina Nastou, Farrokh Mehryary, Radja Hachilif, Annika L. Gable, et al. 2023. <span>“The <span>STRING</span> Database in 2023: Protein–Protein Association Networks and Functional Enrichment Analyses for Any Sequenced Genome of Interest.”</span> <em>Nucleic Acids Research</em> 51 (D1): D638–46. <a href="https://doi.org/10.1093/nar/gkac1000">https://doi.org/10.1093/nar/gkac1000</a>.
+</div>
+<div id="ref-uniprot2023" class="csl-entry" role="listitem">
+UniProt Consortium. 2023. <span>“<span>UniProt</span>: The <span>Universal Protein Knowledgebase</span> in 2023.”</span> <em>Nucleic Acids Research</em> 51 (D1): D523–31. <a href="https://doi.org/10.1093/nar/gkac1052">https://doi.org/10.1093/nar/gkac1052</a>.
+</div>
+<div id="ref-watson2023" class="csl-entry" role="listitem">
+Watson, Joseph L., David Juergens, Nathaniel R. Bennett, Brian L. Trippe, Jason Yim, Helen E. Eisenach, Woody Ahern, et al. 2023. <span>“De Novo Design of Protein Structure and Function with <span>RFdiffusion</span>.”</span> <em>Nature</em> 620 (7976): 1089–1100. <a href="https://doi.org/10.1038/s41586-023-06415-8">https://doi.org/10.1038/s41586-023-06415-8</a>.
+</div>
+<div id="ref-watts1998" class="csl-entry" role="listitem">
+Watts, Duncan J., and Steven H. Strogatz. 1998. <span>“Collective Dynamics of <span>‘Small-World’</span> Networks.”</span> <em>Nature</em> 393 (6684): 440–42. <a href="https://doi.org/10.1038/30918">https://doi.org/10.1038/30918</a>.
+</div>
+<div id="ref-wood2019" class="csl-entry" role="listitem">
+Wood, Derrick E., Jennifer Lu, and Ben Langmead. 2019. <span>“Improved Metagenomic Analysis with <span>Kraken</span> 2.”</span> <em>Genome Biology</em> 20: 257. <a href="https://doi.org/10.1186/s13059-019-1891-0">https://doi.org/10.1186/s13059-019-1891-0</a>.
+</div>
+<div id="ref-zerbino2008" class="csl-entry" role="listitem">
+Zerbino, Daniel R., and Ewan Birney. 2008. <span>“Velvet: Algorithms for de Novo Short Read Assembly Using de Bruijn Graphs.”</span> <em>Genome Research</em> 18 (5): 821–29. <a href="https://doi.org/10.1101/gr.074492.107">https://doi.org/10.1101/gr.074492.107</a>.
+</div>
+</div>
 
 </section></section>
     </div>
@@ -462,6 +3286,44 @@ ESALQ/USP</p>
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
