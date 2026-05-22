@@ -478,7 +478,7 @@ A operação fundamental da bioinformática clássica
 Humano: MVLSPADKTNVKAAW-GKVGAHAGEYGAEAL
 Rato:   MVLSGEDKSNIKAAW-GKIGGHGAEYGAEAL
 Galinha:MVLSAADKNNVKGIF-TKIAGHAEEYGAETL
-        ****  ** * ***  ** *  ** *****
+        ****  ** * *     *   *  ** ** *
 ```
 
 - `*` posição 100% conservada
@@ -2640,7 +2640,7 @@ Muito obrigado pela atenção!
 <center>
 
 Matheus Pimenta  
-[matheuspimenta@outlook.com](mailto:matheuspimenta@outlook.com)
+[matheuspimenta@outlook.com](mailto:omatheuspimenta@outlook.com)
 
 </center>
 
